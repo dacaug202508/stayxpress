@@ -13,6 +13,10 @@ import { Provider } from "react-redux";
 
 import store from "./store/store.js";
 import OwnerAuthLayout from "./Layout/OwnerAuthLayout.jsx";
+
+import { Slide, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 let router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +59,19 @@ let router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Slide}
+      />
       <RouterProvider router={router} />
     </Provider>
   </StrictMode>

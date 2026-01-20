@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { AUTHROLES } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
 
 function OwnerAuthLayout({ children, authentication = true }) {
