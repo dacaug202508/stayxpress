@@ -3,7 +3,12 @@ package com.example.demo.Controllers;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,16 +58,21 @@ public class UserControllers {
 	}
 	
 	@PostMapping("/login")
-	public String login(@RequestBody LoginDto user) {
-		String token = "";
-		try {
-			System.out.println(user.getPassword());
-			 token = userService.authenticate(user);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		return token;
+	public ResponseEntity<?> login(@RequestBody LoginDto user) {
+	    try {
+	        String token = userService.authenticate(user);
+	        return ResponseEntity.ok(token); // 200
+	    } catch (BadCredentialsException e) {
+	        return ResponseEntity
+	                .status(HttpStatus.UNAUTHORIZED) // 401
+	                .body("Invalid username or password");
+	    } catch (Exception e) {
+	        return ResponseEntity
+	                .status(HttpStatus.INTERNAL_SERVER_ERROR) // 500
+	                .body("Something went wrong");
+	    }
 	}
+
 	
 	
 }
