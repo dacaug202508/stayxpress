@@ -1,0 +1,24 @@
+package com.example.demo.entities;
+
+import java.math.BigInteger;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class UserEntity {
+	
+	@Id
+	public BigInteger id;
+	
+	public String full_name;
+	public String email;
+	public String profile_image;
+	public  
+	
+
+}
+
+enum ROLES {
+	CUSTOMER, OWNER, ADMIN
+}

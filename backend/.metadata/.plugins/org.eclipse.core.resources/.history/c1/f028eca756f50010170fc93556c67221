@@ -1,0 +1,26 @@
+package com.example.demo.config;
+
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+@Configuration
+public class RoutConfig {
+
+    @Bean
+     RouteLocator createRoute(RouteLocatorBuilder builder) {
+		return builder.routes()
+				.route("DiscoveryService-1",r-> 
+				r.path("/user/**")
+//				.uri("http://localhost:8081/")
+				.uri("lb://DiscoveryService-1"))
+				.route("DiscoveryService-2",r-> 
+				r.path("/admin/**")
+//				.uri("http://localhost:8081/")
+				.uri("lb://DiscoveryService-2"))
+				
+				.build();
+	}
+	
+	
+}
