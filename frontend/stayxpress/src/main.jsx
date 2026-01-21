@@ -21,7 +21,13 @@ import AuthLayout from "./Layout/AuthLayout.jsx";
 let router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element:( 
+      <AuthLayout authentication={false}>
+        <Layout />
+      </AuthLayout>
+
+
+    ),
     children: [
       {
         index: true,
@@ -30,9 +36,9 @@ let router = createBrowserRouter([
       {
         path: "/login",
         element: (
-          <AuthLayout authentication>
+          
             <Login />
-          </AuthLayout>
+
         ),
       },
       {

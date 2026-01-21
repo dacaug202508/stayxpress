@@ -1,6 +1,7 @@
 package com.example.demo.Controllers;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.Services.UserService;
 import com.example.demo.entities.LoginDto;
 import com.example.demo.entities.UserEntity;
+import com.example.demo.entities.UserRegistrationDto;
 import com.example.demo.utils.JwtServiceUtil;
 
 import io.jsonwebtoken.Claims;
@@ -37,16 +39,21 @@ public class UserControllers {
 	
 	
 	@PostMapping("/register")
-	public UserEntity registerUser(@RequestBody UserEntity user) {
-		UserEntity savedUser = null;
+	public ResponseEntity<Map<String, Object>> registerUser(@RequestBody UserEntity user) {
+		UserRegistrationDto savedUser = null;
 		try {
 			
 			 savedUser =  userService.saveUser(user);
 			
 		}catch(Exception e) {
-			e.printStackTrace();
+			Map<String, Object> err = new HashMap<String, Object>();
+			err.put("err", e.getMessage());
+			return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(err);
 		}
-		return savedUser;
+		Map<String, Object> res = new HashMap<String, Object>();
+		res.put("user", savedUser);
+		
+		return ResponseEntity.status(HttpStatus.OK).body(res);
 	}
 	
 	@GetMapping("/getall")

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Homeimage from "../common/Homeimage";
 import Button from "../reusable/Button";
 import { Link } from "react-router-dom";
+import { registerUser } from "../../services/authservices";
+import { myToast, myWarningToast } from "../../utils/toast";
 
 function Registration() {
   const initialDetails = {
     username: "",
     email: "",
-    phone: "",
     password: "",
   };
 
@@ -18,9 +19,19 @@ function Registration() {
     setRegistrationFormDetails({ ...registrationFormDetails, [name]: value });
   }
 
-  function handleSignup(e) {
+  async function handleSignup(e) {
     e.preventDefault();
     console.log(registrationFormDetails);
+
+    try {
+      let res = await registerUser(registrationFormDetails);
+
+      if (res.data?.user != null || res.data.user != undefined) {
+        myToast("registration successful");
+      }
+    } catch (error) {
+      myWarningToast(error.response.data.err);
+    }
   }
 
   return (
@@ -55,9 +66,7 @@ function Registration() {
                 type="text"
                 placeholder="eg. John"
                 className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
               />
             </div>
 
@@ -68,22 +77,7 @@ function Registration() {
                 type="email"
                 placeholder="eg. john@mail.com"
                 className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
-              />
-            </div>
-
-            <div>
-              <label className="block mb-1 font-medium">Phone</label>
-              <input
-                name="phone"
-                type="tel"
-                placeholder="eg. +91"
-                className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
               />
             </div>
 
@@ -94,9 +88,7 @@ function Registration() {
                 type="password"
                 placeholder="********"
                 className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
               />
             </div>
 

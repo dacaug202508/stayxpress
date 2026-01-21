@@ -34,6 +34,13 @@ public class UserEntity {
 	    @Column(nullable = false)
 	    private STATUS status;
 
+	    
+	    public UserEntity() {
+	    	role = ROLES.CUSTOMER;
+	    	status= STATUS.ACTIVE;
+	    }
+	    
+	    
 		public BigInteger getId() {
 			return id;
 		}

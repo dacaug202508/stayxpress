@@ -3,10 +3,11 @@ import Button from "../reusable/Button";
 import Homeimage from "../common/Homeimage";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../store/authSlice";
+import { AUTHROLES, login } from "../../store/authSlice";
 import { getClaimsFromJwt, loginUser } from "../../services/authservices";
 import Toast from "../reusable/Toast";
 import { Slide, toast } from "react-toastify";
+import { myToast, myWarningToast } from "../../utils/toast";
 
 function Login() {
   const initialDetails = {
@@ -46,20 +47,35 @@ function Login() {
       let role = claims.data.roles.substring(1, claims.data.roles.length - 1);
       dispatch(login({ token, username, role }));
 
-      toast.success("login successful", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Slide,
-      });
-      navigate("/");
+      switch (role) {
+        case AUTHROLES.OWNER:
+          navigate("/owner");
+          break;
+        case AUTHROLES.ADMIN:
+          navigate("/admin");
+          break;
+        case AUTHROLES.USER:
+          navigate("/");
+          break;
+        default:
+          navigate("/");
+          break;
+      }
+
+      // toast.success("login successful", {
+      //   position: "bottom-right",
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: false,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "light",
+      //   transition: Slide,
+      // });
+      myToast("login successful");
     } catch (error) {
-      console.log(error);
+      myWarningToast(error.response.data);
     }
   }
 

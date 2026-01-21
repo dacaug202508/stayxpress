@@ -7,7 +7,7 @@ let username = localStorage.getItem("user");
 
 export let AUTHROLES = {
   OWNER: "ROLE_OWNER",
-  USER: "ROLE_USER",
+  USER: "ROLE_CUSTOMER",
   ADMIN: "ROLE_ADMIN"
 }
 

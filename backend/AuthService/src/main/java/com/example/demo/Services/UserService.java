@@ -18,6 +18,7 @@ import com.example.demo.Controllers.UserControllers;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.entities.LoginDto;
 import com.example.demo.entities.UserEntity;
+import com.example.demo.entities.UserRegistrationDto;
 import com.example.demo.utils.JwtServiceUtil;
 import com.example.demo.utils.MyUserDetailsService;
 
@@ -43,7 +44,7 @@ public class UserService {
 
 	
 	
-	public UserEntity saveUser(UserEntity user) throws Exception {
+	public UserRegistrationDto saveUser(UserEntity user) throws Exception {
 		
 		UserEntity dbUser = userRepo.findByUsername(user.getUsername());
 		
@@ -63,7 +64,8 @@ public class UserService {
 		
 		user.setPassword(encodedPassword);
 		
-		return userRepo.save(user);
+		 UserEntity savedUser = userRepo.save(user);
+		 return new UserRegistrationDto(savedUser.getUsername(), savedUser.getRole());
 	}
 
 

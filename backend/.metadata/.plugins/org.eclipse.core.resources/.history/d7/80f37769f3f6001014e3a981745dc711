@@ -1,0 +1,8 @@
+package com.example.demo.entities;
+
+public class Snippet {
+	public static void main(String[] args) {
+		UserRegistrationDto
+	}
+}
+
