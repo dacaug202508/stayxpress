@@ -1,0 +1,87 @@
+package com.example.demo.Services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.Repositories.UserRepository;
+import com.example.demo.entities.LoginDto;
+import com.example.demo.entities.UserEntity;
+import com.example.demo.utils.JwtServiceUtil;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserRepository userRepo;
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private JwtServiceUtil jwtService;
+	@Autowired
+	private AuthenticationManager authManager;
+
+	
+	
+	public UserEntity saveUser(UserEntity user) throws Exception {
+		
+		UserEntity dbUser = userRepo.findByUsername(user.getUsername());
+		
+		
+		if(dbUser != null)
+		{
+			throw new Exception("User already exists!!");
+		}
+		
+		UserEntity existingEmail = userRepo.findByEmail(user.getEmail());
+		if(existingEmail != null) {
+			throw new Exception("Email already exists!!");
+		}
+		
+		String encodedPassword = passwordEncoder.encode(user.getPassword());
+		
+		
+		user.setPassword(encodedPassword);
+		
+		return userRepo.save(user);
+	}
+
+
+
+
+	public List<UserEntity> allUsers() {
+		
+		return userRepo.findAll();
+	}
+	
+	
+	public String authenticate(LoginDto user) {
+		 Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+	        if (authentication.isAuthenticated()) {
+	        	String authority =authentication.getAuthorities()
+	            .stream()
+	            .map(GrantedAuthority::getAuthority)
+	            .filter(s -> s.startsWith("ROLE_"))
+	            .toList()
+	            .toString();
+	        	
+	            return jwtService.generateToken(user.getUsername(), authority);
+	        } else {
+//	        	System.out.println("in fails");
+	            return "fail";
+	        }
+	}
+	
+	public Object getClaims(String token) {
+		jwtService.extractAllClaims(token);
+	}
+	
+	
+}

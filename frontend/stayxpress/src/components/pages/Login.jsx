@@ -4,7 +4,7 @@ import Homeimage from "../common/Homeimage";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/authSlice";
-import { loginUser } from "../../services/authservices";
+import { getClaimsFromJwt, loginUser } from "../../services/authservices";
 import Toast from "../reusable/Toast";
 import { Slide, toast } from "react-toastify";
 
@@ -38,8 +38,13 @@ function Login() {
 
     try {
       const res = await loginUser(loginFormDetails);
+      let token = res.data?.token;
+      let username = res.data?.user;
 
-      dispatch(login({ token: res.data }));
+      console.log(res.data);
+      let claims = await getClaimsFromJwt(token, username);
+      let role = claims.data.roles.substring(1, claims.data.roles.length - 1);
+      dispatch(login({ token, username, role }));
 
       toast.success("login successful", {
         position: "bottom-right",

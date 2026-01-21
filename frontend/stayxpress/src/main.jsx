@@ -16,6 +16,7 @@ import OwnerAuthLayout from "./Layout/OwnerAuthLayout.jsx";
 
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AuthLayout from "./Layout/AuthLayout.jsx";
 
 let router = createBrowserRouter([
   {
@@ -28,7 +29,11 @@ let router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <AuthLayout authentication>
+            <Login />
+          </AuthLayout>
+        ),
       },
       {
         path: "/signup",
