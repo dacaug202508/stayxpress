@@ -9,6 +9,8 @@ import Toast from "../reusable/Toast";
 import { Slide, toast } from "react-toastify";
 import { myToast, myWarningToast } from "../../utils/toast";
 
+import { useForm } from "react-hook-form";
+
 function Login() {
   const initialDetails = {
     username: "",
@@ -17,28 +19,16 @@ function Login() {
 
   const [loginFormDetails, setLoginFormDetails] = useState(initialDetails);
 
-  let dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  function handleChange(name, value) {
-    setLoginFormDetails({
-      ...loginFormDetails,
-      [name]: value,
-    });
-  }
-
-  let navigate = useNavigate();
-
-  // let state = useSelector(state => state.auth)
-
-  //   useEffect(()=>{
-  //     console.log(state)
-  //   },[state])
-
-  async function handleSignin(e) {
-    e.preventDefault();
-
+  const onSubmit = async (data) => {
     try {
-      const res = await loginUser(loginFormDetails);
+      const res = await loginUser(data);
       let token = res.data?.token;
       let username = res.data?.user;
 
@@ -77,7 +67,68 @@ function Login() {
     } catch (error) {
       myWarningToast(error.response.data);
     }
-  }
+  };
+  let dispatch = useDispatch();
+
+  // function handleChange(name, value) {
+  //   setLoginFormDetails({
+  //     ...loginFormDetails,
+  //     [name]: value,
+  //   });
+  // }
+
+  let navigate = useNavigate();
+
+  // let state = useSelector(state => state.auth)
+
+  //   useEffect(()=>{
+  //     console.log(state)
+  //   },[state])
+
+  // async function handleSignin(e) {
+  //   e.preventDefault();
+
+  //   try {
+  //     const res = await loginUser(loginFormDetails);
+  //     let token = res.data?.token;
+  //     let username = res.data?.user;
+
+  //     console.log(res.data);
+  //     let claims = await getClaimsFromJwt(token, username);
+  //     let role = claims.data.roles.substring(1, claims.data.roles.length - 1);
+  //     dispatch(login({ token, username, role }));
+
+  //     switch (role) {
+  //       case AUTHROLES.OWNER:
+  //         navigate("/owner");
+  //         break;
+  //       case AUTHROLES.ADMIN:
+  //         navigate("/admin");
+  //         break;
+  //       case AUTHROLES.USER:
+  //         navigate("/");
+  //         break;
+  //       default:
+  //         navigate("/");
+  //         break;
+  //     }
+
+  //     // toast.success("login successful", {
+  //     //   position: "bottom-right",
+  //     //   autoClose: 5000,
+  //     //   hideProgressBar: false,
+  //     //   closeOnClick: false,
+  //     //   pauseOnHover: true,
+  //     //   draggable: true,
+  //     //   progress: undefined,
+  //     //   theme: "light",
+  //     //   transition: Slide,
+  //     // });
+  //     myToast("login successful");
+  //   } catch (error) {
+  //     myWarningToast(error.response.data);
+  //   }
+  // }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 h-screen overflow-hidden">
@@ -94,7 +145,7 @@ function Login() {
 
           {/* FORM */}
           <form
-            onSubmit={handleSignin}
+            onSubmit={handleSubmit(onSubmit)}
             className="bg-white rounded-xl px-6 py-4 space-y-2"
           >
             <div>
@@ -104,8 +155,17 @@ function Login() {
                 name="username"
                 placeholder="name@mail.com"
                 className="w-full border rounded-md px-3 py-2"
-                onChange={(e) => handleChange(e.target.name, e.target.value)}
+                // onChange={(e) => handleChange(e.target.name, e.target.value)}
+                {...register("username", {
+                  required: true,
+                  pattern: /^[a-zA-Z0-9][a-zA-Z0-9]*$/,
+                })}
               />
+              {errors.username && (
+                <span className="text-red-600">
+                  special character and space not allowed
+                </span>
+              )}
             </div>
 
             <div>
@@ -124,8 +184,18 @@ function Login() {
                 name="password"
                 placeholder="********"
                 className="w-full border rounded-md px-3 py-2"
-                onChange={(e) => handleChange(e.target.name, e.target.value)}
+                // onChange={(e) => handleChange(e.target.name, e.target.value)}
+                {...register("password", {
+                  required: true,
+                  pattern: /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s]).+$/,
+                })}
               />
+              {errors.password && (
+                <span className="text-red-600">
+                  password must contain special character, uppercase letter and
+                  numbers
+                </span>
+              )}
             </div>
 
             <Button
