@@ -5,14 +5,15 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,37 +22,34 @@ import java.util.function.Function;
 
 @Service
 public class JwtServiceUtil {
-	  private String secretkey = "";
+	private final String secretkey = "MyVerySecretKeyThatNeverChanges123456789";
+
 
 	    public JwtServiceUtil() {
 
-	        try {
-	            KeyGenerator keyGen = KeyGenerator.getInstance("HmacSHA256");
-	            SecretKey sk = keyGen.generateKey();
-	            secretkey = Base64.getEncoder().encodeToString(sk.getEncoded());
-	        } catch (NoSuchAlgorithmException e) {
-	            throw new RuntimeException(e);
-	        }
 	    }
 
-	    public String generateToken(String username) {
+	    public String generateToken(String username, String authorities) {
 	        Map<String, Object> claims = new HashMap<>();
-	        return Jwts.builder()
+	        SecretKey key = getKey();
+//	        System.out.println("in generate token");
+	        String token = Jwts.builder()
 	                .claims()
 	                .add(claims)
-	                .subject(username)
+	                .add("roles", authorities)
+	                .subject(username)  
 	                .issuedAt(new Date(System.currentTimeMillis()))
-	                .expiration(new Date(System.currentTimeMillis() + 60 * 60 * 30))
+	                .expiration(new Date(System.currentTimeMillis() + 60 * 60 * 3000))
 	                .and()
-	                .signWith(getKey())
+	                .signWith(key)
 	                .compact();
-
+	        return token;
 	    }
 
 	    private SecretKey getKey() {
-	        byte[] keyBytes = Decoders.BASE64.decode(secretkey);
-	        return Keys.hmacShaKeyFor(keyBytes);
+	        return Keys.hmacShaKeyFor(secretkey.getBytes());
 	    }
+
 
 	    public String extractUserName(String token) {
 	        // extract the username from jwt token
@@ -63,7 +61,7 @@ public class JwtServiceUtil {
 	        return claimResolver.apply(claims);
 	    }
 
-	    private Claims extractAllClaims(String token) {
+	    public Claims extractAllClaims(String token) {
 	        return Jwts.parser()
 	                .verifyWith(getKey())
 	                .build()
@@ -83,4 +81,6 @@ public class JwtServiceUtil {
 	    private Date extractExpiration(String token) {
 	        return extractClaim(token, Claims::getExpiration);
 	    }
+
+	
 }

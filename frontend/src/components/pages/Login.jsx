@@ -3,7 +3,10 @@ import Button from "../reusable/Button";
 import Homeimage from "../common/Homeimage";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { AUTHROLES, login, logout } from "../../store/authSlice";
+import { login } from "../../store/authSlice";
+import { getClaimsFromJwt, loginUser } from "../../services/authservices";
+import Toast from "../reusable/Toast";
+import { Slide, toast } from "react-toastify";
 
 function Login() {
   const initialDetails = {
@@ -13,6 +16,8 @@ function Login() {
 
   const [loginFormDetails, setLoginFormDetails] = useState(initialDetails);
 
+  let dispatch = useDispatch();
+
   function handleChange(name, value) {
     setLoginFormDetails({
       ...loginFormDetails,
@@ -20,22 +25,42 @@ function Login() {
     });
   }
 
-  let dispatch = useDispatch();
-
   let navigate = useNavigate();
 
-let state = useSelector(state => state.auth)
+  // let state = useSelector(state => state.auth)
 
-  useEffect(()=>{
-    console.log(state)
-  },[state])
+  //   useEffect(()=>{
+  //     console.log(state)
+  //   },[state])
 
-  function handleSignin(e) {
+  async function handleSignin(e) {
     e.preventDefault();
-    let userData = loginFormDetails;
-    dispatch(login({ role: AUTHROLES.OWNER, userData }));
-   
-    navigate("/");
+
+    try {
+      const res = await loginUser(loginFormDetails);
+      let token = res.data?.token;
+      let username = res.data?.user;
+
+      console.log(res.data);
+      let claims = await getClaimsFromJwt(token, username);
+      let role = claims.data.roles.substring(1, claims.data.roles.length - 1);
+      dispatch(login({ token, username, role }));
+
+      toast.success("login successful", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Slide,
+      });
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

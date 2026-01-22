@@ -1,26 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const AUTHROLES = Object.freeze({
-  OWNER: "owner",
-  ADMIN: "admin",
-  USER: "user",
-});
 
-/* ---------- Safe hydration ---------- */
-let savedState = null;
+let token = localStorage.getItem("token");
+let role = localStorage.getItem("role");
+let username = localStorage.getItem("user");
 
-try {
-  const raw = localStorage.getItem("user_data");
-  savedState = raw ? JSON.parse(raw) : null;
-} catch (err) {
-  console.warn("Invalid user_data in localStorage. Clearing it.");
-  localStorage.removeItem("user_data");
+export let AUTHROLES = {
+  OWNER: "ROLE_OWNER",
+  USER: "ROLE_USER",
+  ADMIN: "ROLE_ADMIN"
 }
 
-const initialState = savedState ?? {
-  status: false,
-  role: "",
-  userData: null,
+const initialState = {
+  status: token ? true : false,
+  role: role ? role : "",
+  token: token ? token : null,
+  username: username ? username : ""
 };
 
 const authSlice = createSlice({
@@ -28,28 +23,25 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      state.status = true;
-      state.role = action.payload.role;
-      state.userData = action.payload.userData;
+      const { token, username, role } = action.payload;
 
-      // persist clean object (not Immer proxy)
-      localStorage.setItem(
-        "user_data",
-        JSON.stringify({
-          status: true,
-          role: action.payload.role,
-          userData: action.payload.userData,
-        })
-      );
+      state.status = true;
+      state.token = token;
+      state.username = username;
+      state.role = role
+
+      localStorage.setItem("token", state.token);
+      localStorage.setItem("username", state.username);
+      localStorage.setItem("role", state.role);
     },
 
     logout: (state) => {
       state.status = false;
-      state.role = "";
-      state.userData = null;
-      localStorage.removeItem("user_data");
+      state.token = null;
+
+      localStorage.clear();
     },
-  },
+  }
 });
 
 export const { login, logout } = authSlice.actions;

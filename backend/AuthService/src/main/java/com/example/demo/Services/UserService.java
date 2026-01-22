@@ -1,21 +1,31 @@
 package com.example.demo.Services;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
+import com.example.demo.Controllers.UserControllers;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.entities.LoginDto;
 import com.example.demo.entities.UserEntity;
 import com.example.demo.utils.JwtServiceUtil;
+import com.example.demo.utils.MyUserDetailsService;
+
+import io.jsonwebtoken.Claims;
 
 @Service
 public class UserService {
+
 
 	@Autowired
 	private UserRepository userRepo;
@@ -26,6 +36,10 @@ public class UserService {
 	private JwtServiceUtil jwtService;
 	@Autowired
 	private AuthenticationManager authManager;
+	
+	  @Autowired
+	    ApplicationContext context;
+
 
 	
 	
@@ -61,13 +75,41 @@ public class UserService {
 	}
 	
 	
-	public String authenticate(LoginDto user) {
+	public Map<String, String> authenticate(LoginDto user) {
 		 Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 	        if (authentication.isAuthenticated()) {
-	            return jwtService.generateToken(user.getUsername());
+	        	String authority =authentication.getAuthorities()
+	            .stream()
+	            .map(GrantedAuthority::getAuthority)
+	            .filter(s -> s.startsWith("ROLE_"))
+	            .toList()
+	            .toString();
+//System.out.println(jwtService.generateToken(user.getUsername(), authority));
+//System.out.println("in authentication");
+	        	String token = jwtService.generateToken(user.getUsername(), authority);
+	        	Map<String, String> res = new HashMap<String, String>();
+	        	res.put("user",authentication.getName());
+	        	res.put("token", token);
+	        	
+	            return res;
 	        } else {
-	            return "fail";
+	        	Map<String, String> err = new HashMap<String, String>();
+	            err.put("err", "failed login");
+	        	return err;
 	        }
 	}
+	
+	public Claims getClaims(String token, String username) throws Exception  {
+ 
+    	   UserDetails userDetails = context.getBean(MyUserDetailsService.class).loadUserByUsername(username);
+   		if(!jwtService.validateToken(token, userDetails))
+   		{
+   					throw new Exception("invalid token | token expired");
+   		}
+	
+   		return jwtService.extractAllClaims(token);	
+		
+	}
+	
 	
 }

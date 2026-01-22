@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../reusable/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/authSlice";
+import { toast } from "react-toastify";
 
 const NavLinks = [
   { name: "Home", to: "/" },
@@ -12,20 +13,15 @@ const NavLinks = [
 ];
 
 function CommonNavbar() {
-  let state = useSelector((state) => state.auth);
-  let [isauthenticated, setIsAuthenticated] = useState(false);
+  let { status } = useSelector((state) => state.auth);
   let dispatch = useDispatch();
   let navigate = useNavigate();
-  useEffect(() => {
-    console.log(state.status);
-    setIsAuthenticated(state.status);
-  }, [state]);
 
   function handleLogout() {
     dispatch(logout());
+    toast.success("logout success")
     navigate("/login");
   }
-
   return (
     <div className="navbar bg-base-100 shadow-sm px-4">
       {/* LEFT */}
@@ -71,7 +67,7 @@ function CommonNavbar() {
 
       {/* RIGHT – MOBILE */}
       <div className="navbar-end lg:hidden">
-        {isauthenticated ? (
+        {status ? (
           <Button
             onClick={handleLogout}
             text="Logout"
@@ -96,7 +92,7 @@ function CommonNavbar() {
           ))}
         </ul>
 
-        {isauthenticated ? (
+        {status == true ? (
           <Button
             onClick={handleLogout}
             text="Logout"

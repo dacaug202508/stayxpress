@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { AUTHROLES } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
+import { AUTHROLES } from "../store/authSlice";
 
 function OwnerAuthLayout({ children, authentication = true }) {
-  console.log(authentication);
-  let state = useSelector((state) => state.auth);
+  // console.log(authentication);
+  let { status, role } = useSelector((state) => state.auth);
   let navigate = useNavigate();
 
   let [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    if (authentication && state.role != AUTHROLES.OWNER) {
+    if (!(authentication && status)) {
       navigate("/");
-    } else if (!authentication && state.role != AUTHROLES.OWNER) {
+    } else if (authentication && role != AUTHROLES.OWNER) {
       navigate("/login");
     }
     setLoading(false);
-  }, [state]);
+  }, [status]);
 
   return loading ? <h1>Loading.....</h1> : <>{children}</>;
 }
