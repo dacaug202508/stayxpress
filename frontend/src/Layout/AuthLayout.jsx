@@ -26,9 +26,9 @@ function AuthLayout({ children, authentication = true }) {
       navigate("/");
     }
 
-    if (!authentication && !status) {
-      navigate("/login", { replace: true });
-    }
+    // if (!authentication && !status) {
+    //   navigate("/login", { replace: true });
+    // }
 
     // if (!authentication && status) {
     //   navigate("/owner", { replace: true });

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import OwnerNavBar from "./OwnerNavBar";
-import OwnerSideBar from "./OwnerSideBar";
+import OwnerNavBar from "./AdminNavBar";
+import OwnerSideBar from "./AdminSideBar";
 import { BiBell } from "react-icons/bi";
 import { RxAvatar } from "react-icons/rx";
 import Button from "../../reusable/Button";
@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import { myToast } from "../../../utils/toast";
 import { logout } from "../../../store/authSlice";
 
-function OwnerLayout() {
+function AdminLayout() {
   let dispatch = useDispatch();
 
   function handleLogout() {
@@ -39,7 +39,7 @@ function OwnerLayout() {
             sticky
             top-0
             shadow-sm
-            flex-shrink-0
+            shrink-0
           "
         >
           <OwnerSideBar />
@@ -100,4 +100,4 @@ function OwnerLayout() {
   );
 }
 
-export default OwnerLayout;
+export default AdminLayout;
