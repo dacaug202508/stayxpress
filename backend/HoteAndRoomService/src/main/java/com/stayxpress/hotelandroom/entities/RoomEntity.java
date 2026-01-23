@@ -8,7 +8,7 @@ public class RoomEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "hotel_id", nullable = false)
@@ -30,11 +30,11 @@ public class RoomEntity {
     @Column(name = "is_active", nullable = false)
     private Boolean isActive;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
