@@ -1,4 +1,4 @@
-  import { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -9,6 +9,9 @@ import Registration from "./components/pages/Registration.jsx";
 import OwnerLayout from "./components/owner/common/OwnerLayout.jsx";
 import OwnerHomePage from "./components/owner/OwnerHomePage.jsx";
 import OwnerDashboard from "./components/owner/pages/OwnerDashboard.jsx";
+import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
+import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
+import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
 import { Provider } from "react-redux";
 
 import store from "./store/store.js";
@@ -20,16 +23,20 @@ import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AuthLayout from "./Layout/AuthLayout.jsx";
+import AdminLayout from "./components/admin/common/AdminLayout.jsx";
+import AdminHomePage from "./components/admin/pages/AdminHomePage.jsx";
+import AdminDashboard from "./components/admin/pages/AdminDashboard.jsx";
+import HotelOwnerRequest from "./components/admin/pages/HotelOwnerRequest.jsx";
+import ManageHotelOwner from "./components/admin/pages/ManageHotelOwner.jsx";
+import AdminHotels from "./components/admin/pages/AdminHotels.jsx";
 
 let router = createBrowserRouter([
   {
     path: "/",
-    element:( 
+    element: (
       <AuthLayout authentication={false}>
         <Layout />
       </AuthLayout>
-
-
     ),
     children: [
       {
@@ -38,11 +45,7 @@ let router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: (
-          
-            <Login />
-
-        ),
+        element: <Login />,
       },
       {
         path: "/signup",
@@ -77,6 +80,32 @@ let router = createBrowserRouter([
       {
         path: "rooms-pricing",
         element: <OwnerRoomAndPrice />,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        index: true,
+        element: <AdminHomePage />,
+      },
+      {
+        path: "dashboard",
+        element: <AdminDashboard />,
+      },
+      {
+        path: "owner-request",
+        element: <HotelOwnerRequest />,
+      },
+      {
+        path: "manage-owners",
+        element: <ManageHotelOwner />,
+      },
+      {
+        path: "hotels",
+        element: <AdminHotels />,
       },
     ],
   },

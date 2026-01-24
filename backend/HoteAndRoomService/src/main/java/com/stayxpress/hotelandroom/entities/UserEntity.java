@@ -1,5 +1,4 @@
-package com.example.demo.entities;
-
+package com.stayxpress.hotelandroom.entities;
 
 
 import jakarta.persistence.Column;

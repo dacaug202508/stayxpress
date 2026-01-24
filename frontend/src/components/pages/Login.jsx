@@ -1,40 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Button from "../reusable/Button";
 import Homeimage from "../common/Homeimage";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { AUTHROLES, login } from "../../store/authSlice";
 import { getClaimsFromJwt, loginUser } from "../../services/authservices";
-import Toast from "../reusable/Toast";
-import { Slide, toast } from "react-toastify";
 import { myToast, myWarningToast } from "../../utils/toast";
-
 import { useForm } from "react-hook-form";
 
 function Login() {
-  const initialDetails = {
-    username: "",
-    password: "",
-  };
-
-  const [loginFormDetails, setLoginFormDetails] = useState(initialDetails);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+    formState: { errors, isSubmitting },
+  } = useForm({
+    mode: "onTouched", // validation UX
+  });
 
   const onSubmit = async (data) => {
     try {
       const res = await loginUser(data);
-      let token = res.data?.token;
-      let username = res.data?.user;
 
-      console.log(res.data);
-      let claims = await getClaimsFromJwt(token, username);
-      let role = claims.data.roles.substring(1, claims.data.roles.length - 1);
+      const token = res.data?.token;
+      const username = res.data?.user;
+
+      const claims = await getClaimsFromJwt(token, username);
+      const role = claims.data.roles.substring(1, claims.data.roles.length - 1);
+
       dispatch(login({ token, username, role }));
 
       switch (role) {
@@ -49,86 +44,13 @@ function Login() {
           break;
         default:
           navigate("/");
-          break;
       }
 
-      // toast.success("login successful", {
-      //   position: "bottom-right",
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: false,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      //   transition: Slide,
-      // });
-      myToast("login successful");
+      myToast("Login successful");
     } catch (error) {
-      myWarningToast(error.response.data);
+      myWarningToast(error?.response?.data || "Invalid credentials");
     }
   };
-  let dispatch = useDispatch();
-
-  // function handleChange(name, value) {
-  //   setLoginFormDetails({
-  //     ...loginFormDetails,
-  //     [name]: value,
-  //   });
-  // }
-
-  let navigate = useNavigate();
-
-  // let state = useSelector(state => state.auth)
-
-  //   useEffect(()=>{
-  //     console.log(state)
-  //   },[state])
-
-  // async function handleSignin(e) {
-  //   e.preventDefault();
-
-  //   try {
-  //     const res = await loginUser(loginFormDetails);
-  //     let token = res.data?.token;
-  //     let username = res.data?.user;
-
-  //     console.log(res.data);
-  //     let claims = await getClaimsFromJwt(token, username);
-  //     let role = claims.data.roles.substring(1, claims.data.roles.length - 1);
-  //     dispatch(login({ token, username, role }));
-
-  //     switch (role) {
-  //       case AUTHROLES.OWNER:
-  //         navigate("/owner");
-  //         break;
-  //       case AUTHROLES.ADMIN:
-  //         navigate("/admin");
-  //         break;
-  //       case AUTHROLES.USER:
-  //         navigate("/");
-  //         break;
-  //       default:
-  //         navigate("/");
-  //         break;
-  //     }
-
-  //     // toast.success("login successful", {
-  //     //   position: "bottom-right",
-  //     //   autoClose: 5000,
-  //     //   hideProgressBar: false,
-  //     //   closeOnClick: false,
-  //     //   pauseOnHover: true,
-  //     //   draggable: true,
-  //     //   progress: undefined,
-  //     //   theme: "light",
-  //     //   transition: Slide,
-  //     // });
-  //     myToast("login successful");
-  //   } catch (error) {
-  //     myWarningToast(error.response.data);
-  //   }
-  // }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 h-screen overflow-hidden">
@@ -146,28 +68,37 @@ function Login() {
           {/* FORM */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="bg-white rounded-xl px-6 py-4 space-y-2"
+            className="bg-white rounded-xl px-6 py-4 space-y-3"
           >
+            {/* USERNAME */}
             <div>
               <label className="block mb-1 font-medium">Username</label>
               <input
                 type="text"
-                name="username"
-                placeholder="name@mail.com"
-                className="w-full border rounded-md px-3 py-2"
-                // onChange={(e) => handleChange(e.target.name, e.target.value)}
+                placeholder="john123"
+                className={`w-full border rounded-md px-3 py-2 ${
+                  errors.username ? "border-red-500" : ""
+                }`}
                 {...register("username", {
-                  required: true,
-                  pattern: /^[a-zA-Z0-9][a-zA-Z0-9]*$/,
+                  required: "Username is required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9]+$/,
+                    message: "Only letters and numbers allowed",
+                  },
+                  minLength: {
+                    value: 3,
+                    message: "Minimum 3 characters required",
+                  },
                 })}
               />
               {errors.username && (
-                <span className="text-red-600">
-                  special character and space not allowed
-                </span>
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.username.message}
+                </p>
               )}
             </div>
 
+            {/* PASSWORD */}
             <div>
               <div className="flex justify-between items-center mb-1">
                 <label className="font-medium">Password</label>
@@ -181,26 +112,29 @@ function Login() {
 
               <input
                 type="password"
-                name="password"
                 placeholder="********"
-                className="w-full border rounded-md px-3 py-2"
-                // onChange={(e) => handleChange(e.target.name, e.target.value)}
+                className={`w-full border rounded-md px-3 py-2 ${
+                  errors.password ? "border-red-500" : ""
+                }`}
                 {...register("password", {
-                  required: true,
-                  pattern: /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9\s]).+$/,
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters",
+                  },
                 })}
               />
               {errors.password && (
-                <span className="text-red-600">
-                  password must contain special character, uppercase letter and
-                  numbers
-                </span>
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.password.message}
+                </p>
               )}
             </div>
 
             <Button
-              text="Sign in"
-              css="w-full bg-sky-400 text-white py-2 rounded-lg hover:bg-sky-500 transition"
+              text={isSubmitting ? "Signing in..." : "Sign in"}
+              css="w-full bg-sky-400 text-white py-2 rounded-lg hover:bg-sky-500 transition disabled:opacity-60"
+              disabled={isSubmitting}
             />
           </form>
 
