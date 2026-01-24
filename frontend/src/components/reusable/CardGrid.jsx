@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from './Card'
 
+
+
 function CardGrid() {
   return (
     <div className="p-6 sm:p-10">
