@@ -1,0 +1,69 @@
+############################
+# OS
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Node / Frontend
+############################
+node_modules/
+dist/
+build/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+############################
+# Java / Spring Boot
+############################
+target/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+
+############################
+# Eclipse / STS / IntelliJ
+############################
+.metadata/
+.recommenders/
+.project
+.classpath
+.settings/
+.factorypath
+.springBeans
+.sts4-cache/
+
+############################
+# VS Code
+############################
+.vscode/
+
+############################
+# IntelliJ IDEA
+############################
+.idea/
+*.iml
+
+############################
+# Maven
+############################
+.mvn/wrapper/maven-wrapper.jar
+
+############################
+# Environment files
+############################
+.env
+.env.local
+.env.*.local
+
+############################
+# Temporary files
+############################
+*.tmp
+*.swp
+*.bak
