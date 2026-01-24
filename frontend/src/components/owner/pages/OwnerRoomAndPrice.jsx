@@ -1,6 +1,7 @@
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from "react-router-dom";
+
 function OwnerRoomAndPrice() {
 
   // ✅ DUMMY DATA
@@ -31,6 +32,16 @@ function OwnerRoomAndPrice() {
     },
   ];
 
+  // ✅ DELETE HANDLER
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this room?")) {
+      console.log("Deleted room id:", id);
+
+      // API later
+      // axios.delete(`/api/rooms/${id}`);
+    }
+  };
+
   return (
     <div className="w-full space-y-6">
 
@@ -40,11 +51,9 @@ function OwnerRoomAndPrice() {
           Rooms & Pricing
         </h1>
 
-        <button className="btn btn-info btn-soft">
-          <Link to={"/owner/add-room"}>
-          + Add New Room 
-          </Link>
-        </button>
+        <Link to="/owner/add-room" className="btn btn-info btn-soft">
+          + Add New Room
+        </Link>
       </div>
 
       {/* TABLE CARD */}
@@ -87,11 +96,39 @@ function OwnerRoomAndPrice() {
                         {room.status}
                       </span>
                     </td>
-                    <td>
-                      <button className="hover:cursor-pointer">
-                        <BsThreeDotsVertical />
-                      </button>
+
+                    {/* ACTION COLUMN (BOTTOM DROPDOWN) */}
+                    <td className="relative">
+                      <div className="dropdown dropdown-bottom">
+                        <div
+                          tabIndex={0}
+                          role="button"
+                          className="btn btn-ghost btn-sm"
+                        >
+                          <BsThreeDotsVertical />
+                        </div>
+
+                        <ul
+                          tabIndex={-1}
+                          className="dropdown-content menu bg-base-100 rounded-box z-50 w-40 p-2 shadow-md"
+                        >
+                          <li>
+                            <Link to={`/owner/edit-room/${room.id}`}>
+                              Edit
+                            </Link>
+                          </li>
+                          <li>
+                            <button
+                              onClick={() => handleDelete(room.id)}
+                              className="text-red-500"
+                            >
+                              Delete
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
                     </td>
+
                   </tr>
                 ))}
               </tbody>
@@ -105,7 +142,7 @@ function OwnerRoomAndPrice() {
       <div className="flex justify-center">
         <div className="join">
           <button className="join-item btn">«</button>
-          <button className="join-item btn ">Page 1</button>
+          <button className="join-item btn">Page 1</button>
           <button className="join-item btn">»</button>
         </div>
       </div>

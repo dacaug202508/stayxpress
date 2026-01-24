@@ -13,9 +13,11 @@ import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
 import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
 import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
 import { Provider } from "react-redux";
+import UserLayout from "./user/common/UserLayout.jsx";
 
 import store from "./store/store.js";
 import OwnerAuthLayout from "./Layout/OwnerAuthLayout.jsx";
+
 import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
 import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
 import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
@@ -29,6 +31,9 @@ import AdminDashboard from "./components/admin/pages/AdminDashboard.jsx";
 import HotelOwnerRequest from "./components/admin/pages/HotelOwnerRequest.jsx";
 import ManageHotelOwner from "./components/admin/pages/ManageHotelOwner.jsx";
 import AdminHotels from "./components/admin/pages/AdminHotels.jsx";
+
+import RoomCompare from "./user/pages/RoomCompare.jsx";
+import OwnerEditRoom from "./components/owner/pages/OwnerEditRoom.jsx";
 
 let router = createBrowserRouter([
   {
@@ -66,21 +71,43 @@ let router = createBrowserRouter([
         element: <OwnerHomePage />,
       },
       {
-        path: "dashboard",
+        path: "/dashboard",
         element: <OwnerDashboard />,
       },
       {
-        path: "add-hotel",
+        path: "/add-hotel",
         element: <OwnerAddHotel />,
       },
       {
-        path: "add-room",
+        path: "/add-room",
         element: <OwnerAddRoom />,
       },
       {
-        path: "rooms-pricing",
+        path: "/rooms-pricing",
         element: <OwnerRoomAndPrice />,
       },
+      {
+        path: "/edit-room/:roomId",
+        element: <OwnerEditRoom />,
+      },
+    ],
+  },
+  {
+    path: "/user",
+    element: (
+      <OwnerAuthLayout authentication={true}>
+        <UserLayout />
+      </OwnerAuthLayout>
+    ),
+    children: [
+      {
+        index: true,
+        element: <OwnerHomePage />,
+      },
+      {
+        path: "/compare",
+        element: <RoomCompare />,
+      },  
     ],
   },
   {
