@@ -13,17 +13,14 @@ import { Provider } from "react-redux";
 
 import store from "./store/store.js";
 import OwnerAuthLayout from "./Layout/OwnerAuthLayout.jsx";
-<<<<<<< HEAD:frontend/src/main.jsx
 import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
 import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
 import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
-=======
 
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AuthLayout from "./Layout/AuthLayout.jsx";
 
->>>>>>> 57f9c1fbe5ab628c49dc66aad7035fbb7cd68edd:frontend/stayxpress/src/main.jsx
 let router = createBrowserRouter([
   {
     path: "/",
