@@ -13,7 +13,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { FaHotel } from "react-icons/fa";
 
 const sideBarLinks = [
-  { name: 'Dashboard', to: '/owner/dashboard', icon: BiHomeAlt },
+  // { name: 'Dashboard', to: '/owner/dashboard', icon: BiHomeAlt },
   { name: 'Hotel Info', to: '/owner/upload-info', icon: BiInfoCircle },
   { name: 'Rooms & Pricing', to: '/owner/rooms-pricing', icon: MdRoom },
   { name: 'Bookings', to: '/owner/view-bookings', icon: PiBookOpenLight },

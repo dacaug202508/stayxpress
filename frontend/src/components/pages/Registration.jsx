@@ -1,26 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import Homeimage from "../common/Homeimage";
 import Button from "../reusable/Button";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { registerUser } from "../../services/authservices";
+import { myToast, myWarningToast } from "../../utils/toast";
 
 function Registration() {
-  const initialDetails = {
-    username: "",
-    email: "",
-    phone: "",
-    password: "",
-  };
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors, isSubmitting },
+    reset,
+  } = useForm();
+  let navigate = useNavigate();
+  async function onSubmit(data) {
+    try {
+      const res = await registerUser(data);
+      console.log(res.data);
+      if (res?.data?.user) {
+        myToast("Registration successful");
+        reset();
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log(error);
 
-  const [registrationFormDetails, setRegistrationFormDetails] =
-    useState(initialDetails);
-
-  function handleChange(name, value) {
-    setRegistrationFormDetails({ ...registrationFormDetails, [name]: value });
-  }
-
-  function handleSignup(e) {
-    e.preventDefault();
-    console.log(registrationFormDetails);
+      myWarningToast(error?.response?.data?.err || "Registration failed");
+    }
   }
 
   return (
@@ -45,64 +53,95 @@ function Registration() {
 
           {/* FORM */}
           <form
-            onSubmit={handleSignup}
-            className="bg-white rounded-xl px-6 py-4 space-y-2"
+            onSubmit={handleSubmit(onSubmit)}
+            className="bg-white rounded-xl px-6 py-4 space-y-3"
           >
+            {/* USERNAME */}
             <div>
               <label className="block mb-1 font-medium">Username</label>
               <input
-                name="username"
                 type="text"
-                placeholder="eg. John"
-                className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
+                placeholder="john123"
+                className={`w-full border rounded-md px-3 py-2 ${
+                  errors.username ? "border-red-500" : ""
+                }`}
+                {...register("username", {
+                  required: "Username is required",
+                  minLength: {
+                    value: 3,
+                    message: "Username must be at least 3 characters",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z0-9]+$/,
+                    message: "Only letters and numbers allowed",
+                  },
+                })}
               />
+              {errors.username && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.username.message}
+                </p>
+              )}
             </div>
 
+            {/* EMAIL */}
             <div>
               <label className="block mb-1 font-medium">Email</label>
               <input
-                name="email"
                 type="email"
-                placeholder="eg. john@mail.com"
-                className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
+                placeholder="john@mail.com"
+                className={`w-full border rounded-md px-3 py-2 ${
+                  errors.email ? "border-red-500" : ""
+                }`}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Enter a valid email address",
+                  },
+                })}
               />
+              {errors.email && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
-            <div>
-              <label className="block mb-1 font-medium">Phone</label>
-              <input
-                name="phone"
-                type="tel"
-                placeholder="eg. +91"
-                className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
-              />
-            </div>
-
+            {/* PASSWORD */}
             <div>
               <label className="block mb-1 font-medium">Password</label>
               <input
-                name="password"
                 type="password"
                 placeholder="********"
-                className="w-full border rounded-md px-3 py-2"
-                onChange={(e) =>
-                  handleChange(e.target.name, e.target.value)
-                }
+                className={`w-full border rounded-md px-3 py-2 ${
+                  errors.password ? "border-red-500" : ""
+                }`}
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters",
+                  },
+                  pattern: {
+                    value: /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/,
+                    message:
+                      "Must include uppercase, number & special character",
+                  },
+                })}
               />
+              {errors.password && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
 
+            {/* BUTTON */}
             <Button
-              text="Sign up"
-              css="w-full bg-sky-400 text-white py-2 rounded-lg hover:bg-sky-500 transition"
+              text={isSubmitting ? "Signing up..." : "Sign up"}
+              css="w-full bg-sky-400 text-white py-2 rounded-lg hover:bg-sky-500 transition disabled:opacity-60"
+              disabled={isSubmitting}
             />
           </form>
 

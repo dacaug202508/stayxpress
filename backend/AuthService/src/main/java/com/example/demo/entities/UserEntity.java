@@ -1,6 +1,6 @@
 package com.example.demo.entities;
 
-import java.math.BigInteger;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ public class UserEntity {
 
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private BigInteger id;
+	    private Integer id;
 
 	    private String username;
 	    private String email;
@@ -34,11 +34,18 @@ public class UserEntity {
 	    @Column(nullable = false)
 	    private STATUS status;
 
-		public BigInteger getId() {
+	    
+	    public UserEntity() {
+	    	role = ROLES.CUSTOMER;
+	    	status= STATUS.ACTIVE;
+	    }
+	    
+	    
+		public Integer getId() {
 			return id;
 		}
 
-		public void setId(BigInteger id) {
+		public void setId(Integer id) {
 			this.id = id;
 		}
 

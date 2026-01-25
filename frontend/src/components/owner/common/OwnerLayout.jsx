@@ -1,18 +1,28 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import OwnerNavBar from "./OwnerNavBar";
 import OwnerSideBar from "./OwnerSideBar";
 import { BiBell } from "react-icons/bi";
 import { RxAvatar } from "react-icons/rx";
+import Button from "../../reusable/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { myToast } from "../../../utils/toast";
+import { logout } from "../../../store/authSlice";
 
 function OwnerLayout() {
+  let dispatch = useDispatch();
+
+  function handleLogout() {
+    dispatch(logout());
+    myToast("Logout successfull");
+  }
+
   return (
     <>
       {/* MOBILE BLOCK */}
       <div className="md:hidden h-screen flex flex-col items-center justify-center bg-gray-50 text-center px-6">
-        <h1 className="text-xl font-semibold mb-2">
-          Desktop Required
-        </h1>
+        <h1 className="text-xl font-semibold mb-2">Desktop Required</h1>
         <p className="text-gray-500 text-sm">
           This dashboard is optimized for tablet and desktop screens.
         </p>
@@ -20,7 +30,6 @@ function OwnerLayout() {
 
       {/* DESKTOP / TABLET */}
       <div className="hidden md:flex min-h-screen w-full bg-gray-50">
-        
         {/* SIDEBAR */}
         <aside
           className="
@@ -38,7 +47,6 @@ function OwnerLayout() {
 
         {/* MAIN WRAPPER */}
         <div className="flex flex-col flex-1 w-full min-w-0">
-          
           {/* HEADER */}
           <header
             className="
@@ -64,9 +72,8 @@ function OwnerLayout() {
 
               <div className="flex items-center gap-2 bg-gray-100 px-3 py-1.5 rounded-full">
                 <RxAvatar size={20} />
-                <span className="text-sm font-medium text-gray-700">
-                  Admin
-                </span>
+
+                <Button onClick={handleLogout} text={"logout"} css="btn" />
               </div>
             </div>
           </header>
