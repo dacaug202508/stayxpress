@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
 const NavLinks = [
-  { name: "Home", to: "/" },
-  { name: "Compare", to: "/compare" },
-  { name: "Booking", to: "/booking" },
-  { name: "Profile", to: "/profile" },
+  { name: "Home", to: "/user" },
+  { name: "Search", to: "/user/search" },
+  { name: "Compare", to: "/user/compare" },
+  { name: "Booking", to: "/user/booking" },
+  { name: "Profile", to: "/user/profile" },
 ];
 
 function UserNavBar() {
@@ -53,7 +54,7 @@ function UserNavBar() {
 
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-[1]"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-1"
           >
             <li>
               <Link className="justify-between">

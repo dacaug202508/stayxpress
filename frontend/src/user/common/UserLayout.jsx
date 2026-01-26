@@ -4,13 +4,13 @@ import UserNavBar from "./UserNavBar";
 
 function UserLayout() {
   return (
-    <>
+    <div className="min-h-screen bg-gray-100">
       <UserNavBar />
 
-      <main className="p-4">
+      <main className="w-full">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
 

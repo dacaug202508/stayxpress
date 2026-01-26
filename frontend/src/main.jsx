@@ -18,9 +18,9 @@ import UserLayout from "./user/common/UserLayout.jsx";
 import store from "./store/store.js";
 import OwnerAuthLayout from "./Layout/OwnerAuthLayout.jsx";
 
-import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
-import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
-import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
+// import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
+// import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
+// import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
 
 import { Slide, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -34,6 +34,11 @@ import AdminHotels from "./components/admin/pages/AdminHotels.jsx";
 
 import RoomCompare from "./user/pages/RoomCompare.jsx";
 import OwnerEditRoom from "./components/owner/pages/OwnerEditRoom.jsx";
+import UserProfile from "./user/pages/UserProfile.jsx";
+import SearchPage from "./user/pages/Search.jsx";
+import HomePage from "./user/pages/Home.jsx";
+import UserBookings from "./user/pages/Booking.jsx";
+import BookingDetails from "./user/pages/BookingDetails.jsx";
 
 let router = createBrowserRouter([
   {
@@ -61,9 +66,10 @@ let router = createBrowserRouter([
   {
     path: "/owner",
     element: (
-      <OwnerAuthLayout authentication={true}>
-        <OwnerLayout />
-      </OwnerAuthLayout>
+      <OwnerLayout />
+      // <OwnerAuthLayout authentication={true}>
+      //   <OwnerLayout />
+      // </OwnerAuthLayout>
     ),
     children: [
       {
@@ -71,23 +77,23 @@ let router = createBrowserRouter([
         element: <OwnerHomePage />,
       },
       {
-        path: "/dashboard",
+        path: "dashboard",
         element: <OwnerDashboard />,
       },
       {
-        path: "/add-hotel",
+        path: "add-hotel",
         element: <OwnerAddHotel />,
       },
       {
-        path: "/add-room",
+        path: "add-room",
         element: <OwnerAddRoom />,
       },
       {
-        path: "/rooms-pricing",
+        path: "rooms-pricing",
         element: <OwnerRoomAndPrice />,
       },
       {
-        path: "/edit-room/:roomId",
+        path: "edit-room/:roomId",
         element: <OwnerEditRoom />,
       },
     ],
@@ -95,23 +101,39 @@ let router = createBrowserRouter([
   {
     path: "/user",
     element: (
-      <OwnerAuthLayout authentication={true}>
-        <UserLayout />
-      </OwnerAuthLayout>
+      // <OwnerAuthLayout authentication={true}>
+      <UserLayout />
+      // </OwnerAuthLayout>
     ),
     children: [
       {
         index: true,
-        element: <OwnerHomePage />,
+        element: <HomePage />,
       },
       {
-        path: "/compare",
+        path: "profile",
+        element: <UserProfile />,
+      },
+      {
+        path: "compare",
         element: <RoomCompare />,
-      },  
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
+      },
+      {
+        path: "booking",
+        element: <UserBookings />,
+      },
+      {
+        path: "bookings/:bookingId",
+        element: <BookingDetails />,
+      },
     ],
   },
   {
-    path: "/admin",
+    path: "admin",
     element: <AdminLayout />,
     children: [
       {
