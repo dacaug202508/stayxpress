@@ -13,7 +13,7 @@ import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
 import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
 import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
 import { Provider } from "react-redux";
-import UserLayout from "./user/common/UserLayout.jsx";
+import UserLayout from "./components/user/common/UserLayout.jsx";
 
 import store from "./store/store.js";
 import OwnerAuthLayout from "./Layout/OwnerAuthLayout.jsx";
@@ -32,13 +32,15 @@ import HotelOwnerRequest from "./components/admin/pages/HotelOwnerRequest.jsx";
 import ManageHotelOwner from "./components/admin/pages/ManageHotelOwner.jsx";
 import AdminHotels from "./components/admin/pages/AdminHotels.jsx";
 
-import RoomCompare from "./user/pages/RoomCompare.jsx";
+import RoomCompare from "./components/user/pages/RoomCompare.jsx";
 import OwnerEditRoom from "./components/owner/pages/OwnerEditRoom.jsx";
-import UserProfile from "./user/pages/UserProfile.jsx";
-import SearchPage from "./user/pages/Search.jsx";
-import HomePage from "./user/pages/Home.jsx";
-import UserBookings from "./user/pages/Booking.jsx";
-import BookingDetails from "./user/pages/BookingDetails.jsx";
+import UserProfile from "./components/user/pages/UserProfile.jsx";
+import SearchPage from "./components/user/pages/Search.jsx";
+import HomePage from "./components/user/pages/Home.jsx";
+import UserBookings from "./components/user/pages/Booking.jsx";
+import BookingDetails from "./components/user/pages/BookingDetails.jsx";
+import RoomsPage from "./components/user/pages/Rooms.jsx";
+import HotelDetails from "./components/user/pages/HotelDetails.jsx";
 
 let router = createBrowserRouter([
   {
@@ -129,6 +131,14 @@ let router = createBrowserRouter([
       {
         path: "bookings/:bookingId",
         element: <BookingDetails />,
+      },
+      {
+        path: "hotels/:hotelId",
+        element: <HotelDetails />,
+      },
+      {
+        path: "hotels/:hotelId/rooms",
+        element: <RoomsPage />,
       },
     ],
   },

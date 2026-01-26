@@ -1,5 +1,5 @@
 import React from "react";
-import CompareGrid from "../../components/owner/resuable/CompareGrid";
+import CompareGrid from "../../owner/resuable/CompareGrid";
 
 
 function RoomCompare() {

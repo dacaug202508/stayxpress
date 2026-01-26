@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../../components/reusable/Button";
 import { useNavigate } from "react-router-dom";
+import Button from "../../reusable/Button";
 
 function UserBookings() {
   
