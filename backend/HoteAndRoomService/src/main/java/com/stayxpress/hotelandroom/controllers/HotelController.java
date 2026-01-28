@@ -34,7 +34,7 @@ public class HotelController {
 	
 	
 	@GetMapping("/getallhotels")
-	public List<HotelEntity> getAllHotels (){
+	public List<HotelDto> getAllHotels (){
 		return hotelservice.getAllHotels();
 	}
 	

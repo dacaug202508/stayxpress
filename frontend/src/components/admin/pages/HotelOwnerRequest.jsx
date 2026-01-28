@@ -1,102 +1,165 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import Button from "../../reusable/Button";
 
 function HotelOwnerRequest() {
+  const [filter, setFilter] = useState("pending");
+
+  // Original data (backend)
+  const [requests, setRequests] = useState([
+    {
+      id: 1,
+      name: "Hart Hagerty",
+      country: "United States",
+      hotelName: "Sea View Resort",
+      status: "pending",
+      image: "https://img.daisyui.com/images/profile/demo/2@94.webp",
+    },
+    {
+      id: 2,
+      name: "Jane Cooper",
+      country: "Canada",
+      hotelName: "Mountain Stay",
+      status: "accepted",
+      image: "https://img.daisyui.com/images/profile/demo/3@94.webp",
+    },
+    {
+      id: 3,
+      name: "Robert Fox",
+      country: "UK",
+      hotelName: "City Lights Hotel",
+      status: "rejected",
+      image: "https://img.daisyui.com/images/profile/demo/4@94.webp",
+    },
+  ]);
+
+  // Editable copy
+  const [editedRequests, setEditedRequests] = useState(requests);
+
+  // Detect unsaved changes
+  const hasChanges =
+    JSON.stringify(requests) !== JSON.stringify(editedRequests);
+
+  // Change status only in edited state
+  const handleStatusChange = (id, newStatus) => {
+    setEditedRequests((prev) =>
+      prev.map((req) =>
+        req.id === id ? { ...req, status: newStatus } : req
+      )
+    );
+  };
+
+  // Save changes
+  const handleSaveChanges = () => {
+    console.log("Saving updated requests:", editedRequests);
+    setRequests(editedRequests);
+  };
+
+  // Reset changes
+  const handleResetChanges = () => {
+    setEditedRequests(requests);
+  };
+
+  // Filtered list (based on edited state)
+  const filteredRequests = useMemo(() => {
+    if (filter === "all") return editedRequests;
+    return editedRequests.filter((r) => r.status === filter);
+  }, [filter, editedRequests]);
+
   return (
-    <>
-      <div>
-        <div className="flex items-center px-3 font-bold gap-4 my-4 h-16">
-          <div>Filter: </div>
-          {/* name of each tab group should be unique */}
-          <div className="tabs tabs-box">
-            <input
-              type="radio"
-              name="status"
-              className="tab"
-              aria-label="Accept"
-              value={"accept"}
-            />
-            <input
-              type="radio"
-              name="status"
-              className="tab"
-              aria-label="Pending"
-              value={"pending"}
-              defaultChecked
-            />
-            <input
-              type="radio"
-              name="status"
-              className="tab"
-              aria-label="Rejected"
-              value={"rejected"}
-            />
+    <div className="p-6 space-y-6">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="flex items-center gap-4 font-semibold">
+          <span>Filter Requests:</span>
+          <div className="tabs tabs-box bg-base-200">
+            {["pending", "accepted", "rejected", "all"].map((tab) => (
+              <button
+                key={tab}
+                className={`tab ${filter === tab && "tab-active"}`}
+                onClick={() => setFilter(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            ))}
           </div>
         </div>
-        <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Hotel Name</th>
-                <th>Active</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              <tr>
+
+        <div className="flex gap-3 items-center">
+          {hasChanges && (
+            <span className="text-sm text-orange-500 font-medium">
+              Unsaved changes
+            </span>
+          )}
+          <Button
+            text="Reset"
+            css="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg"
+            onClick={handleResetChanges}
+          />
+          <Button
+            text="Save Changes"
+            css="bg-primary text-white px-5 py-2 rounded-lg hover:opacity-90"
+            onClick={handleSaveChanges}
+          />
+        </div>
+      </div>
+
+      {/* Table */}
+      <div className="overflow-x-auto bg-white rounded-xl shadow">
+        <table className="table">
+          <thead className="bg-gray-100">
+            <tr>
+              <th>Name</th>
+              <th>Hotel Name</th>
+              <th>Status</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredRequests.map((req) => (
+              <tr key={req.id}>
                 <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
                       <div className="mask mask-squircle h-12 w-12">
-                        <img
-                          src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                          alt="Avatar Tailwind CSS Component"
-                        />
+                        <img src={req.image} alt="Owner" />
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">Hart Hagerty</div>
-                      <div className="text-sm opacity-50">United States</div>
+                      <div className="font-bold">{req.name}</div>
+                      <div className="text-sm opacity-50">{req.country}</div>
                     </div>
                   </div>
                 </td>
+
+                <td className="font-medium">{req.hotelName}</td>
+
                 <td>
-                  Zemlak, Daniel and Leannon
-                  <br />
-                  <span className="badge badge-ghost badge-sm">
-                    Desktop Support Technician
-                  </span>
-                </td>
-                <td>
-                  <select defaultValue="pending" className="select">
-                    <option disabled={true}>Status</option>
-                    <option>Accept</option>
-                    <option>Pending</option>
-                    <option>Rejected</option>
+                  <select
+                    value={req.status}
+                    className="select select-bordered"
+                    onChange={(e) =>
+                      handleStatusChange(req.id, e.target.value)
+                    }
+                  >
+                    <option value="accepted">Accept</option>
+                    <option value="pending">Pending</option>
+                    <option value="rejected">Reject</option>
                   </select>
                 </td>
-                <th>
-                  <Button css="btn btn-ghost" text={"details"} />
-                </th>
+
+                <td>
+                  <Button
+                    css="btn btn-ghost btn-xs"
+                    text="Details"
+                    onClick={() => console.log("View request details:", req)}
+                  />
+                </td>
               </tr>
-            </tbody>
-            {/* foot */}
-            {/* <tfoot>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </tfoot> */}
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </>
+    </div>
   );
 }
 

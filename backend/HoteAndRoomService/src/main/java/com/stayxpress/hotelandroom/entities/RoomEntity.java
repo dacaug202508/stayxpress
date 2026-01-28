@@ -24,11 +24,26 @@ public class RoomEntity {
     @Column(name = "price_per_night", nullable = false)
     private Double pricePerNight;
 
+    
+    
+    private String description;
+    
     @Column(name = "max_guests", nullable = false)
     private Integer maxGuests;
 
     @Column(name = "is_active", nullable = false)
     private Boolean isActive;
+    
+    
+    
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public Integer getId() {
 		return id;

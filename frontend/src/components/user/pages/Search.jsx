@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import SearchForm from "../common/searchForm";
+import { getAllHotels } from "../../../services/hotelservice";
 
 export default function SearchPage() {
   const today = new Date().toISOString().split("T")[0];
@@ -8,6 +9,7 @@ export default function SearchPage() {
 
   // 🔹 Search State
   const locationState = location.state;
+  let navigate = useNavigate();
 
   const [searchData, setSearchData] = useState({
     location: locationState?.location || "",
@@ -23,11 +25,24 @@ export default function SearchPage() {
     breakfast: false,
   });
 
+  const [hotels, setHotels] = useState([
+    {
+      id: 0,
+      hotelName: "",
+      description: "",
+      address: "",
+      city: "",
+      country: "",
+      status: "",
+    },
+  ]);
+
   useEffect(() => {
-    if (locationState) {
-      console.log("🔍 Running search with:", locationState);
-      // Here later you will call backend API
-    }
+    (async () => {
+      let res = await getAllHotels();
+      console.log(res.data)
+      setHotels(res.data);
+    })();
   }, []);
 
   // 🔹 Handlers
@@ -54,14 +69,12 @@ export default function SearchPage() {
           Find your next stay
         </h1>
 
-      
-            <SearchForm
-            search={searchData}
-              handleChange={handleInputChange}
-              handleSearch={handleSearch}
-                location={location}
-            />
-        
+        <SearchForm
+          search={searchData}
+          handleChange={handleInputChange}
+          handleSearch={handleSearch}
+          location={location}
+        />
       </div>
 
       {/* 🔹 CONTENT AREA */}
@@ -120,20 +133,55 @@ export default function SearchPage() {
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((hotel) => (
+            {hotels.map((hotel) => (
               <div
-                key={hotel}
-                className="bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-lg transition"
+                key={hotel.id}
+                className="bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                <div className="h-48 bg-slate-200 rounded-t-xl"></div>
-                <div className="p-4">
-                  <h4 className="font-bold text-lg">
-                    Oceanview Paradise Resort
+                {/* Hotel Image */}
+                <div className="h-48 bg-slate-200">
+                  <img
+                    src={
+                      hotel.imageUrl ||
+                      "https://via.placeholder.com/400x250?text=Hotel+Image"
+                    }
+                    alt={hotel.hotelName}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Hotel Info */}
+                <div className="p-4 space-y-2">
+                  <h4 className="font-bold text-lg text-slate-800 truncate">
+                    {hotel.hotelName}
                   </h4>
-                  <p className="text-sm text-slate-500 mb-2">Maldives</p>
-                  <p className="text-sky-600 font-bold">
-                    $240 <span className="text-sm text-slate-500">/ night</span>
+
+                  <p className="text-sm text-slate-500">
+                    {hotel.city}, {hotel.country}
                   </p>
+
+                  <p className="text-sm text-slate-600 line-clamp-2">
+                    {hotel.description}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-2">
+                    <span
+                      className={`text-xs px-2 py-1 rounded-full font-medium ${
+                        hotel.status === "ACTIVE"
+                          ? "bg-green-100 text-green-600"
+                          : "bg-red-100 text-red-500"
+                      }`}
+                    >
+                      {hotel.status}
+                    </span>
+
+                    <button
+                      onClick={() => navigate(`/user/hotels/${hotel.id}/rooms`)}
+                      className="text-sky-600 font-semibold text-sm hover:underline hover:cursor-pointer"
+                    >
+                      View Rooms →
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

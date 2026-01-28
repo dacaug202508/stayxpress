@@ -2,24 +2,23 @@ import React, { useEffect, useState } from "react";
 import Button from "../../reusable/Button";
 import { getHotelsByOwnerId } from "../../../services/hotelservice";
 import { saveRoom } from "../../../services/roomservice";
+import { uploadImage } from "../../../services/imageservices";
 
 function OwnerAddRoom() {
   const init = {
-    // id:25,
     hotelId: "",
     roomNumber: "",
     roomType: "",
     pricePerNight: "",
     maxGuests: "",
+    description: "",
     isActive: true,
   };
 
   const [roomData, setRoomData] = useState(init);
-  const [hotels, setHotels] = useState([{
-    id : 0,
-    hotelName : ""
-
-  }]);
+  const [hotels, setHotels] = useState([]);
+  const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const onChangeHandler = (name, value) => {
     setRoomData({
@@ -31,48 +30,59 @@ function OwnerAddRoom() {
   async function handleSave(e) {
     e.preventDefault();
 
-    // ✅ convert types before API call
-    const payload = {...roomData};
-    console.log(payload);
+    try {
+      setLoading(true);
+      // 🔹 Convert types
+      const payload = {
+        ...roomData,
+        hotelId: Number(roomData.hotelId),
+        pricePerNight: Number(roomData.pricePerNight),
+        maxGuests: Number(roomData.maxGuests),
+        isActive: roomData.isActive === "true" || roomData.isActive === true,
+      };
 
-    let res = await saveRoom(payload);
-    console.log(res.data)
+      console.log("Saving Room:", payload);
 
+      // 1️⃣ Save Room First
+      const roomRes = await saveRoom(payload);
+      const savedRoom = roomRes.data;
+      console.log("Saved Room:", savedRoom);
 
+      // 2️⃣ Upload Image AFTER room is created
+      if (image) {
+        const formData = new FormData();
+        formData.append("file", image);
+        formData.append("entityType", "ROOM");
+        formData.append("entityId", savedRoom.id);
 
+        const imgRes = await uploadImage(formData);
+        console.log("Room image uploaded:", imgRes.data);
+      }
+
+      alert("Room added successfully!");
+      setRoomData(init);
+      setImage(null);
+    } catch (error) {
+      console.error("Error saving room:", error);
+    } finally {
+      setLoading(false);
+    }
   }
 
-  // const hotels = [
-  //   { id: 1, name: "Hotel Sunrise" },
-  //   { id: 2, name: "Ocean View Resort" },
-  //   { id: 3, name: "Mountain Stay" },
-  // ];
-
-
-
   useEffect(() => {
-    (
-      async () => {
-        let res = await getHotelsByOwnerId(2)
-        // console.log(res.data.data)
-        setHotels(res.data.data)
-      }
-    )()
+    (async () => {
+      let res = await getHotelsByOwnerId(1);
+      setHotels(res.data.data);
+    })();
   }, []);
-
-
 
   return (
     <div className="w-full min-h-full flex items-center justify-center">
       <div className="card bg-base-100 w-full max-w-md shadow-2xl">
         <div className="card-body">
-
-          <h2 className="text-xl font-semibold text-center mb-4">
-            Add Room
-          </h2>
+          <h2 className="text-xl font-semibold text-center mb-4">Add Room</h2>
 
           <form className="space-y-4" onSubmit={handleSave}>
-
             {/* HOTEL */}
             <div>
               <label className="label">Hotel</label>
@@ -80,9 +90,7 @@ function OwnerAddRoom() {
                 name="hotelId"
                 value={roomData.hotelId}
                 className="select select-bordered w-full"
-                onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
-                }
+                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
                 required
               >
                 <option value="">Select Hotel</option>
@@ -93,7 +101,6 @@ function OwnerAddRoom() {
                 ))}
               </select>
             </div>
-
             {/* ROOM NUMBER */}
             <div>
               <label className="label">Room Number</label>
@@ -102,14 +109,22 @@ function OwnerAddRoom() {
                 name="roomNumber"
                 value={roomData.roomNumber}
                 className="input input-bordered w-full"
-                placeholder="Room Number"
-                onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
-                }
+                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
                 required
               />
             </div>
-
+            {/* ROOM Description */}
+            <div>
+              <label className="label">Description</label>
+              <input
+                type="text"
+                name="description"
+                value={roomData.description}
+                className="input input-bordered w-full"
+                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
+                required
+              />
+            </div>
             {/* ROOM TYPE */}
             <div>
               <label className="label">Room Type</label>
@@ -117,9 +132,7 @@ function OwnerAddRoom() {
                 name="roomType"
                 value={roomData.roomType}
                 className="select select-bordered w-full"
-                onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
-                }
+                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
                 required
               >
                 <option value="">Select Room Type</option>
@@ -128,7 +141,6 @@ function OwnerAddRoom() {
                 <option value="SUITE">SUITE</option>
               </select>
             </div>
-
             {/* PRICE */}
             <div>
               <label className="label">Price Per Night</label>
@@ -137,14 +149,10 @@ function OwnerAddRoom() {
                 name="pricePerNight"
                 value={roomData.pricePerNight}
                 className="input input-bordered w-full"
-                placeholder="Price"
-                onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
-                }
+                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
                 required
               />
             </div>
-
             {/* MAX GUESTS */}
             <div>
               <label className="label">Max Guests</label>
@@ -153,14 +161,10 @@ function OwnerAddRoom() {
                 name="maxGuests"
                 value={roomData.maxGuests}
                 className="input input-bordered w-full"
-                placeholder="Max Guests"
-                onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
-                }
+                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
                 required
               />
             </div>
-
             {/* STATUS */}
             <div>
               <label className="label">Status</label>
@@ -168,21 +172,35 @@ function OwnerAddRoom() {
                 name="isActive"
                 value={roomData.isActive}
                 className="select select-bordered w-full"
-                onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
-                }
+                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
               >
                 <option value="true">ACTIVE</option>
                 <option value="false">INACTIVE</option>
               </select>
             </div>
-
-            <Button
-              css="w-full mt-4 btn btn-soft btn-info"
-              text="Save Room"
-            />
+            {/* ROOM IMAGE */}
+            <div>
+              <label className="label">Room Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                className="file-input file-input-bordered w-full"
+                onChange={(e) => setImage(e.target.files[0])}
+                required
+              />
+            </div>
+            {loading ? (
+              <Button
+                css="w-full mt-4 btn btn-soft btn-info"
+                text="Saving...."
+              />
+            ) : (
+              <Button
+                css="w-full mt-4 btn btn-soft btn-info"
+                text="Save Room"
+              />
+            )}{" "}
           </form>
-
         </div>
       </div>
     </div>

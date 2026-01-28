@@ -57,7 +57,8 @@ export const deleteHotel = async (hotelId) => {
 
 
 export const getHotelsByOwnerId = async (ownerId) => {
-   try {
+  try {
+    console.log(ownerId)
     const res = await axios.get(
       `${BASE_URL}/get-by-ownerid?ownerId=${ownerId}`
     );

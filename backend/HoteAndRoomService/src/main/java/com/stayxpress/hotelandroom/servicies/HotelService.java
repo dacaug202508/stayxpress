@@ -1,11 +1,13 @@
 package com.stayxpress.hotelandroom.servicies;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.stayxpress.hotelandroom.dto.HotelDto;
 import com.stayxpress.hotelandroom.entities.HotelEntity;
+import com.stayxpress.hotelandroom.entities.HotelStatus;
 import com.stayxpress.hotelandroom.entities.UserEntity;
 import com.stayxpress.hotelandroom.repositories.HotelRepository;
 import com.stayxpress.hotelandroom.repositories.UserRepository;
@@ -43,8 +45,27 @@ public class HotelService {
 	}
 
 
-	public List<HotelEntity> getAllHotels() {
-		return hotelrepo.findAll();
+	public List<HotelDto> getAllHotels() {
+		List<Object[]> rows = hotelrepo.findHotelsWithPrimaryImage();
+
+	    List<HotelDto> hotels = new ArrayList<>();
+
+	    for (Object[] row : rows) {
+	        HotelDto dto = new HotelDto();
+	        dto.setId((Integer) row[0]);
+	        dto.setOwnerId((Integer) row[1]);
+	        dto.setHotelName((String) row[2]);
+	        dto.setDescription((String) row[3]);
+	        dto.setAddress((String) row[4]);
+	        dto.setCity((String) row[5]);
+	        dto.setCountry((String) row[6]);
+	        dto.setStatus((HotelStatus) row[7]);
+	        dto.setImageUrl((String) row[8]);
+
+	        hotels.add(dto);
+	    }
+
+	    return hotels;
 	}
 	
 	public HotelEntity updateHotel(HotelDto hotel, int hotelId) {

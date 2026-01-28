@@ -1,944 +1,159 @@
-!SESSION 2026-01-24 13:04:26.873 -----------------------------------------------
+!SESSION 2026-01-28 12:42:53.279 -----------------------------------------------
 eclipse.buildId=4.36.0.20250605-1300
 java.version=21.0.7
 java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
-!ENTRY ch.qos.logback.classic 1 0 2026-01-24 13:04:38.583
-!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+This is a continuation of log file E:\cdac\Project\stayxpress\stayxpress\backend\.metadata\.bak_0.log
+Created Time: 2026-01-28 17:19:21.782
 
-!ENTRY ch.qos.logback.classic 1 0 2026-01-24 13:04:56.636
-!MESSAGE Logback config file: C:\MainProject\stayxpress\backend\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.100.20250418-1315.xml
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:21.784
+!MESSAGE 17:19:21.637 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.ui 2 0 2026-01-24 13:05:06.597
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-24 13:05:06.597
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:21.908
+!MESSAGE 17:19:21.905 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.ui 2 0 2026-01-24 13:05:09.202
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-24 13:05:09.202
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:21.938
+!MESSAGE 17:19:21.936 [pool-3-thread-158] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.egit.ui 2 0 2026-01-24 13:05:36.521
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\yoges'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:23.607
+!MESSAGE 17:19:23.600 [pool-3-thread-158] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.jface 2 0 2026-01-24 13:07:31.660
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2026-01-24 13:07:31.660
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:24.407
+!MESSAGE 17:19:24.405 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.lsp4e 2 0 2026-01-24 13:13:44.232
-!MESSAGE LS Hover Html and JDT hover html were naively concatenated as LS hover HTML BODY tag wasn't found
-!SESSION 2026-01-25 13:16:51.726 -----------------------------------------------
-eclipse.buildId=4.36.0.20250605-1300
-java.version=21.0.7
-java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
-Framework arguments:  -product org.eclipse.epp.package.jee.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:32.328
+!MESSAGE 17:19:32.327 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 53
 
-!ENTRY ch.qos.logback.classic 1 0 2026-01-25 13:17:46.459
-!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:32.511
+!MESSAGE 17:19:32.509 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY ch.qos.logback.classic 1 0 2026-01-25 13:18:04.800
-!MESSAGE Logback config file: C:\MainProject\stayxpress\backend\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.100.20250418-1315.xml
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:32.519
+!MESSAGE 17:19:32.516 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.ui 2 0 2026-01-25 13:18:07.074
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-25 13:18:07.074
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:32.546
+!MESSAGE 17:19:32.530 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.ui 2 0 2026-01-25 13:18:08.386
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-25 13:18:08.386
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:32.677
+!MESSAGE 17:19:32.561 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.egit.ui 2 0 2026-01-25 13:18:39.396
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\yoges'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:33.084
+!MESSAGE 17:19:33.082 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.jface 2 0 2026-01-25 13:19:25.274
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2026-01-25 13:19:25.276
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:33.193
+!MESSAGE 17:19:33.192 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.ui 4 0 2026-01-25 13:45:21.072
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException: Cannot invoke "org.eclipse.jface.internal.text.html.BrowserInformationControlInput.getHtml()" because "this.fInput" is null
-	at org.eclipse.jface.internal.text.html.BrowserInformationControl.computeSizeHint(BrowserInformationControl.java:432)
-	at org.eclipse.lsp4e.operations.hover.FocusableBrowserInformationControl.updateBrowserSize(FocusableBrowserInformationControl.java:101)
-	at org.eclipse.lsp4e.operations.hover.FocusableBrowserInformationControl.lambda$1(FocusableBrowserInformationControl.java:105)
-	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4234)
-	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3347)
-	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3722)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:35.252
+!MESSAGE 17:19:35.249 [pool-3-thread-155] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.lsp4e 2 0 2026-01-25 16:26:59.200
-!MESSAGE Javadoc unavailable. Failed to obtain it.
-!STACK 0
-java.lang.InterruptedException
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:66)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
-	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:131)
-	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
-	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
-!SESSION 2026-01-27 11:38:43.648 -----------------------------------------------
-eclipse.buildId=4.36.0.20250605-1300
-java.version=21.0.7
-java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
-Framework arguments:  -product org.eclipse.epp.package.jee.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:35.463
+!MESSAGE 17:19:35.254 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY ch.qos.logback.classic 1 0 2026-01-27 11:40:37.130
-!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:36.432
+!MESSAGE 17:19:35.604 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/application.properties
 
-!ENTRY ch.qos.logback.classic 1 0 2026-01-27 11:40:50.370
-!MESSAGE Logback config file: C:\MainProject\stayxpress\backend\.metadata\.plugins\org.eclipse.m2e.logback\logback.2.7.100.20250418-1315.xml
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:36.433
+!MESSAGE 17:19:36.431 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.ui 2 0 2026-01-27 11:40:52.511
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-27 11:40:52.512
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:36.496
+!MESSAGE 17:19:36.495 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.ui 2 0 2026-01-27 11:40:53.420
-!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
-!SUBENTRY 1 org.eclipse.ui 2 0 2026-01-27 11:40:53.420
-!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:37.880
+!MESSAGE 17:19:37.879 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.egit.ui 2 0 2026-01-27 11:41:41.775
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\yoges'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:40.474
+!MESSAGE 17:19:37.889 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.lsp4e 4 0 2026-01-27 12:15:26.336
-!MESSAGE org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
-!STACK 0
-java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.checkMarkerResolution(LSPCodeActionMarkerResolution.java:159)
-	at org.eclipse.lsp4e.operations.codeactions.LSPCodeActionMarkerResolution.hasResolutions(LSPCodeActionMarkerResolution.java:210)
-	at org.eclipse.ui.internal.ide.registry.MarkerHelpRegistry.hasResolution(MarkerHelpRegistry.java:263)
-	at org.eclipse.ui.internal.ide.registry.MarkerHelpRegistry.hasResolutions(MarkerHelpRegistry.java:236)
-	at org.eclipse.ui.views.markers.MarkerField.annotateImage(MarkerField.java:86)
-	at org.eclipse.ui.internal.views.markers.MarkerProblemSeverityAndMessageField.update(MarkerProblemSeverityAndMessageField.java:80)
-	at org.eclipse.ui.internal.views.markers.MarkerColumnLabelProvider.update(MarkerColumnLabelProvider.java:54)
-	at org.eclipse.jface.viewers.ViewerColumn.refresh(ViewerColumn.java:149)
-	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:998)
-	at org.eclipse.ui.internal.views.markers.MarkersTreeViewer.doUpdateItem(MarkersTreeViewer.java:62)
-	at org.eclipse.jface.viewers.AbstractTreeViewer$UpdateItemSafeRunnable.run(AbstractTreeViewer.java:156)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:167)
-	at org.eclipse.jface.viewers.AbstractTreeViewer.doUpdateItem(AbstractTreeViewer.java:1071)
-	at org.eclipse.jface.viewers.StructuredViewer$UpdateItemSafeRunnable.run(StructuredViewer.java:426)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:167)
-	at org.eclipse.jface.viewers.StructuredViewer.updateItem(StructuredViewer.java:2110)
-	at org.eclipse.jface.viewers.AbstractTreeViewer.updateChildren(AbstractTreeViewer.java:3013)
-	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefreshStruct(AbstractTreeViewer.java:2030)
-	at org.eclipse.jface.viewers.TreeViewer.internalRefreshStruct(TreeViewer.java:684)
-	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefreshStruct(AbstractTreeViewer.java:2036)
-	at org.eclipse.jface.viewers.TreeViewer.internalRefreshStruct(TreeViewer.java:684)
-	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(AbstractTreeViewer.java:2003)
-	at org.eclipse.jface.viewers.AbstractTreeViewer.internalRefresh(AbstractTreeViewer.java:1960)
-	at org.eclipse.jface.viewers.StructuredViewer.lambda$3(StructuredViewer.java:1485)
-	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1391)
-	at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:367)
-	at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1352)
-	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1485)
-	at org.eclipse.jface.viewers.ColumnViewer.refresh(ColumnViewer.java:532)
-	at org.eclipse.jface.viewers.StructuredViewer.refresh(StructuredViewer.java:1446)
-	at org.eclipse.ui.internal.views.markers.UIUpdateJob.runInUIThread(UIUpdateJob.java:102)
-	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:148)
-	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
-	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
-	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
-Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
-	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
-	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
-	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$3(LanguageServerWrapper.java:419)
-	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
-	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
-	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:40.495
+!MESSAGE 17:19:40.494 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2026-01-27 12:38:21.223
-!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:47.369
+!MESSAGE 17:19:40.505 [pool-3-thread-158] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2026-01-27 12:38:21.225
-!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:47.370
+!MESSAGE 17:19:47.368 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 40
 
-!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2026-01-27 12:38:21.227
-!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:47.552
+!MESSAGE 17:19:47.482 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2026-01-27 12:38:21.229
-!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:48.236
+!MESSAGE 17:19:47.793 [pool-3-thread-158] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2026-01-27 12:38:21.240
-!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:48.238
+!MESSAGE 17:19:48.236 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2026-01-27 12:38:21.246
-!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:48.282
+!MESSAGE 17:19:48.282 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.jface 2 0 2026-01-27 12:38:21.907
-!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2026-01-27 12:38:21.907
-!MESSAGE A conflict occurred for CTRL+SHIFT+T:
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
-		Open a type in a Java editor,
-		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
-		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
-Binding(CTRL+SHIFT+T,
-	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolInWorkspace,Go to Symbol in Workspace,
-		,
-		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
-		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolInWorkspace"),
-		,,true),null),
-	org.eclipse.ui.defaultAcceleratorConfiguration,
-	org.eclipse.ui.contexts.window,,,system)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:51.224
+!MESSAGE 17:19:50.919 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2026-01-27 12:42:38.853
-!MESSAGE Could not read maven project
-!STACK 1
-org.eclipse.core.runtime.CoreException: Could not read maven project
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:371)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:388)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$3(ProjectConfigurationManager.java:340)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1053)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:339)
-	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:80)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	... 25 more
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:51.338
+!MESSAGE 17:19:51.226 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/application.properties, file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/com/stayxpress/hotelandroom/repositories/RoomRepository.class]
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 27 more
-!SUBENTRY 1 org.eclipse.m2e.core 4 0 2026-01-27 12:42:38.853
-!MESSAGE Could not read maven project
-!STACK 0
-org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:388)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$3(ProjectConfigurationManager.java:340)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1053)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:339)
-	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:80)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:51.565
+!MESSAGE 17:19:51.448 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - additional reconciling with complete index triggered for: [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\ImageController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\UserController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\RoomController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\HotelController.java]
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 27 more
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:51.694
+!MESSAGE 17:19:51.688 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2026-01-27 12:43:06.158
-!MESSAGE Could not read maven project
-!STACK 1
-org.eclipse.core.runtime.CoreException: Could not read maven project
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:371)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
-	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
-	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	... 35 more
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:52.119
+!MESSAGE 17:19:52.118 [pool-3-thread-155] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 37 more
-!SUBENTRY 1 org.eclipse.m2e.core 4 0 2026-01-27 12:43:06.158
-!MESSAGE Could not read maven project
-!STACK 0
-org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
-	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
-	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:53.581
+!MESSAGE 17:19:52.131 [pool-5-thread-52] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 37 more
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:19:53.582
+!MESSAGE 17:19:53.573 [pool-3-thread-158] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.eclipse.ui 4 0 2026-01-27 12:43:22.170
-!MESSAGE Unhandled event loop exception
-!STACK 0
-java.lang.NullPointerException: Cannot invoke "org.eclipse.jface.internal.text.html.BrowserInformationControlInput.getHtml()" because "this.fInput" is null
-	at org.eclipse.jface.internal.text.html.BrowserInformationControl.computeSizeHint(BrowserInformationControl.java:432)
-	at org.eclipse.lsp4e.operations.hover.FocusableBrowserInformationControl.updateBrowserSize(FocusableBrowserInformationControl.java:101)
-	at org.eclipse.lsp4e.operations.hover.FocusableBrowserInformationControl.lambda$1(FocusableBrowserInformationControl.java:105)
-	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4234)
-	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3347)
-	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
-	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:241)
-	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4177)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3718)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:42.242
+!MESSAGE 17:21:42.097 [pool-5-thread-54] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/ImageEntity.java
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2026-01-27 12:43:30.250
-!MESSAGE Could not read maven project
-!STACK 1
-org.eclipse.core.runtime.CoreException: Could not read maven project
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:371)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:388)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$3(ProjectConfigurationManager.java:340)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1053)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:339)
-	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:80)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	... 25 more
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:49.065
+!MESSAGE 17:21:48.803 [pool-5-thread-54] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 27 more
-!SUBENTRY 1 org.eclipse.m2e.core 4 0 2026-01-27 12:43:30.250
-!MESSAGE Could not read maven project
-!STACK 0
-org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:388)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$3(ProjectConfigurationManager.java:340)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1053)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:339)
-	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:80)
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:49.228
+!MESSAGE 17:21:49.226 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 27 more
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:49.689
+!MESSAGE 17:21:49.263 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java done in 461ms
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2026-01-27 12:45:16.242
-!MESSAGE Could not read pom.xml
-!STACK 1
-org.eclipse.core.runtime.CoreException: Could not read pom.xml
-	at org.eclipse.m2e.core.internal.IMavenToolbox.readModel(IMavenToolbox.java:245)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:591)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
-	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
-	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'build' (position: START_TAG seen ...<dependencies>\n\t<build>... @33:9) 
-	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:96)
-	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:74)
-	at org.eclipse.m2e.core.internal.IMavenToolbox.readModel(IMavenToolbox.java:243)
-	... 24 more
-Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'build' (position: START_TAG seen ...<dependencies>\n\t<build>... @33:9) 
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:181)
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2325)
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:623)
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:654)
-	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:93)
-	... 26 more
-!SUBENTRY 1 org.eclipse.m2e.core 4 0 2026-01-27 12:45:16.242
-!MESSAGE Could not read pom.xml
-!STACK 0
-org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'build' (position: START_TAG seen ...<dependencies>\n\t<build>... @33:9) 
-	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:96)
-	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:74)
-	at org.eclipse.m2e.core.internal.IMavenToolbox.readModel(IMavenToolbox.java:243)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:591)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:491)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:370)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:322)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
-	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
-	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'build' (position: START_TAG seen ...<dependencies>\n\t<build>... @33:9) 
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:181)
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2325)
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:623)
-	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:654)
-	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:93)
-	... 26 more
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:50.144
+!MESSAGE 17:21:50.143 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java]
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2026-01-27 12:45:39.140
-!MESSAGE failed to load maven project for org.eclipse.ui.part.FileEditorInput(/AdminService/pom.xml)
-!STACK 1
-org.eclipse.core.runtime.CoreException: Could not read maven project
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:917)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache$CacheLine.lambda$1(MavenProjectCache.java:192)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache$CacheLine.getProject(MavenProjectCache.java:191)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache.getMavenProject(MavenProjectCache.java:105)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$24(ProjectRegistryManager.java:1101)
-	at java.base/java.util.Map.computeIfAbsent(Map.java:1066)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1100)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:289)
-	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:241)
-	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:709)
-	at org.eclipse.m2e.editor.pom.MavenPomEditor$4.run(MavenPomEditor.java:1029)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Contains: Some problems were encountered while processing the POMs:
-[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar is missing. @ line 41, column 15
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:50.160
+!MESSAGE 17:21:50.158 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java]
 
-org.apache.maven.project.ProjectBuildingException: Some problems were encountered while processing the POMs:
-[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar is missing. @ line 41, column 15
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:51.362
+!MESSAGE 17:21:50.683 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - Finished scanning affected files [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\repositories\RoomRepository.java]
 
-	at org.eclipse.m2e.core.internal.IMavenToolbox.readMavenProjects(IMavenToolbox.java:140)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$22(ProjectRegistryManager.java:943)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectsWithDependencies(ProjectRegistryManager.java:939)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:904)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache$CacheLine.lambda$1(MavenProjectCache.java:192)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache$CacheLine.getProject(MavenProjectCache.java:191)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache.getMavenProject(MavenProjectCache.java:105)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$24(ProjectRegistryManager.java:1101)
-	at java.base/java.util.Map.computeIfAbsent(Map.java:1066)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1100)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:289)
-	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:241)
-	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:709)
-	at org.eclipse.m2e.editor.pom.MavenPomEditor$4.run(MavenPomEditor.java:1029)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SUBENTRY 1 org.eclipse.m2e.core 4 0 2026-01-27 12:45:39.140
-!MESSAGE Could not read maven project
-!SUBENTRY 2 org.eclipse.m2e.core 4 0 2026-01-27 12:45:39.140
-!MESSAGE Some problems were encountered while processing the POMs:
-[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar is missing. @ line 41, column 15
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:51.375
+!MESSAGE 17:21:51.372 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/application.properties, file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/com/stayxpress/hotelandroom/repositories/RoomRepository.class]
 
-!STACK 0
-org.apache.maven.project.ProjectBuildingException: Some problems were encountered while processing the POMs:
-[ERROR] 'dependencies.dependency.version' for org.springframework.cloud:spring-cloud-starter-netflix-eureka-client:jar is missing. @ line 41, column 15
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:52.005
+!MESSAGE 17:21:51.490 [ForkJoinPool.commonPool-worker-34] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Removing and cleaning up name env for project file:/E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService
 
-	at org.eclipse.m2e.core.internal.IMavenToolbox.readMavenProjects(IMavenToolbox.java:140)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$22(ProjectRegistryManager.java:943)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectsWithDependencies(ProjectRegistryManager.java:939)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:904)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache$CacheLine.lambda$1(MavenProjectCache.java:192)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache$CacheLine.getProject(MavenProjectCache.java:191)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectCache.getMavenProject(MavenProjectCache.java:105)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$24(ProjectRegistryManager.java:1101)
-	at java.base/java.util.Map.computeIfAbsent(Map.java:1066)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1100)
-	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:289)
-	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:241)
-	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:709)
-	at org.eclipse.m2e.editor.pom.MavenPomEditor$4.run(MavenPomEditor.java:1029)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:52.329
+!MESSAGE 17:21:52.134 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - additional reconciling with complete index triggered for: [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\ImageController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\UserController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\RoomController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\HotelController.java]
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2026-01-27 12:45:39.687
-!MESSAGE Could not read maven project
-!STACK 1
-org.eclipse.core.runtime.CoreException: Could not read maven project
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:371)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
-	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
-	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	... 35 more
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:52.713
+!MESSAGE 17:21:52.680 [pool-5-thread-54] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 37 more
-!SUBENTRY 1 org.eclipse.m2e.core 4 0 2026-01-27 12:45:39.687
-!MESSAGE Could not read maven project
-!STACK 0
-org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
- for project  at C:\MainProject\stayxpress\backend\AdminService
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:180)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:123)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:369)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:292)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:361)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.lambda$4(AbstractMavenArchiverConfigurator.java:576)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.loadParentHierarchy(AbstractMavenArchiverConfigurator.java:568)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.generateManifest(AbstractMavenArchiverConfigurator.java:365)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:228)
-	at org.eclipse.m2e.mavenarchiver.internal.AbstractMavenArchiverConfigurator.mavenProjectChanged(AbstractMavenArchiverConfigurator.java:220)
-	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.mavenProjectChanged(ProjectConfigurationManager.java:885)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:892)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:1042)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:324)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:146)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.lambda$0(MavenBuilder.java:84)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
-	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:83)
-	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:192)
-	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:1077)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:296)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:352)
-	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:441)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:444)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:555)
-	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:503)
-	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:585)
-	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:207)
-	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:300)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
-[FATAL] Non-readable POM C:\MainProject\stayxpress\backend\AdminService: C:\MainProject\stayxpress\backend\AdminService (Access is denied) @ 
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:52.714
+!MESSAGE 17:21:52.712 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:176)
-	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:642)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:262)
-	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:248)
-	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:176)
-	... 37 more
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:53.681
+!MESSAGE 17:21:53.679 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
 
-!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2026-01-27 12:46:42.286
-!MESSAGE Failed to refresh Code Minings for editor.
-!STACK 1
-Java Model Exception: Error in Java Model (code 969): AdminService does not exist
-	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:546)
-	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2549)
-	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2361)
-	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2404)
-	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$9(STS4LanguageClientImpl.java:439)
-	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.lambda$0(ReusableClasspathListenerHandler.java:76)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.run(ReusableClasspathListenerHandler.java:76)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SUBENTRY 1 org.eclipse.jdt.core 4 969 2026-01-27 12:46:42.286
-!MESSAGE AdminService does not exist
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:54.797
+!MESSAGE 17:21:54.796 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
-!ENTRY org.eclipse.ui 4 0 2026-01-27 12:52:10.589
-!MESSAGE Unhandled event loop exception
-!STACK 0
-org.eclipse.swt.SWTException: Widget is disposed
-	at org.eclipse.swt.SWT.error(SWT.java:4945)
-	at org.eclipse.swt.SWT.error(SWT.java:4860)
-	at org.eclipse.swt.SWT.error(SWT.java:4831)
-	at org.eclipse.swt.widgets.Widget.error(Widget.java:507)
-	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:628)
-	at org.eclipse.swt.browser.Edge.scheduleMouseMovementHandling(Edge.java:869)
-	at org.eclipse.swt.browser.Edge.lambda$39(Edge.java:876)
-	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4234)
-	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3347)
-	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3722)
-	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
-	at org.eclipse.jface.window.Window.open(Window.java:799)
-	at org.eclipse.ui.internal.actions.NewWizardShortcutAction.run(NewWizardShortcutAction.java:130)
-	at org.eclipse.jface.action.Action.runWithEvent(Action.java:474)
-	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:581)
-	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:415)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4338)
-	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1214)
-	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4136)
-	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3724)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
-	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
-	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
-	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
-	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
-	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:185)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:54.808
+!MESSAGE 17:21:54.807 [pool-5-thread-54] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 2 10035 2026-01-28 01:46:25.623
 !MESSAGE The workspace will exit with unsaved changes in this session.
 !SESSION 2026-01-28 14:10:06.061 -----------------------------------------------
@@ -1191,3 +406,412 @@ Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+=======
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:21:57.275
+!MESSAGE 17:21:57.274 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:22:39.913
+!MESSAGE 17:21:58.462 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:23:27.203
+!MESSAGE 17:22:42.054 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:23:27.221
+!MESSAGE 17:23:00.412 [pool-3-thread-160] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:23:27.378
+!MESSAGE 17:23:27.375 [pool-5-thread-55] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:37.260
+!MESSAGE 17:24:37.108 [pool-5-thread-56] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:43.861
+!MESSAGE 17:24:40.102 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:43.914
+!MESSAGE 17:24:43.913 [pool-5-thread-56] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:44.039
+!MESSAGE 17:24:44.012 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:44.577
+!MESSAGE 17:24:44.238 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:44.634
+!MESSAGE 17:24:44.630 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:45.863
+!MESSAGE 17:24:45.303 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - Finished scanning affected files [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\repositories\RoomRepository.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:46.279
+!MESSAGE 17:24:45.942 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - additional reconciling with complete index triggered for: [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\ImageController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\UserController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\RoomController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\HotelController.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:47.638
+!MESSAGE 17:24:46.623 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:47.713
+!MESSAGE 17:24:47.712 [pool-5-thread-56] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:48.677
+!MESSAGE 17:24:48.675 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:49.388
+!MESSAGE 17:24:49.387 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:51.785
+!MESSAGE 17:24:51.783 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:51.794
+!MESSAGE 17:24:51.793 [pool-5-thread-56] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:55.460
+!MESSAGE 17:24:55.198 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:55.605
+!MESSAGE 17:24:55.600 [pool-3-thread-162] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:56.287
+!MESSAGE 17:24:55.607 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:56.288
+!MESSAGE 17:24:55.744 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - Finished scanning affected files [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\dto\RoomDto.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:56.325
+!MESSAGE 17:24:56.300 [pool-3-thread-163] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:56.851
+!MESSAGE 17:24:56.835 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:56.898
+!MESSAGE 17:24:56.897 [pool-5-thread-56] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:56.917
+!MESSAGE 17:24:56.908 [pool-5-thread-57] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:57.097
+!MESSAGE 17:24:57.081 [pool-3-thread-165] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:58.888
+!MESSAGE 17:24:58.887 [pool-3-thread-165] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:24:58.905
+!MESSAGE 17:24:58.890 [pool-3-thread-163] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:03.479
+!MESSAGE 17:25:01.222 [pool-3-thread-165] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:03.482
+!MESSAGE 17:25:03.479 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:04.391
+!MESSAGE 17:25:03.511 [pool-3-thread-163] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:04.392
+!MESSAGE 17:25:04.073 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 1ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:04.399
+!MESSAGE 17:25:04.398 [pool-5-thread-57] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:04.880
+!MESSAGE 17:25:04.583 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:04.881
+!MESSAGE 17:25:04.866 [pool-3-thread-163] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:04.923
+!MESSAGE 17:25:04.920 [pool-3-thread-165] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:04.988
+!MESSAGE 17:25:04.981 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - doc save event: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:05.356
+!MESSAGE 17:25:04.990 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:05.746
+!MESSAGE 17:25:05.466 [ForkJoinPool.commonPool-worker-37] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Removing and cleaning up name env for project file:/E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:05.867
+!MESSAGE 17:25:05.865 [pool-5-thread-57] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:05.903
+!MESSAGE 17:25:05.900 [pool-5-thread-56] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:05.974
+!MESSAGE 17:25:05.972 [pool-5-thread-57] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:06.011
+!MESSAGE 17:25:06.010 [pool-5-thread-56] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:06.234
+!MESSAGE 17:25:06.025 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:06.284
+!MESSAGE 17:25:06.275 [pool-3-thread-164] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:25:06.931
+!MESSAGE 17:25:06.928 [pool-3-thread-162] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:38:27.353
+!MESSAGE 17:38:27.290 [pool-3-thread-166] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:38:27.915
+!MESSAGE 17:38:27.913 [pool-3-thread-166] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:38:30.831
+!MESSAGE 17:38:30.829 [pool-3-thread-166] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:38:31.910
+!MESSAGE 17:38:31.909 [pool-3-thread-166] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:51:41.879
+!MESSAGE 17:50:24.691 [pool-5-thread-59] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:51:41.921
+!MESSAGE 17:51:41.852 [pool-3-thread-169] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:51:49.314
+!MESSAGE 17:51:49.204 [pool-5-thread-60] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/HotelService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 17:56:30.589
+!MESSAGE 17:53:21.281 [pool-5-thread-61] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/HotelRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:02:37.080
+!MESSAGE 17:56:31.061 [pool-5-thread-62] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/HotelRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:02:37.986
+!MESSAGE 18:02:37.983 [pool-5-thread-63] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/HotelRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:07.663
+!MESSAGE 18:03:07.617 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.115
+!MESSAGE 18:03:08.076 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.310
+!MESSAGE 18:03:08.298 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.310
+!MESSAGE vices.GenericEndpoint.notify(GenericEndpoint.java:152)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.311
+!MESSAGE 	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.314
+!MESSAGE 	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.315
+!MESSAGE 	at org.springframework.ide.vscode.commons.languageserver.util.ParentProcessWatcher.lambda$apply$0(ParentProcessWatcher.java:129)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.316
+!MESSAGE 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.316
+!MESSAGE 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.317
+!MESSAGE 	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.343
+!MESSAGE 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.343
+!MESSAGE 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.344
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.345
+!MESSAGE 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.345
+!MESSAGE 	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.345
+!MESSAGE Caused by: java.util.concurrent.CancellationException: null
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.346
+!MESSAGE 	at java.base/java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2510)
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.346
+!MESSAGE 	... 26 common frames omitted
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.359
+!MESSAGE 18:03:08.355 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.436
+!MESSAGE 18:03:08.396 [pool-5-thread-63] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.438
+!MESSAGE 18:03:08.416 [pool-3-thread-173] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.721
+!MESSAGE 18:03:08.526 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 1ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.940
+!MESSAGE 18:03:08.939 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.945
+!MESSAGE 18:03:08.943 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:08.990
+!MESSAGE 18:03:08.989 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:09.006
+!MESSAGE 18:03:08.993 [pool-3-thread-173] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:09.269
+!MESSAGE 18:03:09.267 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:09.493
+!MESSAGE 18:03:09.411 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:09.494
+!MESSAGE 18:03:09.415 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:09.932
+!MESSAGE 18:03:09.796 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:09.971
+!MESSAGE 18:03:09.970 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:10.005
+!MESSAGE 18:03:10.004 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 221
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:10.140
+!MESSAGE 18:03:10.136 [pool-3-thread-175] INFO  o.s.i.v.c.l.c.VscodeCompletionEngineAdapter - Starting completion handling for: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:10.278
+!MESSAGE 18:03:10.180 [pool-3-thread-175] INFO  o.s.i.v.c.l.c.VscodeCompletionEngineAdapter - Got 0 completions in 44ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:10.444
+!MESSAGE 18:03:10.280 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 3ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:10.482
+!MESSAGE 18:03:10.481 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:10.912
+!MESSAGE 18:03:10.683 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 223
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:11.403
+!MESSAGE 18:03:11.033 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:11.403
+!MESSAGE 18:03:11.401 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:11.945
+!MESSAGE 18:03:11.943 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:12.407
+!MESSAGE 18:03:11.979 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:12.407
+!MESSAGE 18:03:12.051 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:12.626
+!MESSAGE 18:03:12.625 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:12.704
+!MESSAGE 18:03:12.703 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:12.815
+!MESSAGE 18:03:12.814 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 0ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:13.344
+!MESSAGE 18:03:13.324 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:13.361
+!MESSAGE 18:03:13.352 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:14.266
+!MESSAGE 18:03:14.259 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:14.990
+!MESSAGE 18:03:14.846 [pool-3-thread-175] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:15.001
+!MESSAGE 18:03:14.999 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:16.781
+!MESSAGE 18:03:15.841 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - Finished scanning affected files [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\servicies\RoomService.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:16.790
+!MESSAGE 18:03:16.787 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/application.properties, file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/com/stayxpress/hotelandroom/servicies/RoomService.class]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:17.322
+!MESSAGE 18:03:17.247 [pool-6-thread-1] INFO  o.s.i.v.b.j.utils.SpringIndexerJava - additional reconciling with complete index triggered for: [E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\ImageController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\UserController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\RoomController.java, E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\main\java\com\stayxpress\hotelandroom\controllers\HotelController.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:17.482
+!MESSAGE 18:03:17.481 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:17.484
+!MESSAGE 18:03:17.481 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:17.504
+!MESSAGE 18:03:17.482 [pool-3-thread-175] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:17.505
+!MESSAGE 18:03:17.482 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:17.839
+!MESSAGE 18:03:17.783 [pool-5-thread-64] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:17.840
+!MESSAGE 18:03:17.838 [pool-3-thread-174] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:03:18.696
+!MESSAGE 18:03:18.695 [pool-3-thread-175] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:08.755
+!MESSAGE 18:03:18.717 [pool-3-thread-175] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:09.243
+!MESSAGE 18:10:09.241 [pool-3-thread-177] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:10.769
+!MESSAGE 18:10:10.768 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:11.307
+!MESSAGE 18:10:11.305 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:11.377
+!MESSAGE 18:10:11.367 [pool-3-thread-177] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:13.014
+!MESSAGE 18:10:11.391 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java done in 86ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:13.213
+!MESSAGE 18:10:13.211 [pool-3-thread-178] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:13.265
+!MESSAGE 18:10:13.262 [pool-5-thread-65] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:13.524
+!MESSAGE 18:10:13.523 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:14.577
+!MESSAGE 18:10:13.527 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:14.692
+!MESSAGE 18:10:14.686 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: [file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java]
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:15.437
+!MESSAGE 18:10:14.694 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:16.985
+!MESSAGE 18:10:16.951 [ForkJoinPool.commonPool-worker-41] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Removing and cleaning up name env for project file:/E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:17.072
+!MESSAGE 18:10:16.991 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/application.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:18.668
+!MESSAGE 18:10:18.664 [pool-3-thread-177] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:19.039
+!MESSAGE 18:10:19.037 [pool-5-thread-65] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:19.113
+!MESSAGE 18:10:19.040 [pool-3-thread-178] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:10:19.960
+!MESSAGE 18:10:19.955 [pool-3-thread-177] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+>>>>>>> vaibhav

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchForm from "../common/searchForm";
+import { getAllHotels } from "../../../services/hotelservice";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function HomePage() {
   const handleSearch = () => {
     console.log("🏠 Home Search Data:", search);
     navigate("/user/search", {
-      state: search, 
+      state: search,
     });
   };
 
