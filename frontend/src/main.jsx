@@ -23,7 +23,6 @@ import OwnerAuthLayout from "./Layout/OwnerAuthLayout.jsx";
 // import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
 
 import { Slide, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import AuthLayout from "./Layout/AuthLayout.jsx";
 import AdminLayout from "./components/admin/common/AdminLayout.jsx";
 import AdminHomePage from "./components/admin/pages/AdminHomePage.jsx";
@@ -70,24 +69,24 @@ let router = createBrowserRouter([
         index: true,
         element: <OwnerHomePage />,
       },
+        // {
+        //   path: "dashboard",
+        //   element: <OwnerDashboard />,
+        // },
       {
-        path: "/dashboard",
-        element: <OwnerDashboard />,
-      },
-      {
-        path: "/add-hotel",
+        path: "add-hotel",
         element: <OwnerAddHotel />,
       },
       {
-        path: "/add-room",
+        path: "add-room",
         element: <OwnerAddRoom />,
       },
       {
-        path: "/rooms-pricing",
+        path: "rooms-pricing",
         element: <OwnerRoomAndPrice />,
       },
       {
-        path: "/edit-room/:roomId",
+        path: "edit-room/:roomId",
         element: <OwnerEditRoom />,
       },
     ],
@@ -105,7 +104,7 @@ let router = createBrowserRouter([
         element: <OwnerHomePage />,
       },
       {
-        path: "/compare",
+        path: "compare",
         element: <RoomCompare />,
       },  
     ],

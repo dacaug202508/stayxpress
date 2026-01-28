@@ -15,6 +15,7 @@ public class HotelService {
 	
 	private final HotelRepository hotelrepo;
 	private final UserRepository userrepo;
+
 	
 	public HotelService(HotelRepository hotelrepo, UserRepository userrepo) {
 		this.hotelrepo = hotelrepo;
@@ -84,6 +85,20 @@ public class HotelService {
 		} catch (Exception e) {	
 			throw e;
 		}
+	}
+
+
+	
+	public List<HotelEntity> findHotelByUserId(Integer userID) {
+		try {
+			UserEntity owner = userrepo.findById(userID).orElse(null);
+			
+			List<HotelEntity> list =  hotelrepo.findByOwner(owner);
+			return list;
+			
+		} catch (Exception e) {
+			throw e;
+			}
 	}
 	
 	

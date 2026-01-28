@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import Button from "../../reusable/Button";
+import { saveHotel } from "../../../services/hotelservice";
 
 function OwnerAddHotel() {
 
   const init = {
-    owner_id: 1,        // dummy owner id (replace from auth later)
-    hotel_name: "",
-    description: "",
-    address: "",
-    city: "",
-    country: "",
-    status: "ACTIVE",
+   id: 0,
+   ownerId: 1,        // dummy owner id (replace from auth later)
+   hotelName: "",
+   description: "",
+   address: "",
+   city: "",
+   country: "",
+   status: "ACTIVE",
   };
+
 
   const [hotelData, setHotelData] = useState(init);
 
@@ -22,9 +25,15 @@ function OwnerAddHotel() {
     });
   };
 
-  const handleSave = (e) => {
+  const  handleSave = async(e) => {
     e.preventDefault();
-    console.log(hotelData); // ready for API
+   try {
+    let res = await saveHotel(hotelData);
+    console.log(res.data)
+
+   } catch (error) {
+    console.log(error)
+   }
   };
 
   return (
@@ -43,8 +52,8 @@ function OwnerAddHotel() {
               <label className="label">Hotel Name</label>
               <input
                 type="text"
-                name="hotel_name"
-                value={hotelData.hotel_name}
+                name="hotelName"
+                value={hotelData.hotelName}
                 onChange={(e) =>
                   onChangeHandler(e.target.name, e.target.value)
                 }

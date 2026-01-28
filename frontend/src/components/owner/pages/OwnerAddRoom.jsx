@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../reusable/Button";
+import { getHotelsByOwnerId } from "../../../services/hotelservice";
+import { saveRoom } from "../../../services/roomservice";
 
 function OwnerAddRoom() {
   const init = {
-    hotel_id: "",
-    room_number: "",
-    room_type: "",
-    price_per_night: "",
-    max_guests: "",
-    is_active: true,
+    // id:25,
+    hotelId: "",
+    roomNumber: "",
+    roomType: "",
+    pricePerNight: "",
+    maxGuests: "",
+    isActive: true,
   };
 
   const [roomData, setRoomData] = useState(init);
+  const [hotels, setHotels] = useState([{
+    id : 0,
+    hotelName : ""
+
+  }]);
 
   const onChangeHandler = (name, value) => {
     setRoomData({
@@ -20,26 +28,39 @@ function OwnerAddRoom() {
     });
   };
 
-  function handleSave(e) {
+  async function handleSave(e) {
     e.preventDefault();
 
     // ✅ convert types before API call
-    const payload = {
-      ...roomData,
-      hotel_id: Number(roomData.hotel_id),
-      price_per_night: Number(roomData.price_per_night),
-      max_guests: Number(roomData.max_guests),
-      is_active: roomData.is_active === "true",
-    };
-
+    const payload = {...roomData};
     console.log(payload);
+
+    let res = await saveRoom(payload);
+    console.log(res.data)
+
+
+
   }
 
-  const hotels = [
-    { id: 1, name: "Hotel Sunrise" },
-    { id: 2, name: "Ocean View Resort" },
-    { id: 3, name: "Mountain Stay" },
-  ];
+  // const hotels = [
+  //   { id: 1, name: "Hotel Sunrise" },
+  //   { id: 2, name: "Ocean View Resort" },
+  //   { id: 3, name: "Mountain Stay" },
+  // ];
+
+
+
+  useEffect(() => {
+    (
+      async () => {
+        let res = await getHotelsByOwnerId(2)
+        // console.log(res.data.data)
+        setHotels(res.data.data)
+      }
+    )()
+  }, []);
+
+
 
   return (
     <div className="w-full min-h-full flex items-center justify-center">
@@ -56,8 +77,8 @@ function OwnerAddRoom() {
             <div>
               <label className="label">Hotel</label>
               <select
-                name="hotel_id"
-                value={roomData.hotel_id}
+                name="hotelId"
+                value={roomData.hotelId}
                 className="select select-bordered w-full"
                 onChange={(e) =>
                   onChangeHandler(e.target.name, e.target.value)
@@ -67,7 +88,7 @@ function OwnerAddRoom() {
                 <option value="">Select Hotel</option>
                 {hotels.map((hotel) => (
                   <option key={hotel.id} value={hotel.id}>
-                    {hotel.name}
+                    {hotel.hotelName}
                   </option>
                 ))}
               </select>
@@ -78,8 +99,8 @@ function OwnerAddRoom() {
               <label className="label">Room Number</label>
               <input
                 type="text"
-                name="room_number"
-                value={roomData.room_number}
+                name="roomNumber"
+                value={roomData.roomNumber}
                 className="input input-bordered w-full"
                 placeholder="Room Number"
                 onChange={(e) =>
@@ -93,8 +114,8 @@ function OwnerAddRoom() {
             <div>
               <label className="label">Room Type</label>
               <select
-                name="room_type"
-                value={roomData.room_type}
+                name="roomType"
+                value={roomData.roomType}
                 className="select select-bordered w-full"
                 onChange={(e) =>
                   onChangeHandler(e.target.name, e.target.value)
@@ -113,8 +134,8 @@ function OwnerAddRoom() {
               <label className="label">Price Per Night</label>
               <input
                 type="number"
-                name="price_per_night"
-                value={roomData.price_per_night}
+                name="pricePerNight"
+                value={roomData.pricePerNight}
                 className="input input-bordered w-full"
                 placeholder="Price"
                 onChange={(e) =>
@@ -129,8 +150,8 @@ function OwnerAddRoom() {
               <label className="label">Max Guests</label>
               <input
                 type="number"
-                name="max_guests"
-                value={roomData.max_guests}
+                name="maxGuests"
+                value={roomData.maxGuests}
                 className="input input-bordered w-full"
                 placeholder="Max Guests"
                 onChange={(e) =>
@@ -144,8 +165,8 @@ function OwnerAddRoom() {
             <div>
               <label className="label">Status</label>
               <select
-                name="is_active"
-                value={roomData.is_active}
+                name="isActive"
+                value={roomData.isActive}
                 className="select select-bordered w-full"
                 onChange={(e) =>
                   onChangeHandler(e.target.name, e.target.value)

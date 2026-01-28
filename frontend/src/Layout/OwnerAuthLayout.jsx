@@ -6,28 +6,30 @@ import { AUTHROLES } from "../store/authSlice";
 function OwnerAuthLayout({ children, authentication = true }) {
   const { status, role } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [loading, setLoading] = useState(true);
 
-  let route = useLocation();
-
   useEffect(() => {
-    // console.log(status + " " + role);
-    // console.log(role + AUTHROLES.OWNER);
-    console.log(route.pathname)
-    if (route.pathname != "/owner") navigate("/owner");
-
-    if (authentication == status && role === AUTHROLES.OWNER) {
-      navigate("/owner", { replace: true });
+    // 🔹 Not logged in → go to login
+    if (!status) {
+      navigate("/login", {
+        replace: true,
+        state: { from: location.pathname },
+      });
+      return;
     }
 
-    if (authentication != status) {
-      navigate("/login");
-    } else if (authentication == status && role != AUTHROLES.OWNER) {
-      navigate("/");
+    // 🔹 Logged in but NOT OWNER → go home
+    if (status && role !== AUTHROLES.OWNER) {
+      navigate("/", { replace: true });
+      return;
     }
+
+   
     setLoading(false);
-  }, [status, role, authentication, navigate]);
+
+  }, [status, role, navigate, location.pathname]);
 
   if (loading) {
     return <h1>Loading...</h1>;

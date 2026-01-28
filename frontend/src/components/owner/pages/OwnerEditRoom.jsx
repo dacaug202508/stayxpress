@@ -1,26 +1,54 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../reusable/Button";
+import { useParams } from "react-router-dom";
+import { getRoomById, updateRoom } from "../../../services/roomservice";
 
 function OwnerEditRoom() {
 
-  // ✅ Room form state
+  const params = useParams();
+
+  // ✅ INITIAL STATE (MATCH BACKEND STRUCTURE)
   const initialRoom = {
-    hotel_id: "",
-    room_number: "",
-    room_type: "",
-    price_per_night: "",
-    max_guests: "",
-    is_active: "true",
+    id: 0,
+    isActive: true,
+    maxGuests: 2,
+    pricePerNight: 0,
+    roomNumber: "",
+    roomType: "",
+    hotel: {
+      id: 0,
+      hotelName: "",
+      address: "",
+      city: "",
+      country: "",
+      description: "",
+      status: "",
+      createdAt: ""
+    }
   };
+
+
+  let [loading, setLoading] = useState(false)
 
   const [roomData, setRoomData] = useState(initialRoom);
 
-  //  Dummy hotel list (dropdown)
-  const hotelList = [
-    { id: 1, name: "Hotel Sunrise" },
-    { id: 2, name: "Hotel Ocean View" },
-  ];
+  // ✅ FETCH ROOM BY ID
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await getRoomById(params.roomId);
+        console.log(res.data.room)
+        setRoomData(res.data.room);
+          
+      } catch (error) {
+        console.error("Error fetching room", error);
+      }
+    })();
+  }, [params.roomId]);
 
+  console.log(roomData.hotel)
+
+  // ✅ COMMON CHANGE HANDLER
   const onChangeHandler = (name, value) => {
     setRoomData((prev) => ({
       ...prev,
@@ -28,21 +56,29 @@ function OwnerEditRoom() {
     }));
   };
 
-  const handleEdit = (e) => {
+  // ✅ SUBMIT HANDLER
+  const handleEdit = async (e) => {
     e.preventDefault();
-
-    const payload = {
-      ...roomData,
-      hotel_id: Number(roomData.hotel_id),
-      price_per_night: Number(roomData.price_per_night),
-      max_guests: Number(roomData.max_guests),
-      is_active: roomData.is_active === "true",
-    };
-
-    console.log("Payload:", payload);
-
-    // 🔥 API call here
-    // axios.put(`/api/rooms/${id}`, payload)
+    setLoading(true)
+   try {
+    let payload = {
+     id: roomData.id,
+     hotelId: roomData.hotel.id,
+     roomNumber: roomData.roomNumber,
+     pricePerNight: roomData.pricePerNight,
+     maxGuests: roomData.maxGuests,
+     isActive: roomData.isActive,
+     roomType: roomData.roomType,
+    }
+ 
+     console.log("Final Payload:", payload);
+ 
+     let res = await updateRoom(payload);
+     console.log(res.data)
+   } catch (error) {
+    console.log(error)
+   }
+   setLoading(false)
   };
 
   return (
@@ -56,25 +92,15 @@ function OwnerEditRoom() {
 
           <form className="space-y-4" onSubmit={handleEdit}>
 
-            {/* HOTEL */}
+            {/* HOTEL NAME */}
             <div>
-              <label className="label">Hotel</label>
-              <select
-                name="hotel_id"
-                value={roomData.hotel_id}
-                className="select select-bordered w-full"
-                onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
-                }
-                required
-              >
-                <option value="">Select Hotel</option>
-                {hotelList.map((hotel) => (
-                  <option key={hotel.id} value={hotel.id}>
-                    {hotel.name}
-                  </option>
-                ))}
-              </select>
+              <label className="label">Hotel Name</label>
+              <input
+                type="text"
+                value={roomData.hotel?.hotelName || ""}
+                className="input input-bordered w-full"
+                disabled
+              />
             </div>
 
             {/* ROOM NUMBER */}
@@ -82,8 +108,8 @@ function OwnerEditRoom() {
               <label className="label">Room Number</label>
               <input
                 type="text"
-                name="room_number"
-                value={roomData.room_number}
+                name="roomNumber"
+                value={roomData.roomNumber}
                 className="input input-bordered w-full"
                 onChange={(e) =>
                   onChangeHandler(e.target.name, e.target.value)
@@ -96,8 +122,8 @@ function OwnerEditRoom() {
             <div>
               <label className="label">Room Type</label>
               <select
-                name="room_type"
-                value={roomData.room_type}
+                name="roomType"
+                value={roomData.roomType}
                 className="select select-bordered w-full"
                 onChange={(e) =>
                   onChangeHandler(e.target.name, e.target.value)
@@ -116,11 +142,11 @@ function OwnerEditRoom() {
               <label className="label">Price Per Night</label>
               <input
                 type="number"
-                name="price_per_night"
-                value={roomData.price_per_night}
+                name="pricePerNight"
+                value={roomData.pricePerNight}
                 className="input input-bordered w-full"
                 onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
+                  onChangeHandler(e.target.name, Number(e.target.value))
                 }
                 required
               />
@@ -131,11 +157,11 @@ function OwnerEditRoom() {
               <label className="label">Max Guests</label>
               <input
                 type="number"
-                name="max_guests"
-                value={roomData.max_guests}
+                name="maxGuests"
+                value={roomData.maxGuests}
                 className="input input-bordered w-full"
                 onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
+                  onChangeHandler(e.target.name, Number(e.target.value))
                 }
                 required
               />
@@ -145,11 +171,11 @@ function OwnerEditRoom() {
             <div>
               <label className="label">Status</label>
               <select
-                name="is_active"
-                value={roomData.is_active}
+                name="isActive"
+                value={String(roomData.isActive)}
                 className="select select-bordered w-full"
                 onChange={(e) =>
-                  onChangeHandler(e.target.name, e.target.value)
+                  onChangeHandler("isActive", e.target.value === "true")
                 }
               >
                 <option value="true">ACTIVE</option>
@@ -159,7 +185,7 @@ function OwnerEditRoom() {
 
             <Button
               css="w-full mt-4 btn btn-soft btn-info"
-              text="Save Room"
+              text={loading ? "Saving..." : "Save Room"}
             />
           </form>
 
