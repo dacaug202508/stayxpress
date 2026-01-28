@@ -941,3 +941,237 @@ org.eclipse.swt.SWTException: Widget is disposed
 
 !ENTRY org.eclipse.core.resources 2 10035 2026-01-28 01:46:25.623
 !MESSAGE The workspace will exit with unsaved changes in this session.
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:31.480
+!MESSAGE 18:10:20.008 [pool-3-thread-177] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:31.558
+!MESSAGE 18:17:31.554 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: 10
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:31.562
+!MESSAGE 18:17:31.559 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:32.612
+!MESSAGE 18:17:32.606 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 50
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:32.714
+!MESSAGE 18:17:32.712 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change arrived: 1
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:32.720
+!MESSAGE 18:17:32.719 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/ImageController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:32.746
+!MESSAGE 18:17:32.745 [pool-3-thread-179] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/config/CloudinaryConfiguration.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:32.873
+!MESSAGE 18:17:32.869 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/RoomController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:32.944
+!MESSAGE 18:17:32.922 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: 9
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.013
+!MESSAGE 18:17:33.011 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.277
+!MESSAGE 18:17:33.045 [pool-3-thread-181] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.390
+!MESSAGE 18:17:33.387 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/RoomController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.522
+!MESSAGE 18:17:33.459 [pool-3-thread-180] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.701
+!MESSAGE 18:17:33.583 [pool-3-thread-185] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.876
+!MESSAGE 18:17:33.875 [pool-5-thread-67] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.928
+!MESSAGE 18:17:33.926 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/RoomController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.951
+!MESSAGE 18:17:33.946 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 4ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:33.978
+!MESSAGE 18:17:33.953 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.051
+!MESSAGE 18:17:34.019 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.053
+!MESSAGE 18:17:34.019 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.214
+!MESSAGE 18:17:34.153 [pool-14-thread-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Invalidate AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.283
+!MESSAGE 18:17:34.282 [pool-3-thread-184] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.340
+!MESSAGE 18:17:34.291 [pool-3-thread-184] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.344
+!MESSAGE 18:17:34.343 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - change message work done in 4ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.450
+!MESSAGE 18:17:34.426 [pool-3-thread-184] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.612
+!MESSAGE 18:17:34.595 [pool-3-thread-184] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/HotelService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.677
+!MESSAGE 18:17:34.676 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.731
+!MESSAGE 18:17:34.729 [pool-14-thread-1] INFO  o.s.i.v.c.l.u.SimpleTextDocumentService - doc save event: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.824
+!MESSAGE 18:17:34.822 [pool-3-thread-183] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.843
+!MESSAGE 18:17:34.842 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/HotelRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.859
+!MESSAGE 18:17:34.846 [pool-3-thread-183] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/HotelRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:34.903
+!MESSAGE 18:17:34.901 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/HotelRepository.java done in 160ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.064
+!MESSAGE 18:17:34.912 [pool-3-thread-184] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [didSave event]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/RoomEntity.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.067
+!MESSAGE 18:17:35.058 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java done in 155ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.159
+!MESSAGE 18:17:35.157 [Reconciler-1] INFO  o.s.i.v.b.j.r.JdtReconciler - reconciling (JDT): file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/HotelService.java done in 96ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.256
+!MESSAGE 18:17:35.249 [pool-3-thread-184] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/HotelController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.270
+!MESSAGE 18:17:35.268 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/RoomEntity.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.307
+!MESSAGE 18:17:35.305 [pool-5-thread-66] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/RoomEntity.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.329
+!MESSAGE 18:17:35.313 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/RoomEntity.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.342
+!MESSAGE 18:17:35.340 [pool-3-thread-183] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/HotelService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.384
+!MESSAGE 18:17:35.374 [pool-3-thread-184] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.485
+!MESSAGE 18:17:35.483 [pool-3-thread-184] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/RoomEntity.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:35.500
+!MESSAGE 18:17:35.498 [pool-3-thread-183] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:41.785
+!MESSAGE 18:17:35.512 [pool-3-thread-184] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/RoomEntity.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:41.865
+!MESSAGE 18:17:41.820 [Simple-Language-Server main thread] INFO  o.s.i.v.b.j.s.StereotypeCatalogRegistry - stereotype catalog registry reset for project 'HoteAndRoomService'
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:41.873
+!MESSAGE 18:17:41.870 [pool-3-thread-181] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/HoteAndRoomServiceApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:41.968
+!MESSAGE 18:17:41.948 [pool-5-thread-67] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/RoomController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:41.981
+!MESSAGE 18:17:41.970 [pool-3-thread-186] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:41.988
+!MESSAGE 18:17:41.986 [pool-5-thread-71] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.003
+!MESSAGE 18:17:41.999 [pool-5-thread-72] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/entities/HotelEntity.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.033
+!MESSAGE 18:17:42.006 [pool-3-thread-194] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/HotelRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.041
+!MESSAGE 18:17:42.038 [pool-3-thread-197] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/HotelService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.054
+!MESSAGE 18:17:42.049 [pool-5-thread-76] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Started parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.153
+!MESSAGE 18:17:42.152 [pool-5-thread-76] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Parsed successfully CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.154
+!MESSAGE 18:17:42.153 [pool-5-thread-71] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.155
+!MESSAGE 18:17:42.153 [pool-3-thread-190] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.157
+!MESSAGE 18:17:42.153 [pool-3-thread-190] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.289
+!MESSAGE 18:17:42.280 [pool-3-thread-182] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/RoomController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:42.323
+!MESSAGE 18:17:42.303 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/repositories/RoomRepository.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:43.066
+!MESSAGE 18:17:42.341 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/RoomDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:43.069
+!MESSAGE 18:17:42.374 [Project-Reconciler-6] INFO  o.s.i.v.b.v.BootVersionValidationEngine - validating Spring Boot version on project: HoteAndRoomService done in 0ms
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:46.315
+!MESSAGE 18:17:46.265 [pool-3-thread-201] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:46.527
+!MESSAGE 18:17:46.265 [pool-3-thread-191] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:46.716
+!MESSAGE 18:17:46.265 [pool-3-thread-201] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:46.809
+!MESSAGE 18:17:46.265 [pool-3-thread-191] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:47.236
+!MESSAGE 18:17:47.235 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/META-INF/maven/com.example/HoteAndRoomService/pom.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:47.286
+!MESSAGE 18:17:47.239 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/META-INF/maven/com.example/HoteAndRoomService/pom.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:47.748
+!MESSAGE 18:17:47.746 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/HoteAndRoomServiceApplication.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:47.754
+!MESSAGE 18:17:47.753 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/controllers/RoomController.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:47.762
+!MESSAGE 18:17:47.761 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:47.769
+!MESSAGE 18:17:47.763 [Reconciler-1] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: end work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:47.769
+!MESSAGE 18:17:47.768 [pool-3-thread-191] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:49.117
+!MESSAGE 18:17:49.076 [Simple-Language-Server main thread] INFO  o.s.i.v.c.l.u.SimpleWorkspaceService - file changed event: 24
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:49.118
+!MESSAGE 18:17:49.117 [Simple-Language-Server main thread] INFO  o.s.i.v.boot.app.SpringSymbolIndex - Update document [file changed]: file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/target/classes/META-INF/maven/com.example/HoteAndRoomService/pom.properties
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:49.323
+!MESSAGE 18:17:49.226 [ForkJoinPool.commonPool-worker-43] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Removing and cleaning up name env for project file:/E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:49.601
+!MESSAGE 18:17:49.599 [pool-3-thread-185] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: work item submitted for doc file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:49.690
+!MESSAGE 18:17:49.689 [pool-3-thread-197] INFO  o.s.i.v.b.j.u.CompilationUnitCache - CU Cache: start work on AST for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/dto/HotelDto.java
+
+!ENTRY org.eclipse.lsp4e 4 0 2026-01-28 18:17:49.701
+!MESSAGE 18:17:49.701 [pool-5-thread-67] INFO  o.s.i.v.b.j.u.CompilationUnitCache - Finished parsing CU for file:///E:/cdac/Project/stayxpress/stayxpress/backend/HoteAndRoomService/src/main/java/com/stayxpress/hotelandroom/servicies/RoomService.java
