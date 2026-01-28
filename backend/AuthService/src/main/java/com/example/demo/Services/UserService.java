@@ -78,6 +78,9 @@ public class UserService {
 	
 	
 	public Map<String, String> authenticate(LoginDto user) {
+		
+		
+		
 		 Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 	        if (authentication.isAuthenticated()) {
 	        	String authority =authentication.getAuthorities()

@@ -69,10 +69,10 @@ let router = createBrowserRouter([
         index: true,
         element: <OwnerHomePage />,
       },
-      // {
-      //   path: "dashboard",
-      //   element: <OwnerDashboard />,
-      // },
+        // {
+        //   path: "dashboard",
+        //   element: <OwnerDashboard />,
+        // },
       {
         path: "add-hotel",
         element: <OwnerAddHotel />,
