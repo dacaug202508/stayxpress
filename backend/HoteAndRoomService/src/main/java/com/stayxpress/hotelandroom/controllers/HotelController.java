@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.stayxpress.hotelandroom.servicies.HotelService;
 
 @RestController
 @RequestMapping("/hotel")
+@CrossOrigin(origins = "http://localhost:5173")
 public class HotelController {
 
 	private final HotelService hotelservice;
@@ -127,4 +129,33 @@ public class HotelController {
 		}
 		
 	}
+	
+	
+	@GetMapping("/get-by-ownerid")
+	public ResponseEntity<Map<String, Object>> getHotelByUserId(@RequestParam Integer ownerId){
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		try {
+			
+			List<HotelEntity> hotel = hotelservice.findHotelByUserId(ownerId);
+			map.put("data", hotel );
+			
+			return ResponseEntity
+					.status(HttpStatus.OK)
+					.body(map);
+			
+		} catch (Exception e) {
+			map.put("error", e);
+			return ResponseEntity
+					.status(HttpStatus.BAD_GATEWAY)
+					.body(map);
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
 }

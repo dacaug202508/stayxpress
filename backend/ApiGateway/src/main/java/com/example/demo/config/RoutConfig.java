@@ -17,7 +17,8 @@ public class RoutConfig {
     @Bean
      RouteLocator createRoute(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route("AuthService",r-> 
+				.route("AuthService",
+						r-> 
 				r.path("/auth/**")
 //				.uri("http://localhost:8081/")
 				.uri("lb://AuthService"))
