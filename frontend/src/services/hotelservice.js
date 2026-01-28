@@ -60,8 +60,18 @@ export const getHotelsByOwnerId = async (ownerId) => {
   try {
     console.log(ownerId)
     const res = await axios.get(
-      `${BASE_URL}/get-by-ownerid?ownerId=${ownerId}`
+      `${BASE_URL}/by-userid/${ownerId}`
     );
+    return res;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export const getHotelsByCity = async (city) => {
+  try {
+
+    const res = await axios.get(`${BASE_URL}/getallhotels-bycity?city=${city}`);
     return res;
   } catch (error) {
     throw error;

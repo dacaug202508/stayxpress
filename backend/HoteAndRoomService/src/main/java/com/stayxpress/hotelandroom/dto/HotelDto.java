@@ -25,8 +25,31 @@ public class HotelDto {
 
 	    private HotelStatus status;
 	    private String imageUrl;
-
 	    
+	    
+	    public HotelDto() {}
+	    
+
+	    public HotelDto(Integer id,
+                Integer ownerId,
+                String hotelName,
+                String description,
+                String address,
+                String city,
+                String country,
+                HotelStatus status,
+                String imageUrl) {
+    this.id = id;
+    this.ownerId = ownerId;
+    this.hotelName = hotelName;
+    this.description = description;
+    this.address = address;
+    this.city = city;
+    this.country = country;
+    this.status = status;
+    this.imageUrl = imageUrl;
+}
+
 	    
 
 		public String getImageUrl() {
@@ -37,9 +60,9 @@ public class HotelDto {
 			this.imageUrl = imageUrl;
 		}
 
-		public void setOwnerId(Integer ownerId) {
-			this.ownerId = ownerId;
-		}
+//		public void setOwnerId(Integer ownerId) {
+//			this.ownerId = ownerId;
+//		}
 
 		public Integer getId() {
 			return id;

@@ -163,7 +163,21 @@ public class RoomController {
 	    }
 	}
 
-	
+	@GetMapping("/get-room-byid")
+	public ResponseEntity<?> getRoomWithImage(@RequestParam Integer roomId) {
+	    try {
+	        RoomDto room = roomservice.getRoomsByRoomlId(roomId);
+
+	        return ResponseEntity
+	                .status(HttpStatus.OK)
+	                .body(room);
+
+	    } catch (Exception e) {
+	        return ResponseEntity
+	                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+	                .body(e.getMessage());
+	    }
+	}
 	
 	
 	

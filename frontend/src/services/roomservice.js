@@ -9,7 +9,7 @@ export const getAllRooms = async () => {
 
 // ✅ Get room by ID
 export const getRoomById = async (roomId) => {
-  return axios.get(`${ROOM_BASE_URL}/get-room/${roomId}`);
+  return axios.get(`${ROOM_BASE_URL}/get-room-byid?roomId=${roomId}`);
 };
 
 // ✅ Save room
@@ -32,3 +32,5 @@ export const getRoomsByHotelId = async (hotelid) => {
   console.log(hotelid)
   return axios.get(`${ROOM_BASE_URL}/get-room-by-hotel?hotelid=${hotelid}`)
 }
+
+

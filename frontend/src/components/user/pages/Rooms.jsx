@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getRoomsByHotelId } from "../../../services/roomservice";
 
 function OwnerBooking() {
@@ -37,8 +37,10 @@ function OwnerBooking() {
       updated_at: "2026-01-22",
     },
   ]);
-  const [rooms, setRooms] = useState([]);
 
+  let { hotelId } = useParams();
+  const [rooms, setRooms] = useState([]);
+  let navigate = useNavigate();
   useEffect(() => {
     (async () => {
       try {
@@ -159,7 +161,7 @@ function OwnerBooking() {
                 <div className="mt-auto pt-4">
                   <button
                     disabled={!room.isActive}
-                    onClick={() => console.log("Booking room:", room)}
+                    onClick={() => navigate(`/user/rooms/${room.id}`)}
                     className={`w-full py-2 rounded-lg font-semibold transition ${
                       room.isActive
                         ? "bg-sky-600 text-white hover:bg-sky-700"

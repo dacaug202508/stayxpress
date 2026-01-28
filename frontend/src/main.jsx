@@ -16,9 +16,6 @@ import OwnerEditRoom from "./components/owner/pages/OwnerEditRoom.jsx";
 import OwnerHotelInfo from "./components/owner/pages/OwnerHotelInfo.jsx";
 import OwnerUpdateHotel from "./components/owner/pages/OwnerUpdateHotel.jsx";
 import OwnerBooking from "./components/owner/pages/OwnerBooking.jsx";
-  
-
-
 
 import { Provider } from "react-redux";
 import UserLayout from "./components/user/common/UserLayout.jsx";
@@ -47,6 +44,7 @@ import UserBookings from "./components/user/pages/Booking.jsx";
 import BookingDetails from "./components/user/pages/BookingDetails.jsx";
 import RoomsPage from "./components/user/pages/Rooms.jsx";
 import HotelDetails from "./components/user/pages/HotelDetails.jsx";
+import RoomDetails from "./components/user/pages/RoomDetails.jsx";
 
 let router = createBrowserRouter([
   {
@@ -84,10 +82,10 @@ let router = createBrowserRouter([
         index: true,
         element: <OwnerHomePage />,
       },
-        // {
-        //   path: "dashboard",
-        //   element: <OwnerDashboard />,
-        // },
+      // {
+      //   path: "dashboard",
+      //   element: <OwnerDashboard />,
+      // },
       {
         path: "dashboard",
         element: <OwnerDashboard />,
@@ -96,7 +94,7 @@ let router = createBrowserRouter([
         path: "add-hotel",
         element: <OwnerAddHotel />,
       },
-       {
+      {
         path: "update-hotel/:id",
         element: <OwnerUpdateHotel />,
       },
@@ -116,7 +114,7 @@ let router = createBrowserRouter([
         path: "upload-info",
         element: <OwnerHotelInfo />,
       },
-       {
+      {
         path: "view-bookings",
         element: <OwnerBooking />,
       },
@@ -138,6 +136,7 @@ let router = createBrowserRouter([
         path: "profile",
         element: <UserProfile />,
       },
+
       {
         path: "compare",
         element: <RoomCompare />,
@@ -162,7 +161,10 @@ let router = createBrowserRouter([
         path: "hotels/:hotelId/rooms",
         element: <RoomsPage />,
       },
-       
+      {
+        path: "rooms/:roomId",
+        element: <RoomDetails />,
+      },
     ],
   },
   {

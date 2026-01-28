@@ -511,3 +511,39 @@ Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was
 2026-01-28 17:47:05,292 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2026-01-28 17:47:05,362 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2026-01-28 17:47:05,366 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\MainProject\stayxpress\backend\HoteAndRoomService\src\test\resources
+2026-01-28 18:47:11,076 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-01-28 18:47:33,235 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ApiGateway:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\ApiGateway\pom.xml.
+2026-01-28 18:47:40,739 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:47:40,808 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:47:40,813 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\ApiGateway\src\test\resources
+2026-01-28 18:47:43,130 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:AuthService:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\AuthService\pom.xml.
+2026-01-28 18:47:47,434 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:47:47,469 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:47:47,477 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\AuthService\src\test\resources
+2026-01-28 18:47:48,892 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:DiscoveryService:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\DiscoveryService\pom.xml.
+2026-01-28 18:47:52,427 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:47:52,460 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:47:52,468 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\DiscoveryService\src\test\resources
+2026-01-28 18:47:55,472 [Worker-7: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:HoteAndRoomService:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\pom.xml.
+2026-01-28 18:47:59,218 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:47:59,244 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:47:59,254 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\test\resources
+2026-01-28 18:48:02,852 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:AuthService:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\AuthService\pom.xml.
+2026-01-28 18:48:04,612 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:ApiGateway:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\ApiGateway\pom.xml.
+2026-01-28 18:48:04,718 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:48:04,747 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:48:04,756 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\test\resources
+2026-01-28 18:48:06,170 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:HoteAndRoomService:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\pom.xml.
+2026-01-28 18:48:07,084 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:DiscoveryService:0.0.1-SNAPSHOT @ E:\cdac\Project\stayxpress\stayxpress\backend\DiscoveryService\pom.xml.
+2026-01-28 18:48:58,822 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:48:58,855 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:48:58,861 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\test\resources
+2026-01-28 18:49:31,988 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:49:32,126 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:49:32,560 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\test\resources
+2026-01-28 18:49:52,627 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:49:52,667 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:49:52,672 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\test\resources
+2026-01-28 18:51:17,892 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-01-28 18:51:17,926 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-01-28 18:51:17,928 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\cdac\Project\stayxpress\stayxpress\backend\HoteAndRoomService\src\test\resources

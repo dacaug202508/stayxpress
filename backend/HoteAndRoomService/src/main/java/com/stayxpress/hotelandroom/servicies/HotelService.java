@@ -123,4 +123,33 @@ public class HotelService {
 	}
 	
 	
+	
+	public List<HotelDto> findHotelsByCity(String city){
+		List<Object[]> rows = hotelrepo.findByCityIgnoreCase(city);
+
+	    List<HotelDto> hotels = new ArrayList<>();
+
+	    for (Object[] row : rows) {
+	        HotelDto dto = new HotelDto();
+	        dto.setId((Integer) row[0]);
+	        dto.setOwnerId((Integer) row[1]);
+	        dto.setHotelName((String) row[2]);
+	        dto.setDescription((String) row[3]);
+	        dto.setAddress((String) row[4]);
+	        dto.setCity((String) row[5]);
+	        dto.setCountry((String) row[6]);
+	        dto.setStatus((HotelStatus) row[7]);
+	        dto.setImageUrl((String) row[8]);
+
+	        hotels.add(dto);
+	    }
+
+	    return hotels;
+	}
+	
+	public List<HotelDto> getHotelsByOwnerId(Integer ownerId) {
+	    return hotelrepo.findHotelsByOwnerIdWithImage(ownerId);
+	}
+
+	
 }

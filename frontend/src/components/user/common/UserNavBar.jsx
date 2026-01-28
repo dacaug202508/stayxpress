@@ -30,13 +30,6 @@ function UserNavBar() {
 
       {/* RIGHT SECTION */}
       <div className="flex items-center gap-2">
-        {/* SEARCH INPUT */}
-        <input
-          type="text"
-          placeholder="Search"
-          className="input input-bordered w-24 md:w-auto"
-        />
-
         {/* AVATAR DROPDOWN */}
         <div className="dropdown dropdown-end">
           <div

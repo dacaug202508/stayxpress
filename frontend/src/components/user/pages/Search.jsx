@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SearchForm from "../common/searchForm";
-import { getAllHotels } from "../../../services/hotelservice";
+import { getAllHotels, getHotelsByCity } from "../../../services/hotelservice";
+import { useDebounce } from "use-debounce";
 
 export default function SearchPage() {
   const today = new Date().toISOString().split("T")[0];
@@ -25,6 +26,8 @@ export default function SearchPage() {
     breakfast: false,
   });
 
+  const [value] = useDebounce(searchData.location, 1000);
+
   const [hotels, setHotels] = useState([
     {
       id: 0,
@@ -39,11 +42,19 @@ export default function SearchPage() {
 
   useEffect(() => {
     (async () => {
-      let res = await getAllHotels();
-      console.log(res.data)
-      setHotels(res.data);
+      // console.log(searchData.location == "");
+
+      if (value != "") {
+        handleSearch();
+      }
+
+      if (value == "") {
+        let res = await getAllHotels();
+        console.log(res.data);
+        setHotels(res.data);
+      }
     })();
-  }, []);
+  }, [value]);
 
   // 🔹 Handlers
   const handleInputChange = (e) => {
@@ -56,9 +67,11 @@ export default function SearchPage() {
     setFilters((prev) => ({ ...prev, [name]: checked }));
   };
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     console.log("Search Data:", searchData);
     console.log("Selected Filters:", filters);
+    let res = await getHotelsByCity(value);
+    setHotels(res.data);
   };
 
   return (

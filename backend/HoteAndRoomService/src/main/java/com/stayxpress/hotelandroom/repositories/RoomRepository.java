@@ -15,9 +15,9 @@ import com.stayxpress.hotelandroom.entities.RoomEntity;
 @Repository
 public interface RoomRepository extends JpaRepository<RoomEntity, Integer> {
 
-<<<<<<< HEAD
+
 	 List<RoomEntity> findByHotelId(Integer hotelId);
-=======
+
 	List<RoomEntity> findByHotel(HotelEntity hotel);
 
 	@Query("""
@@ -41,7 +41,27 @@ public interface RoomRepository extends JpaRepository<RoomEntity, Integer> {
 			""")
 			List<RoomDto> getRoomsByHotelWithImages(@Param("hotelId") Integer hotelId);
 
+	@Query("""
+			SELECT new com.stayxpress.hotelandroom.dto.RoomDto(
+			    r.id,
+			    r.hotel.id,
+			    r.roomNumber,
+			    r.roomType,
+			    r.description,
+			    r.pricePerNight,
+			    r.maxGuests,
+			    r.isActive,
+			    img.imageUrl
+			)
+			FROM RoomEntity r
+			LEFT JOIN ImageEntity img
+			       ON img.entityId = r.id
+			       AND img.entityType = 'ROOM'
+			       AND img.isPrimary = true
+			WHERE r.id = :roomId
+			""")
+			RoomDto getRoomByWithImages(@Param("roomId") Integer roomId);
 
->>>>>>> vaibhav
-	
+
+
 }

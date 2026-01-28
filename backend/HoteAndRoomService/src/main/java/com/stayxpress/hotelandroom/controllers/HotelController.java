@@ -38,6 +38,12 @@ public class HotelController {
 		return hotelservice.getAllHotels();
 	}
 	
+	@GetMapping("/getallhotels-bycity")
+	public List<HotelDto> getAllHotelsByCity (@RequestParam String city){
+		return hotelservice.findHotelsByCity(city);
+	}
+	
+	
 	
 	@PostMapping("/save-hotel")
 	public ResponseEntity<Map<String, Object>> saveHotel(@RequestBody HotelDto hotel){
@@ -153,9 +159,19 @@ public class HotelController {
 		
 	}
 	
-	
-	
-	
+	@GetMapping("/by-userid/{userId}")
+	public ResponseEntity<Map<String, Object>> findHotelsByOwnerID(@PathVariable Integer userId) {
+
+	    List<HotelDto> hotels = hotelservice.getHotelsByOwnerId(userId);
+
+	    return ResponseEntity.ok(Map.of(
+	            "success", true,
+	            "count", hotels.size(),
+	            "data", hotels
+	    ));
+	}
+
+
 	
 	
 }

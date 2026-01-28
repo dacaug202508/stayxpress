@@ -13,6 +13,7 @@ function SearchForm({ search, handleChange, handleSearch }) {
           placeholder="Where are you going?"
           value={search.location}
           onChange={handleChange}
+          required
           className="border border-sky-200 rounded-lg p-3 focus:ring-2 focus:ring-sky-400 md:col-span-2"
         />
 

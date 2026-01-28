@@ -29,7 +29,7 @@ function HomePage() {
   };
 
   const handleSearch = () => {
-    console.log("🏠 Home Search Data:", search);
+    console.log(" Home Search Data:", search);
     navigate("/user/search", {
       state: search,
     });

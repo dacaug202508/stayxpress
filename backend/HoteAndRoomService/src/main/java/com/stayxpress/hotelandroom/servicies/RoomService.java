@@ -59,6 +59,7 @@ public class RoomService {
 			updatedRoom.setIsActive(room.getIsActive());
 			updatedRoom.setRoomType(room.getRoomType());
 			updatedRoom.setHotel(hotel);
+			updatedRoom.setDescription(room.getDescription());
 			return roomrepo.save(updatedRoom);
 		} catch (Exception e) {
 			throw e;
@@ -95,9 +96,7 @@ public class RoomService {
 			throw e;
 		}
 	}
-<<<<<<< HEAD
-	 
-=======
+
 
 
 	public List<RoomEntity> getRoomByHotelId(Integer hotelid) {
@@ -108,8 +107,7 @@ public class RoomService {
 			throw e;
 		}
 	}
->>>>>>> vaibhav
-	
+
 
 	public List<RoomEntity> getRoomsByHotelId(Integer hotelId) {
 	    return roomrepo.findByHotelId(hotelId);
@@ -118,7 +116,10 @@ public class RoomService {
 	
 	
 	
-	
+	public RoomDto getRoomsByRoomlId(Integer roomId) {
+	    return roomrepo.getRoomByWithImages(roomId);
+	}
+
 	
 	
 	
