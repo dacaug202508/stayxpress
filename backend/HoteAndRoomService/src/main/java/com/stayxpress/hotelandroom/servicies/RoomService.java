@@ -25,12 +25,13 @@ public class RoomService {
 	}
 	
 	
-	public List<RoomEntity> getAllRooms() throws Exception {
-		try {
-			return roomrepo.findAll();
-		} catch (Exception e) {
-			throw e;
-		}
+	public List<RoomDto> getAllRooms(Integer hotelId) throws Exception {
+
+		List<RoomDto> rooms =roomrepo.getRoomsByHotelWithImages(hotelId);
+
+        
+
+        return rooms;
 	}
 	
 	
@@ -76,6 +77,7 @@ public class RoomService {
 			savedRoom.setPricePerNight(room.getPricePerNight());
 			savedRoom.setMaxGuests(room.getMaxGuests());
 			savedRoom.setIsActive(room.getIsActive());
+			savedRoom.setDescription(room.getDescription());
 			savedRoom.setRoomType(room.getRoomType());
 			return roomrepo.save(savedRoom);
 		} catch (Exception e) {
@@ -89,6 +91,16 @@ public class RoomService {
 	public void deleteRoomById(Integer id) {
 		try {
 			roomrepo.deleteById(id);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+
+	public List<RoomEntity> getRoomByHotelId(Integer hotelid) {
+		try {
+			HotelEntity hotel = hotelrepo.findById(hotelid).orElse(null);
+			return roomrepo.findByHotel(hotel);
 		} catch (Exception e) {
 			throw e;
 		}

@@ -26,3 +26,9 @@ export const updateRoom = async (room) => {
 export const deleteRoom = async (roomId) => {
   return axios.delete(`${ROOM_BASE_URL}/delete-room?id=${roomId}`);
 };
+
+
+export const getRoomsByHotelId = async (hotelid) => {
+  console.log(hotelid)
+  return axios.get(`${ROOM_BASE_URL}/get-room-by-hotel?hotelid=${hotelid}`)
+}

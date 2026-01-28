@@ -1,7 +1,7 @@
 import React from "react";
 import CompareCard from "./CompareCard";
 
-function CompareGrid() {
+function CompareGrid({room1, room2}) {
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
       <div
@@ -13,8 +13,8 @@ function CompareGrid() {
           justify-items-center
         "
       >
-        <CompareCard />
-        <CompareCard />
+        <CompareCard room={room1} />
+        <CompareCard room={room2}/>
       </div>
     </div>
   );

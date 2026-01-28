@@ -7,14 +7,45 @@ public class RoomDto {
 	Integer hotelId;
 	String roomNumber;
 	Double pricePerNight;
+	String description;
 	Integer maxGuests;
 	Boolean isActive;
 	RoomType roomType;
+	String image;
+	
+	
 	
 	
 	
 
-	
+	public RoomDto(Integer id,
+            Integer hotelId,
+            String roomNumber,
+            RoomType roomType,
+            String description,
+            Double pricePerNight,
+            Integer maxGuests,
+            Boolean isActive,
+            String imageUrl) {
+		 this.id = id;
+		 this.hotelId = hotelId;
+		 this.roomNumber = roomNumber;
+		 this.roomType = roomType;
+		 this.description = description;
+		 this.pricePerNight = pricePerNight;
+		 this.maxGuests = maxGuests;
+		 this.isActive = isActive;
+		 this.image = imageUrl;
+}
+
+
+public RoomDto() {}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public RoomType getRoomType() {
 		return roomType;
 	}
@@ -57,5 +88,15 @@ public class RoomDto {
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
 	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	
 	
 }

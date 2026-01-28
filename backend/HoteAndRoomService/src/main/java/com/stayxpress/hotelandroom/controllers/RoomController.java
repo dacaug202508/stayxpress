@@ -34,11 +34,11 @@ public class RoomController {
 		
 	}
 	
-	@GetMapping("/get-all-rooms")
-	public ResponseEntity<?> getAllRooms(){
+	@GetMapping("/get-room-by-hotel")
+	public ResponseEntity<?> getAllRooms(@RequestParam Integer hotelid){
 		try {
 			
-			List<RoomEntity> rooms = roomservice.getAllRooms();			
+			List<RoomDto> rooms = roomservice.getAllRooms(hotelid);			
 			return ResponseEntity
 					.status(HttpStatus.OK)
 					.body(rooms);
@@ -73,6 +73,26 @@ public class RoomController {
 	}
 	
 	
+//	@GetMapping("/get-room-by-hotel")
+//	public ResponseEntity<?> getRoomByHotelId(@RequestParam Integer hotelid){
+//		try {
+//			Map<String, Object> map = new HashMap<>();
+//			
+//			
+//			List<RoomEntity> rooms = roomservice.getRoomByHotelId(hotelid);
+//			map.put("rooms", rooms);
+//			
+//			return ResponseEntity
+//					.status(HttpStatus.OK)
+//					.body(map);
+//					
+//		} catch (Exception e) {
+//			return ResponseEntity
+//			.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//			.body(e);
+//		}
+//	}
+//	
 	
 	@PostMapping("/save-room")
 	public ResponseEntity<?> saveRoom(@RequestBody RoomDto room){
