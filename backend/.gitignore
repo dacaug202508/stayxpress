@@ -67,3 +67,9 @@ target/
 *.tmp
 *.swp
 *.bak
+
+# Eclipse
+**/.metadata/
+
+# Logs
+**/*.log
