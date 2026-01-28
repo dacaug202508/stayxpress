@@ -1,8 +1,5 @@
 package com.example.demo.entities;
 
-import com.stayxpress.hotelandroom.entities.ROLES;
-import com.stayxpress.hotelandroom.entities.STATUS;
-
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

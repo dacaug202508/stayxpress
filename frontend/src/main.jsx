@@ -12,6 +12,14 @@ import OwnerDashboard from "./components/owner/pages/OwnerDashboard.jsx";
 import OwnerAddHotel from "./components/owner/pages/OwnerAddHotel.jsx";
 import OwnerAddRoom from "./components/owner/pages/OwnerAddRoom.jsx";
 import OwnerRoomAndPrice from "./components/owner/pages/OwnerRoomAndPrice.jsx";
+import OwnerEditRoom from "./components/owner/pages/OwnerEditRoom.jsx";
+import OwnerHotelInfo from "./components/owner/pages/OwnerHotelInfo.jsx";
+import OwnerUpdateHotel from "./components/owner/pages/OwnerUpdateHotel.jsx";
+import OwnerBooking from "./components/owner/pages/OwnerBooking.jsx";
+  
+
+
+
 import { Provider } from "react-redux";
 import UserLayout from "./components/user/common/UserLayout.jsx";
 
@@ -32,7 +40,6 @@ import ManageHotelOwner from "./components/admin/pages/ManageHotelOwner.jsx";
 import AdminHotels from "./components/admin/pages/AdminHotels.jsx";
 
 import RoomCompare from "./components/user/pages/RoomCompare.jsx";
-import OwnerEditRoom from "./components/owner/pages/OwnerEditRoom.jsx";
 import UserProfile from "./components/user/pages/UserProfile.jsx";
 import SearchPage from "./components/user/pages/Search.jsx";
 import HomePage from "./components/user/pages/Home.jsx";
@@ -89,6 +96,10 @@ let router = createBrowserRouter([
         path: "add-hotel",
         element: <OwnerAddHotel />,
       },
+       {
+        path: "update-hotel/:id",
+        element: <OwnerUpdateHotel />,
+      },
       {
         path: "add-room",
         element: <OwnerAddRoom />,
@@ -100,6 +111,14 @@ let router = createBrowserRouter([
       {
         path: "edit-room/:roomId",
         element: <OwnerEditRoom />,
+      },
+      {
+        path: "upload-info",
+        element: <OwnerHotelInfo />,
+      },
+       {
+        path: "view-bookings",
+        element: <OwnerBooking />,
       },
     ],
   },
@@ -143,6 +162,7 @@ let router = createBrowserRouter([
         path: "hotels/:hotelId/rooms",
         element: <RoomsPage />,
       },
+       
     ],
   },
   {
