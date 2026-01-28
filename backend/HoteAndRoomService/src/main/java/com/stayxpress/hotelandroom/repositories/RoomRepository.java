@@ -13,9 +13,6 @@ import com.stayxpress.hotelandroom.entities.RoomEntity;
 @Repository
 public interface RoomRepository extends JpaRepository<RoomEntity, Integer> {
 
-
-
-
-
+	 List<RoomEntity> findByHotelId(Integer hotelId);
 	
 }

@@ -26,3 +26,10 @@ export const updateRoom = async (room) => {
 export const deleteRoom = async (roomId) => {
   return axios.delete(`${ROOM_BASE_URL}/delete-room?id=${roomId}`);
 };
+
+// 🆕 Get rooms by hotel ID (REQUIRED for dropdown filter)
+export const getRoomsByHotelId = async (hotelId) => {
+  return axios.get(
+    `${ROOM_BASE_URL}/get-by-hotel?hotelId=${hotelId}`
+  );
+};

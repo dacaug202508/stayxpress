@@ -1,93 +1,80 @@
 import React, { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { getAllRooms, deleteRoom } from "../../../services/roomservice";
+import Button from "../resuable/Button";
+import { getHotelsByOwnerId } from "../../../services/hotelservice";
+import { getRoomsByHotelId, deleteRoom } from "../../../services/roomservice";
 
 function OwnerRoomAndPrice() {
+  const ownerId = 1; // 🔴 later from auth
 
-  // ✅ STATE
-  const [rooms, setRooms] = useState([
-    {      
+  // 🔹 STATE
+  const [hotels, setHotels] = useState([]);
+  const [selectedHotelId, setSelectedHotelId] = useState("");
+  const [rooms, setRooms] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-   id: 10,
-   isActive: true,
-   maxGuests: 2,
-    pricePerNight: 3500,
-    roomNumber: "102",
-    roomType: "DOUBLE",
-   hotel: {
-      address: "Address 2",
-      city: "Delhi",
-      country: "India",
-      createdAt: "2026-01-24T12:19:55",
-      description: "Business hotel",
-      hotelName: "Hotel Two",
-      id: 2,
-      status: "ACTIVE"
-
-   } 
-
-    }
-  ]);
-
-  // ✅ FETCH ROOMS (DECLARED FIRST)
-  // const fetchRooms = async () => {
-  //   try {
-  //     const response = await getAllRooms();
-  //     setRooms(response.data);
-  //   } catch (error) {
-  //     console.error("Error fetching rooms:", error);
-  //   }
-  // ]);
-
-  // ✅ FETCH ROOMS (DECLARED FIRST)
-  // const fetchRooms = async () => {
-  //   try {
-  //     const response = await getAllRooms();
-  //     setRooms(response.data);
-  //   } catch (error) {
-  //     console.error("Error fetching rooms:", error);
-  //   }
-  // };
-
-  // ✅ ON PAGE LOAD
+  // 🔹 Load owner hotels
   useEffect(() => {
-
-    (
-      async () => {
-         try {
-      const response = await getAllRooms();
-      console.log(response.data)
-      console.log(response.data[0].isActive)
-      setRooms(response.data);
-    } catch (error) {
-      console.error("Error fetching rooms:", error);
-    }
-      }
-    )()
-
-
-
+    fetchHotels();
   }, []);
 
-  // ✅ DELETE ROOM
-  // const handleDelete = async (id) => {
-  //   if (window.confirm("Are you sure you want to delete this room?")) {
-  //     try {
-  //       await deleteRoom(id);
-  //       fetchRooms(); // refresh list
-  //     } catch (error) {
-  //       console.error("Error deleting room:", error);
-  //     }
-  //   }
-  // };
+  // 🔹 Fetch Hotels (FIXED)
+  const fetchHotels = async () => {
+    try {
+      const res = await getHotelsByOwnerId(ownerId);
 
+      // ✅ hotel API returns { data: [...] }
+      setHotels(Array.isArray(res.data?.data) ? res.data.data : []);
+    } catch (error) {
+      console.error("Error fetching hotels", error);
+      setHotels([]);
+    }
+  };
 
+  // 🔹 Load rooms by hotel (FIXED)
+  const fetchRoomsByHotel = async (hotelId) => {
+    try {
+      setLoading(true);
+      const res = await getRoomsByHotelId(hotelId);
+
+      // ✅ room API returns []
+      setRooms(Array.isArray(res.data) ? res.data : []);
+    } catch (error) {
+      console.error("Error fetching rooms", error);
+      setRooms([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 🔹 Dropdown change
+  const handleHotelChange = (e) => {
+    const hotelId = e.target.value;
+    setSelectedHotelId(hotelId);
+
+    if (hotelId) {
+      fetchRoomsByHotel(hotelId);
+    } else {
+      setRooms([]);
+    }
+  };
+
+  // 🔹 Delete room + refresh
+  const handleDelete = async (roomId) => {
+    try {
+      await deleteRoom(roomId);
+      if (selectedHotelId) {
+        fetchRoomsByHotel(selectedHotelId);
+      }
+    } catch (error) {
+      console.error("Error deleting room", error);
+    }
+  };
 
   return (
     <div className="w-full space-y-6">
-
-      {/* PAGE HEADER */}
+      {/* HEADER */}
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-800">
           Rooms & Pricing
@@ -98,19 +85,32 @@ function OwnerRoomAndPrice() {
         </Link>
       </div>
 
-      {/* TABLE CARD */}
+      {/* 🔽 HOTEL DROPDOWN */}
+      <div className="w-72">
+        <select
+          className="select select-bordered w-full"
+          value={selectedHotelId}
+          onChange={handleHotelChange}
+        >
+          <option value="">Select Hotel</option>
+          {hotels.map((hotel) => (
+            <option key={hotel.id} value={hotel.id}>
+              {hotel.hotelName}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* TABLE */}
       <div className="card bg-base-100 shadow-md">
         <div className="card-body p-0">
-
           <div className="overflow-x-auto">
             <table className="table">
-
-              {/* TABLE HEAD */}
               <thead className="bg-gray-50">
                 <tr>
                   <th>#</th>
                   <th>Hotel</th>
-                  <th>Room ID</th>
+                  <th>Room No</th>
                   <th>Room Type</th>
                   <th>Price / Night</th>
                   <th>Status</th>
@@ -118,38 +118,36 @@ function OwnerRoomAndPrice() {
                 </tr>
               </thead>
 
-              {/* TABLE BODY */}
               <tbody>
-                {rooms.length > 0 ? (
+                {loading ? (
+                  <tr>
+                    <td colSpan="7" className="text-center py-6">
+                      Loading rooms...
+                    </td>
+                  </tr>
+                ) : rooms.length > 0 ? (
                   rooms.map((room, index) => (
-                    <tr key={room.id} className="hover">
+                    <tr key={room.id}>
                       <th>{index + 1}</th>
-                      <td>{room.hotel.hotelName}</td>
+                      <td>{room.hotel?.hotelName || "-"}</td>
                       <td>{room.roomNumber}</td>
                       <td>{room.roomType}</td>
                       <td>₹{room.pricePerNight}</td>
-
-
-                     <td>
+                      <td>
                         <span
                           className={`badge badge-outline ${
-                            room.isActive 
+                            room.isActive
                               ? "badge-success"
                               : "badge-warning"
                           }`}
                         >
                           {room.isActive ? "Active" : "Inactive"}
                         </span>
-                      </td> 
+                      </td>
 
-                      {/* ACTION DROPDOWN */}
                       <td>
                         <div className="dropdown dropdown-bottom">
-                          <div
-                            tabIndex={0}
-                            role="button"
-                            className="btn btn-ghost btn-sm"
-                          >
+                          <div tabIndex={0} className="btn btn-ghost btn-sm">
                             <BsThreeDotsVertical />
                           </div>
 
@@ -161,7 +159,7 @@ function OwnerRoomAndPrice() {
                             </li>
                             <li>
                               <button
-                                // onClick={() => handleDelete(room.id)}
+                                onClick={() => handleDelete(room.id)}
                                 className="text-red-500"
                               >
                                 Delete
@@ -170,32 +168,23 @@ function OwnerRoomAndPrice() {
                           </ul>
                         </div>
                       </td>
-
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="7" className="text-center py-6 text-gray-500">
-                      No rooms found
+                    <td
+                      colSpan="7"
+                      className="text-center py-6 text-gray-500"
+                    >
+                      Select a hotel to view rooms
                     </td>
                   </tr>
                 )}
               </tbody>
-
             </table>
           </div>
         </div>
       </div>
-
-      {/* PAGINATION (UI ONLY) */}
-      <div className="flex justify-center">
-        <div className="join">
-          <button className="join-item btn">«</button>
-          <button className="join-item btn">Page 1</button>
-          <button className="join-item btn">»</button>
-        </div>
-      </div>
-
     </div>
   );
 }

@@ -33,11 +33,14 @@ public class HotelDto {
 			this.id = id;
 		}
 
+
+		
+
 		public Integer getOwnerId() {
 			return ownerId;
 		}
 
-		public void setOwner(Integer ownerId) {
+		public void setOwnerId(Integer ownerId) {
 			this.ownerId = ownerId;
 		}
 

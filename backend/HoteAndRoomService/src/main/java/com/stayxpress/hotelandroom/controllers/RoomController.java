@@ -127,7 +127,22 @@ public class RoomController {
 	}
 	
 	
-	
+	@GetMapping("/get-by-hotel")
+	public ResponseEntity<?> getRoomsByHotel(@RequestParam Integer hotelId) {
+	    try {
+	        List<RoomEntity> rooms = roomservice.getRoomsByHotelId(hotelId);
+
+	        return ResponseEntity
+	                .status(HttpStatus.OK)
+	                .body(rooms);
+
+	    } catch (Exception e) {
+	        return ResponseEntity
+	                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+	                .body(e.getMessage());
+	    }
+	}
+
 	
 	
 	
