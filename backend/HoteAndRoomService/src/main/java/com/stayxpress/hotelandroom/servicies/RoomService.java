@@ -93,7 +93,13 @@ public class RoomService {
 			throw e;
 		}
 	}
+	 
 	
+
+	public List<RoomEntity> getRoomsByHotelId(Integer hotelId) {
+	    return roomrepo.findByHotelId(hotelId);
+	}
+
 	
 	
 	
