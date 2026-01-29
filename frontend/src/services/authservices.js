@@ -11,9 +11,10 @@ async function registerUser(user) {
 }
 
 async function loginUser(user) {
-    // eslint-disable-next-line no-useless-catch
+    console.log(user)
     try {
         const res = await axios.post("http://localhost:8080/auth/login", user);
+        // console.log(res)
         return res;
     } catch (error) {
         throw error;
@@ -34,7 +35,7 @@ async function getClaimsFromJwt(token, username) {
         throw error;
     }
 }
- 
+
 
 
 export { registerUser, loginUser, getClaimsFromJwt };

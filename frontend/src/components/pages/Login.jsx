@@ -7,6 +7,7 @@ import { AUTHROLES, login } from "../../store/authSlice";
 import { getClaimsFromJwt, loginUser } from "../../services/authservices";
 import { myToast, myWarningToast } from "../../utils/toast";
 import { useForm } from "react-hook-form";
+import { jwtDecode } from "jwt-decode";
 
 function Login() {
   const dispatch = useDispatch();
@@ -23,23 +24,27 @@ function Login() {
   const onSubmit = async (data) => {
     try {
       const res = await loginUser(data);
-
+      console.log(res.data);
       const token = res.data?.token;
       const username = res.data?.user;
 
-      const claims = await getClaimsFromJwt(token, username);
-      const role = claims.data.roles.substring(1, claims.data.roles.length - 1);
+      const decoded = jwtDecode(token);
+      console.log(decoded.userId);
 
-      dispatch(login({ token, username, role }));
+      const roles = decoded.roles || [];
+      const userId = decoded.userId;
+      const role = roles[0];
+
+      dispatch(login({ token, username, role, userId }));
 
       switch (role) {
-        case AUTHROLES.OWNER:
+        case "ROLE_USER":
           navigate("/owner");
           break;
-        case AUTHROLES.ADMIN:
+        case "ROLE_ADMIN":
           navigate("/admin");
           break;
-        case AUTHROLES.USER:
+        case "ROLE_CUSTOMER":
           navigate("/");
           break;
         default:
@@ -82,7 +87,7 @@ function Login() {
                 {...register("username", {
                   required: "Username is required",
                   pattern: {
-                    value: /^[a-zA-Z0-9]+$/,
+                    // value: /^[a-zA-Z0-9]+$/,
                     message: "Only letters and numbers allowed",
                   },
                   minLength: {
@@ -119,7 +124,7 @@ function Login() {
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
-                    value: 6,
+                    // value: 6,
                     message: "Password must be at least 6 characters",
                   },
                 })}

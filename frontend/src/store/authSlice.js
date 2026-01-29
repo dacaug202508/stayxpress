@@ -1,21 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 let token = localStorage.getItem("token");
 let role = localStorage.getItem("role");
-let username = localStorage.getItem("user");
+let username = localStorage.getItem("username");
+let userId = localStorage.getItem("user_id");
 
-export let AUTHROLES = {
+export const AUTHROLES = {
   OWNER: "ROLE_OWNER",
   USER: "ROLE_CUSTOMER",
   ADMIN: "ROLE_ADMIN"
-}
+};
 
 const initialState = {
-  status: token ? true : false,
-  role: role ? role : "",
-  token: token ? token : null,
-  username: username ? username : ""
+  status: !!token,
+  role: role || "",
+  token: token || null,
+  username: username || "",
+  userId: userId ? Number(userId) : 0
 };
 
 const authSlice = createSlice({
@@ -23,24 +24,34 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      const { token, username, role } = action.payload;
+      const { token, username, role, userId } = action.payload;
 
       state.status = true;
       state.token = token;
       state.username = username;
-      state.role = role
+      state.role = role;
+      state.userId = userId;
 
-      localStorage.setItem("token", state.token);
-      localStorage.setItem("username", state.username);
-      localStorage.setItem("role", state.role);
+      localStorage.setItem("token", token);
+      localStorage.setItem("username", username);
+      localStorage.setItem("role", role);
+      localStorage.setItem("user_id", userId);
     },
 
     logout: (state) => {
+
       state.status = false;
       state.token = null;
+      state.username = "";
+      state.role = "";
+      state.userId = 0;
 
-      localStorage.clear();
-    },
+
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      localStorage.removeItem("role");
+      localStorage.removeItem("user_id");
+    }
   }
 });
 

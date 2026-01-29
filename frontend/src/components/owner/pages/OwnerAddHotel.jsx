@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import Button from "../../reusable/Button";
 import { saveHotel } from "../../../services/hotelservice";
 import { uploadImage } from "../../../services/imageservices";
+import { useSelector } from "react-redux";
 
 function OwnerAddHotel() {
+  let { userId } = useSelector((state) => state.auth);
+
   const init = {
     id: 0,
-    ownerId: 1, // dummy owner id (replace from auth later)
+    ownerId: userId,
     hotelName: "",
     description: "",
     address: "",
@@ -33,12 +36,10 @@ function OwnerAddHotel() {
 
     try {
       setLoading(true);
-      // 1️⃣ Save hotel first
       const hotelRes = await saveHotel(hotelData);
       const savedHotel = hotelRes.data.data;
       console.log("Saved Hotel:", savedHotel);
 
-      // 2️⃣ Upload image AFTER hotel is saved
       if (image) {
         console.log("image : " + image);
         const formData = new FormData();

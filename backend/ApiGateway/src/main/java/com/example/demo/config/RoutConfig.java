@@ -22,29 +22,12 @@ public class RoutConfig {
 				r.path("/auth/**")
 //				.uri("http://localhost:8081/")
 				.uri("lb://AuthService"))
-				.build();
+				.route("HotelAndRoomService",
+						r -> r.path("/hotel/**", "/room/**", "/image/**")
+						.uri("lb://HotelAndRoomService")
+						)			.build();
 	}
     
     
-    @Configuration
-    public class GatewayCorsConfig {
-
-        @Bean
-        public CorsWebFilter corsWebFilter() {
-            CorsConfiguration config = new CorsConfiguration();
-            config.setAllowCredentials(true);
-            config.setAllowedOrigins(List.of("http://localhost:5173"));
-            config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-            config.setAllowedHeaders(List.of("*"));
-
-            UrlBasedCorsConfigurationSource source =
-                    new UrlBasedCorsConfigurationSource();
-            source.registerCorsConfiguration("/**", config);
-
-            return new CorsWebFilter(source);
-        }
-    }
-
-	
-	
+    	
 }

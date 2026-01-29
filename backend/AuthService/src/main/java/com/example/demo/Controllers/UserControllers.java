@@ -73,20 +73,19 @@ public class UserControllers {
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody LoginDto user) {
 	    try {
-	    	System.out.println(user.getUsername());
-	    	System.out.println(user.getPassword());
+	        System.out.println("LOGIN ATTEMPT");
 	        Map<String, String> loginRes = userService.authenticate(user);
-	        return ResponseEntity.ok(loginRes); // 200
-	    } catch (BadCredentialsException e) {
+	        System.out.println("LOGIN RESPONSE = " + loginRes);
+	        return ResponseEntity.ok(loginRes);
+
+	    } catch (Exception e) {   // catch EVERYTHING
+	        e.printStackTrace();  // 🔥 IMPORTANT
 	        return ResponseEntity
-	                .status(HttpStatus.UNAUTHORIZED) // 401
-	                .body("Invalid username or password");
-	    } catch (Exception e) {
-	        return ResponseEntity
-	                .status(HttpStatus.INTERNAL_SERVER_ERROR) // 500
-	                .body("Something went wrong");
+	                .status(HttpStatus.UNAUTHORIZED)
+	                .body("Login failed: " + e.getClass().getSimpleName());
 	    }
 	}
+
 	
 	@GetMapping("/get-allclaims")
 	public ResponseEntity<?> getAllClaims(@RequestHeader String Authorization, @RequestParam String username)

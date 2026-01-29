@@ -1,30 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import Button from "../resuable/Button";
 import { getHotelsByOwnerId } from "../../../services/hotelservice";
 import { getRoomsByHotelId, deleteRoom } from "../../../services/roomservice";
+import { useSelector } from "react-redux";
 
 function OwnerRoomAndPrice() {
-  const ownerId = 1; // 🔴 later from auth
-
-  // 🔹 STATE
+  let state = useSelector((state) => state.auth);
+  console.log(state);
   const [hotels, setHotels] = useState([]);
   const [selectedHotelId, setSelectedHotelId] = useState("");
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // 🔹 Load owner hotels
   useEffect(() => {
     fetchHotels();
   }, []);
 
-  // 🔹 Fetch Hotels (FIXED)
   const fetchHotels = async () => {
     try {
-      const res = await getHotelsByOwnerId(ownerId);
-
-      // ✅ hotel API returns { data: [...] }
+      const res = await getHotelsByOwnerId(state.userId);
       setHotels(Array.isArray(res.data?.data) ? res.data.data : []);
     } catch (error) {
       console.error("Error fetching hotels", error);
@@ -32,13 +27,10 @@ function OwnerRoomAndPrice() {
     }
   };
 
-  // 🔹 Load rooms by hotel (FIXED)
   const fetchRoomsByHotel = async (hotelId) => {
     try {
       setLoading(true);
       const res = await getRoomsByHotelId(hotelId);
-
-      // ✅ room API returns []
       setRooms(Array.isArray(res.data) ? res.data : []);
     } catch (error) {
       console.error("Error fetching rooms", error);
@@ -48,25 +40,16 @@ function OwnerRoomAndPrice() {
     }
   };
 
-  // 🔹 Dropdown change
   const handleHotelChange = (e) => {
     const hotelId = e.target.value;
     setSelectedHotelId(hotelId);
-
-    if (hotelId) {
-      fetchRoomsByHotel(hotelId);
-    } else {
-      setRooms([]);
-    }
+    hotelId ? fetchRoomsByHotel(hotelId) : setRooms([]);
   };
 
-  // 🔹 Delete room + refresh
   const handleDelete = async (roomId) => {
     try {
       await deleteRoom(roomId);
-      if (selectedHotelId) {
-        fetchRoomsByHotel(selectedHotelId);
-      }
+      if (selectedHotelId) fetchRoomsByHotel(selectedHotelId);
     } catch (error) {
       console.error("Error deleting room", error);
     }
@@ -85,7 +68,7 @@ function OwnerRoomAndPrice() {
         </Link>
       </div>
 
-      {/* 🔽 HOTEL DROPDOWN */}
+      {/* HOTEL DROPDOWN */}
       <div className="w-72">
         <select
           className="select select-bordered w-full"
@@ -101,24 +84,30 @@ function OwnerRoomAndPrice() {
         </select>
       </div>
 
-      {/* TABLE */}
+      {/* TABLE CARD */}
       <div className="card bg-base-100 shadow-md">
         <div className="card-body p-0">
-          <div className="overflow-x-auto">
-            <table className="table">
-              <thead className="bg-gray-50">
+          <div className="flex items-center justify-between px-6 pt-4">
+            <h2 className="font-semibold text-gray-700">
+              {rooms.length} Room(s) Found
+            </h2>
+          </div>
+
+          <div className="overflow-x-auto h-screen ">
+            <table className="table table-zebra w-full">
+              <thead className="bg-base-200 text-gray-700 text-sm uppercase">
                 <tr>
-                  <th>#</th>
+                  <th className="w-12 text-center">#</th>
                   <th>Hotel</th>
                   <th>Room No</th>
                   <th>Room Type</th>
-                  <th>Price / Night</th>
+                  <th className="text-right">Price / Night</th>
                   <th>Status</th>
-                  <th>Action</th>
+                  <th className="w-24 text-center">Action</th>
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className="text-sm">
                 {loading ? (
                   <tr>
                     <td colSpan="7" className="text-center py-6">
@@ -127,31 +116,44 @@ function OwnerRoomAndPrice() {
                   </tr>
                 ) : rooms.length > 0 ? (
                   rooms.map((room, index) => (
-                    <tr key={room.id}>
-                      <th>{index + 1}</th>
-                      <td>{room.hotel?.hotelName || "-"}</td>
+                    <tr key={room.id} className="hover">
+                      <th className="text-center">{index + 1}</th>
+
+                      <td className="font-medium">
+                        {room.hotel?.hotelName || "-"}
+                      </td>
+
                       <td>{room.roomNumber}</td>
+
                       <td>{room.roomType}</td>
-                      <td>₹{room.pricePerNight}</td>
+
+                      <td className="text-right font-semibold">
+                        ₹{room.pricePerNight}
+                      </td>
+
                       <td>
                         <span
-                          className={`badge badge-outline ${
-                            room.isActive
-                              ? "badge-success"
-                              : "badge-warning"
+                          className={`badge badge-sm ${
+                            room.isActive ? "badge-success" : "badge-warning"
                           }`}
                         >
                           {room.isActive ? "Active" : "Inactive"}
                         </span>
                       </td>
 
-                      <td>
-                        <div className="dropdown dropdown-bottom">
-                          <div tabIndex={0} className="btn btn-ghost btn-sm">
-                            <BsThreeDotsVertical />
-                          </div>
+                      <td className="text-center">
+                        <div className="dropdown dropdown-end dropdown-hover">
+                          <label
+                            tabIndex={0}
+                            className="btn btn-ghost btn-sm btn-circle"
+                          >
+                            <BsThreeDotsVertical size={18} />
+                          </label>
 
-                          <ul className="dropdown-content menu bg-base-100 rounded-box z-50 w-40 p-2 shadow-md">
+                          <ul
+                            tabIndex={0}
+                            className="dropdown-content menu p-2 shadow-lg bg-base-100 rounded-box w-40 z-[9999]"
+                          >
                             <li>
                               <Link to={`/owner/edit-room/${room.id}`}>
                                 Edit
@@ -172,10 +174,7 @@ function OwnerRoomAndPrice() {
                   ))
                 ) : (
                   <tr>
-                    <td
-                      colSpan="7"
-                      className="text-center py-6 text-gray-500"
-                    >
+                    <td colSpan="7" className="text-center py-6 text-gray-500">
                       Select a hotel to view rooms
                     </td>
                   </tr>

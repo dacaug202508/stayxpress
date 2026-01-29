@@ -70,31 +70,36 @@ public class UserService {
 
     public Map<String, String> authenticate(LoginDto user) {
 
-        Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+        Authentication authentication = authManager.authenticate(
+                new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
 
         UserPrincipal userDetails = (UserPrincipal) authentication.getPrincipal();
 
         if (authentication.isAuthenticated()) {
-            String authority = authentication.getAuthorities()
+
+            List<String> authorities = authentication.getAuthorities()
                     .stream()
                     .map(GrantedAuthority::getAuthority)
                     .filter(s -> s.startsWith("ROLE_"))
-                    .toList()
-                    .toString();
-//System.out.println(jwtService.generateToken(user.getUsername(), authority));
-//System.out.println("in authentication");
-            String token = jwtService.generateToken(user.getUsername(), authority, userDetails.getUser().getId());
-            Map< String, String> res = new HashMap<String, String>();
+                    .toList();   
+
+            String token = jwtService.generateToken(
+                    user.getUsername(),
+                    authorities,   
+                    userDetails.getUser().getId()
+            );
+
+            Map<String, String> res = new HashMap<>();
             res.put("user", authentication.getName());
             res.put("token", token);
-
             return res;
         } else {
-            Map<String, String> err = new HashMap<String, String>();
+            Map<String, String> err = new HashMap<>();
             err.put("err", "failed login");
             return err;
         }
     }
+
 
     public Claims getClaims(String token, String username) throws Exception {
 

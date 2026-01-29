@@ -2,6 +2,7 @@ package com.example.demo.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
@@ -15,19 +16,21 @@ import javax.crypto.SecretKey;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
 @Service
 public class JwtServiceUtil {
+	private final String secretkey = "TXlWZXJ5U2VjcmV0S2V5VGhhdE5ldmVyQ2hhbmdlczEyMzQ1Njc4OQ==";
 
-    private final String secretkey = "MyVerySecretKeyThatNeverChanges123456789";
+	private SecretKey getKey() {
+	    byte[] keyBytes = Decoders.BASE64.decode(secretkey);
+	    return Keys.hmacShaKeyFor(keyBytes);
+	}
 
-    public JwtServiceUtil() {
 
-    }
-
-    public String generateToken(String username, String authorities, Integer id) {
+    public String generateToken(String username, List<String>  authorities, Integer id) {
         Map<String, Object> claims = new HashMap<>();
         SecretKey key = getKey();
 //	        System.out.println("in generate token");
@@ -40,14 +43,12 @@ public class JwtServiceUtil {
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + 60 * 60 * 3000))
                 .and()
-                .signWith(key)
+                .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
         return token;
     }
 
-    private SecretKey getKey() {
-        return Keys.hmacShaKeyFor(secretkey.getBytes());
-    }
+   
 
     public String extractUserName(String token) {
         // extract the username from jwt token

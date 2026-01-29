@@ -1,12 +1,20 @@
-/* eslint-disable no-useless-catch */
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8082/hotel";
+const BASE_URL = "http://localhost:8080/hotel";
+
+const getAuthHeader = () => {
+  const token = localStorage.getItem("token");
+  if (!token) return {};
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+};
 
 export const getAllHotels = async () => {
   try {
-    const res = await axios.get(`${BASE_URL}/getallhotels`);
-    return res;
+    return await axios.get(`${BASE_URL}/getallhotels`, getAuthHeader());
   } catch (error) {
     throw error;
   }
@@ -14,8 +22,7 @@ export const getAllHotels = async () => {
 
 export const saveHotel = async (hotel) => {
   try {
-    const res = await axios.post(`${BASE_URL}/save-hotel`, hotel);
-    return res;
+    return await axios.post(`${BASE_URL}/save-hotel`, hotel, getAuthHeader());
   } catch (error) {
     throw error;
   }
@@ -23,11 +30,11 @@ export const saveHotel = async (hotel) => {
 
 export const updateHotel = async (hotelId, hotel) => {
   try {
-    const res = await axios.put(
+    return await axios.put(
       `${BASE_URL}/update-hotel/${hotelId}`,
-      hotel
+      hotel,
+      getAuthHeader()
     );
-    return res;
   } catch (error) {
     throw error;
   }
@@ -35,10 +42,10 @@ export const updateHotel = async (hotelId, hotel) => {
 
 export const getHotelById = async (hotelId) => {
   try {
-    const res = await axios.get(
-      `${BASE_URL}/get-by-id?hotelId=${hotelId}`
+    return await axios.get(
+      `${BASE_URL}/get-by-id?hotelId=${hotelId}`,
+      getAuthHeader()
     );
-    return res;
   } catch (error) {
     throw error;
   }
@@ -46,34 +53,36 @@ export const getHotelById = async (hotelId) => {
 
 export const deleteHotel = async (hotelId) => {
   try {
-    const res = await axios.delete(
-      `${BASE_URL}/delete-hotel?hotelId=${hotelId}`
+    return await axios.delete(
+      `${BASE_URL}/delete-hotel?hotelId=${hotelId}`,
+      getAuthHeader()
     );
-    return res;
   } catch (error) {
     throw error;
   }
 };
 
-
 export const getHotelsByOwnerId = async (ownerId) => {
   try {
-    console.log(ownerId)
-    const res = await axios.get(
-      `${BASE_URL}/by-userid/${ownerId}`
+
+    console.log(getAuthHeader().headers.Authorization)
+
+    return await axios.get(
+      `${BASE_URL}/by-userid/${ownerId}`,
+      getAuthHeader()
     );
-    return res;
   } catch (error) {
     throw error;
   }
-}
+};
 
 export const getHotelsByCity = async (city) => {
   try {
-
-    const res = await axios.get(`${BASE_URL}/getallhotels-bycity?city=${city}`);
-    return res;
+    return await axios.get(
+      `${BASE_URL}/getallhotels-bycity?city=${city}`,
+      getAuthHeader()
+    );
   } catch (error) {
     throw error;
   }
-}
+};

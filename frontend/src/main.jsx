@@ -2,7 +2,12 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  Router,
+  RouterProvider,
+} from "react-router-dom";
 import Login from "./components/pages/Login.jsx";
 import Layout from "./components/reusable/Layout.jsx";
 import Registration from "./components/pages/Registration.jsx";
@@ -45,151 +50,90 @@ import BookingDetails from "./components/user/pages/BookingDetails.jsx";
 import RoomsPage from "./components/user/pages/Rooms.jsx";
 import HotelDetails from "./components/user/pages/HotelDetails.jsx";
 import RoomDetails from "./components/user/pages/RoomDetails.jsx";
+import PublicOnlyLayout from "./Layout/PublicOnlyLayout.jsx";
+import AuthRequiredLayout from "./Layout/AuthRequiredLayout.jsx";
+import RoleBasedLayout from "./Layout/RoleBasedLayout.jsx";
 
 let router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <AuthLayout authentication={false}>
-        <Layout />
-      </AuthLayout>
-    ),
+    element: <Layout />, 
     children: [
-      {
-        index: true,
-        element: <App />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <Registration />,
-      },
+      { index: true, element: <App /> }, // home page
     ],
   },
+
   {
-    path: "/owner",
-    element: (
-      <OwnerLayout />
-      // <OwnerAuthLayout authentication={true}>
-      //   <OwnerLayout />
-      // </OwnerAuthLayout>
-    ),
+    element: <PublicOnlyLayout />,
     children: [
-      {
-        index: true,
-        element: <OwnerHomePage />,
-      },
-      // {
-      //   path: "dashboard",
-      //   element: <OwnerDashboard />,
-      // },
-      {
-        path: "dashboard",
-        element: <OwnerDashboard />,
-      },
-      {
-        path: "add-hotel",
-        element: <OwnerAddHotel />,
-      },
-      {
-        path: "update-hotel/:id",
-        element: <OwnerUpdateHotel />,
-      },
-      {
-        path: "add-room",
-        element: <OwnerAddRoom />,
-      },
-      {
-        path: "rooms-pricing",
-        element: <OwnerRoomAndPrice />,
-      },
-      {
-        path: "edit-room/:roomId",
-        element: <OwnerEditRoom />,
-      },
-      {
-        path: "upload-info",
-        element: <OwnerHotelInfo />,
-      },
-      {
-        path: "view-bookings",
-        element: <OwnerBooking />,
-      },
+      { path: "/login", element: <Login /> },
+      { path: "/signup", element: <Registration /> },
     ],
   },
+
   {
-    path: "/user",
-    element: (
-      // <OwnerAuthLayout authentication={true}>
-      <UserLayout />
-      // </OwnerAuthLayout>
-    ),
+    element: <AuthRequiredLayout />,
     children: [
+      // 👤 USER / CUSTOMER
       {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: "profile",
-        element: <UserProfile />,
+        path: "/user",
+        element: <RoleBasedLayout allowedRoles={["ROLE_CUSTOMER"]} />,
+        children: [
+          {
+            element: <UserLayout />,
+            children: [
+              { index: true, element: <HomePage /> },
+              { path: "profile", element: <UserProfile /> },
+              { path: "compare", element: <RoomCompare /> },
+              { path: "search", element: <SearchPage /> },
+              { path: "booking", element: <UserBookings /> },
+              { path: "bookings/:bookingId", element: <BookingDetails /> },
+              { path: "hotels/:hotelId", element: <HotelDetails /> },
+              { path: "hotels/:hotelId/rooms", element: <RoomsPage /> },
+              { path: "rooms/:roomId", element: <RoomDetails /> },
+            ],
+          },
+        ],
       },
 
+      // 👑 OWNER
       {
-        path: "compare",
-        element: <RoomCompare />,
+        path: "/owner",
+        element: <RoleBasedLayout allowedRoles={["ROLE_OWNER"]} />,
+        children: [
+          {
+            element: <OwnerLayout />,
+            children: [
+              { index: true, element: <OwnerHomePage /> },
+              { path: "dashboard", element: <OwnerDashboard /> },
+              { path: "add-hotel", element: <OwnerAddHotel /> },
+              { path: "update-hotel/:id", element: <OwnerUpdateHotel /> },
+              { path: "add-room", element: <OwnerAddRoom /> },
+              { path: "rooms-pricing", element: <OwnerRoomAndPrice /> },
+              { path: "edit-room/:roomId", element: <OwnerEditRoom /> },
+              { path: "upload-info", element: <OwnerHotelInfo /> },
+              { path: "view-bookings", element: <OwnerBooking /> },
+            ],
+          },
+        ],
       },
+
+      // 🛡 ADMIN
       {
-        path: "search",
-        element: <SearchPage />,
-      },
-      {
-        path: "booking",
-        element: <UserBookings />,
-      },
-      {
-        path: "bookings/:bookingId",
-        element: <BookingDetails />,
-      },
-      {
-        path: "hotels/:hotelId",
-        element: <HotelDetails />,
-      },
-      {
-        path: "hotels/:hotelId/rooms",
-        element: <RoomsPage />,
-      },
-      {
-        path: "rooms/:roomId",
-        element: <RoomDetails />,
-      },
-    ],
-  },
-  {
-    path: "admin",
-    element: <AdminLayout />,
-    children: [
-      {
-        index: true,
-        element: <AdminHomePage />,
-      },
-      {
-        path: "dashboard",
-        element: <AdminDashboard />,
-      },
-      {
-        path: "owner-request",
-        element: <HotelOwnerRequest />,
-      },
-      {
-        path: "manage-owners",
-        element: <ManageHotelOwner />,
-      },
-      {
-        path: "hotels",
-        element: <AdminHotels />,
+        path: "/admin",
+        element: <RoleBasedLayout allowedRoles={["ROLE_ADMIN"]} />,
+        children: [
+          {
+            element: <AdminLayout />,
+            children: [
+              { index: true, element: <AdminHomePage /> },
+              { path: "dashboard", element: <AdminDashboard /> },
+              { path: "owner-request", element: <HotelOwnerRequest /> },
+              { path: "manage-owners", element: <ManageHotelOwner /> },
+              { path: "hotels", element: <AdminHotels /> },
+            ],
+          },
+        ],
       },
     ],
   },

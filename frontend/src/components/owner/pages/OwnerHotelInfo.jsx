@@ -5,6 +5,7 @@ import {
   getHotelsByOwnerId,
   deleteHotel,
 } from "../../../services/hotelservice";
+import { useSelector } from "react-redux";
 
 function OwnerHotelInfo() {
   const navigate = useNavigate();
@@ -12,7 +13,9 @@ function OwnerHotelInfo() {
   const [hotels, setHotels] = useState([{}]);
   const [loading, setLoading] = useState(true);
 
-  const ownerId = 1; // Replace later with JWT
+  let state = useSelector((state) => state.auth);
+
+  
 
   useEffect(() => {
     fetchHotels();
@@ -20,7 +23,7 @@ function OwnerHotelInfo() {
 
   const fetchHotels = async () => {
     try {
-      const res = await getHotelsByOwnerId(ownerId);
+      const res = await getHotelsByOwnerId(state.userId);
       console.log(res.data);
       setHotels(res.data.data);
     } catch (error) {

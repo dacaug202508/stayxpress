@@ -3,37 +3,32 @@ import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AUTHROLES } from "../store/authSlice";
 
-function OwnerAuthLayout({ children, authentication = true }) {
+function OwnerAuthLayout({ children }) {
   const { status, role } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
-
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 🔹 Not logged in → go to login
+    const path = location.pathname;
+
     if (!status) {
       navigate("/login", {
         replace: true,
-        state: { from: location.pathname },
+        state: { from: path },
       });
       return;
     }
 
-    // 🔹 Logged in but NOT OWNER → go home
-    if (status && role !== AUTHROLES.OWNER) {
+    if (path.startsWith("/owner") && role !== AUTHROLES.OWNER) {
       navigate("/", { replace: true });
       return;
     }
 
-   
     setLoading(false);
+  }, [status, role, location.pathname, navigate]);
 
-  }, [status, role, navigate, location.pathname]);
-
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
+  if (loading) return <h1>Loading...</h1>;
 
   return <>{children}</>;
 }
