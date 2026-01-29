@@ -12,9 +12,8 @@ import java.util.List;
 
 public class UserPrincipal implements UserDetails {
 
-    
-	private static final long serialVersionUID = 6826797688758889699L;
-	private UserEntity user;
+    private static final long serialVersionUID = 6826797688758889699L;
+    private UserEntity user;
 
     public UserPrincipal(UserEntity user) {
         this.user = user;
@@ -22,7 +21,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_"+user.getRole()));
+        return List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
     }
 
     @Override
@@ -54,4 +53,13 @@ public class UserPrincipal implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user){
+        this.user = user;
+    }
+
 }

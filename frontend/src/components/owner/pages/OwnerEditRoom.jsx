@@ -6,7 +6,7 @@ import { getRoomById, updateRoom } from "../../../services/roomservice";
 function OwnerEditRoom() {
   const params = useParams();
 
-  // ✅ INITIAL STATE (MATCH BACKEND STRUCTURE)
+  //  INITIAL STATE (MATCH BACKEND STRUCTURE)
   const initialRoom = {
     id: 0,
     isActive: true,
@@ -15,38 +15,29 @@ function OwnerEditRoom() {
     roomNumber: "",
     description: "",
     roomType: "",
-    hotel: {
-      id: 0,
-      hotelName: "",
-      address: "",
-      city: "",
-      country: "",
-      description: "",
-      status: "",
-      createdAt: "",
-    },
+    hotelId: 0,
   };
 
   let [loading, setLoading] = useState(false);
 
   const [roomData, setRoomData] = useState(initialRoom);
 
-  // ✅ FETCH ROOM BY ID
   useEffect(() => {
     (async () => {
       try {
+        console.log("inside");
         const res = await getRoomById(params.roomId);
-        console.log(res.data.room);
-        setRoomData(res.data.room);
+        console.log(res.data);
+        setRoomData(res.data);
       } catch (error) {
         console.error("Error fetching room", error);
       }
     })();
   }, [params.roomId]);
 
-  console.log(roomData.hotel);
+  console.log(roomData);
 
-  // ✅ COMMON CHANGE HANDLER
+  // COMMON CHANGE HANDLER
   const onChangeHandler = (name, value) => {
     setRoomData((prev) => ({
       ...prev,
@@ -54,14 +45,14 @@ function OwnerEditRoom() {
     }));
   };
 
-  // ✅ SUBMIT HANDLER
+  // SUBMIT HANDLER
   const handleEdit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       let payload = {
         id: roomData.id,
-        hotelId: roomData.hotel.id,
+        hotelId: roomData?.hotelId,
         roomNumber: roomData.roomNumber,
         description: roomData.description,
         pricePerNight: roomData.pricePerNight,
@@ -92,7 +83,7 @@ function OwnerEditRoom() {
               <label className="label">Hotel Name</label>
               <input
                 type="text"
-                value={roomData.hotel?.hotelName || ""}
+                value={roomData.hotelId || ""}
                 className="input input-bordered w-full"
                 disabled
               />

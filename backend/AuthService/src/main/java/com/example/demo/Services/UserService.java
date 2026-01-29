@@ -14,6 +14,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import com.example.demo.Controllers.UserControllers;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.entities.LoginDto;
@@ -21,100 +22,89 @@ import com.example.demo.entities.UserEntity;
 import com.example.demo.entities.UserRegistrationDto;
 import com.example.demo.utils.JwtServiceUtil;
 import com.example.demo.utils.MyUserDetailsService;
+import com.example.demo.utils.UserPrincipal;
 
 import io.jsonwebtoken.Claims;
 
 @Service
 public class UserService {
 
+    @Autowired
+    private UserRepository userRepo;
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
-	@Autowired
-	private UserRepository userRepo;
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
-	
-	@Autowired
-	private JwtServiceUtil jwtService;
-	@Autowired
-	private AuthenticationManager authManager;
-	
-	  @Autowired
-	    ApplicationContext context;
+    @Autowired
+    private JwtServiceUtil jwtService;
+    @Autowired
+    private AuthenticationManager authManager;
 
+    @Autowired
+    ApplicationContext context;
 
-	
-	
-	public UserRegistrationDto saveUser(UserEntity user) throws Exception {
-		
-		UserEntity dbUser = userRepo.findByUsername(user.getUsername());
-		
-		
-		if(dbUser != null)
-		{
-			throw new Exception("User already exists!!");
-		}
-		
-		UserEntity existingEmail = userRepo.findByEmail(user.getEmail());
-		if(existingEmail != null) {
-			throw new Exception("Email already exists!!");
-		}
-		
-		String encodedPassword = passwordEncoder.encode(user.getPassword());
-		
-		
-		user.setPassword(encodedPassword);
-		
-		 UserEntity savedUser = userRepo.save(user);
-		 return new UserRegistrationDto(savedUser.getUsername(), savedUser.getRole());
-	}
+    public UserRegistrationDto saveUser(UserEntity user) throws Exception {
 
+        UserEntity dbUser = userRepo.findByUsername(user.getUsername());
 
+        if (dbUser != null) {
+            throw new Exception("User already exists!!");
+        }
 
+        UserEntity existingEmail = userRepo.findByEmail(user.getEmail());
+        if (existingEmail != null) {
+            throw new Exception("Email already exists!!");
+        }
 
-	public List<UserEntity> allUsers() {
-		
-		return userRepo.findAll();
-	}
-	
-	
-	public Map<String, String> authenticate(LoginDto user) {
-		
-		
-		
-		 Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
-	        if (authentication.isAuthenticated()) {
-	        	String authority =authentication.getAuthorities()
-	            .stream()
-	            .map(GrantedAuthority::getAuthority)
-	            .filter(s -> s.startsWith("ROLE_"))
-	            .toList()
-	            .toString();
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+
+        user.setPassword(encodedPassword);
+
+        UserEntity savedUser = userRepo.save(user);
+        return new UserRegistrationDto(savedUser.getUsername(), savedUser.getRole());
+    }
+
+    public List<UserEntity> allUsers() {
+
+        return userRepo.findAll();
+    }
+
+    public Map<String, String> authenticate(LoginDto user) {
+
+        Authentication authentication = authManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+
+        UserPrincipal userDetails = (UserPrincipal) authentication.getPrincipal();
+
+        if (authentication.isAuthenticated()) {
+            String authority = authentication.getAuthorities()
+                    .stream()
+                    .map(GrantedAuthority::getAuthority)
+                    .filter(s -> s.startsWith("ROLE_"))
+                    .toList()
+                    .toString();
 //System.out.println(jwtService.generateToken(user.getUsername(), authority));
 //System.out.println("in authentication");
-	        	String token = jwtService.generateToken(user.getUsername(), authority);
-	        	Map<String, String> res = new HashMap<String, String>();
-	        	res.put("user",authentication.getName());
-	        	res.put("token", token);
-	        	
-	            return res;
-	        } else {
-	        	Map<String, String> err = new HashMap<String, String>();
-	            err.put("err", "failed login");
-	        	return err;
-	        }
-	}
-	
-	public Claims getClaims(String token, String username) throws Exception  {
- 
-    	   UserDetails userDetails = context.getBean(MyUserDetailsService.class).loadUserByUsername(username);
-   		if(!jwtService.validateToken(token, userDetails))
-   		{
-   					throw new Exception("invalid token | token expired");
-   		}
-	
-   		return jwtService.extractAllClaims(token);	
-		
-	}
-	
-	
+            String token = jwtService.generateToken(user.getUsername(), authority, userDetails.getUser().getId());
+            Map< String, String> res = new HashMap<String, String>();
+            res.put("user", authentication.getName());
+            res.put("token", token);
+
+            return res;
+        } else {
+            Map<String, String> err = new HashMap<String, String>();
+            err.put("err", "failed login");
+            return err;
+        }
+    }
+
+    public Claims getClaims(String token, String username) throws Exception {
+
+        UserDetails userDetails = context.getBean(MyUserDetailsService.class).loadUserByUsername(username);
+        if (!jwtService.validateToken(token, userDetails)) {
+            throw new Exception("invalid token | token expired");
+        }
+
+        return jwtService.extractAllClaims(token);
+
+    }
+
 }
