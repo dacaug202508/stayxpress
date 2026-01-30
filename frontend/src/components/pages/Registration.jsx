@@ -72,7 +72,7 @@ function Registration() {
                     message: "Username must be at least 3 characters",
                   },
                   pattern: {
-                    value: /^[a-zA-Z0-9]+$/,
+                    // value: /^[a-zA-Z0-9]+$/,
                     message: "Only letters and numbers allowed",
                   },
                 })}
@@ -96,7 +96,7 @@ function Registration() {
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    // value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                     message: "Enter a valid email address",
                   },
                 })}
@@ -120,11 +120,11 @@ function Registration() {
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
-                    value: 6,
+                    // value: 6,
                     message: "Password must be at least 6 characters",
                   },
                   pattern: {
-                    value: /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/,
+                    // value: /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/,
                     message:
                       "Must include uppercase, number & special character",
                   },

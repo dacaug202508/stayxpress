@@ -1,71 +1,64 @@
 import React, { useEffect, useState } from "react";
 import { getBookedRoomsByOwner } from "../../../services/bookingService";
-import { getHotelsByOwnerId } from "../../../services/hotelservice";
+import { getHotelsByOwnerAdmin } from "../../../services/adminHotelService";
 
 function OwnerBooking() {
-  const ownerId = 1; // later from JWT
+  const ownerId = localStorage.getItem("user_id");
 
   const [hotels, setHotels] = useState([]);
   const [selectedHotelId, setSelectedHotelId] = useState("");
-  const [bookedRooms, setBookedRooms] = useState([]);
-  const [filteredRooms, setFilteredRooms] = useState([]);
+  const [bookings, setBookings] = useState([]);
+  const [filteredBookings, setFilteredBookings] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchHotels();
-    fetchBookedRooms();
+    fetchBookings();
   }, []);
 
-  // 🔹 Fetch hotels
   const fetchHotels = async () => {
     try {
-      const res = await getHotelsByOwnerId(ownerId);
-      setHotels(res.data.data);
+      const res = await getHotelsByOwnerAdmin(ownerId);
+      console.log(res.data)
+      setHotels(res.data)
     } catch (error) {
       console.error("Error fetching hotels", error);
     }
   };
 
-  // 🔹 Fetch booked rooms
-  const fetchBookedRooms = async () => {
+  const fetchBookings = async () => {
     try {
       const res = await getBookedRoomsByOwner(ownerId);
+      console.log(res.data)
+      // Backend field = status
+      const confirmed = res.data.filter((b) => b.status === "CONFIRMED");
 
-      // ✅ only BOOKED / CONFIRMED
-      const confirmed = res.data.data.filter(
-        (item) =>
-          item.bookingStatus === "BOOKED" ||
-          item.bookingStatus === "CONFIRMED"
-      );
-
-      setBookedRooms(confirmed);
-      setFilteredRooms(confirmed);
+      setBookings(confirmed);
+      setFilteredBookings(confirmed);
     } catch (error) {
-      console.error("Error fetching booked rooms:", error);
+      console.error("Error fetching bookings:", error);
     } finally {
       setLoading(false);
     }
   };
 
-  // 🔹 Hotel dropdown change
   const handleHotelChange = (e) => {
     const hotelId = e.target.value;
     setSelectedHotelId(hotelId);
 
     if (!hotelId) {
-      setFilteredRooms(bookedRooms);
+      setFilteredBookings(bookings);
     } else {
-      const filtered = bookedRooms.filter(
-        (room) => room.hotelId === Number(hotelId)
+      setFilteredBookings(
+        bookings.filter((b) => b.hotelId === Number(hotelId))
       );
-      setFilteredRooms(filtered);
     }
   };
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        Loading booked rooms...
+        Loading bookings...
       </div>
     );
   }
@@ -73,13 +66,8 @@ function OwnerBooking() {
   return (
     <div className="min-h-screen bg-sky-50 px-4 py-10">
       <div className="max-w-6xl mx-auto space-y-6">
+        <h2 className="text-3xl font-bold text-sky-900">Confirmed Bookings</h2>
 
-        {/* HEADER */}
-        <h2 className="text-3xl font-bold text-sky-900">
-          Booked / Confirmed Rooms
-        </h2>
-
-        {/* 🔽 HOTEL DROPDOWN */}
         <div className="w-72">
           <select
             className="select select-bordered w-full"
@@ -89,69 +77,56 @@ function OwnerBooking() {
             <option value="">All Hotels</option>
             {hotels.map((hotel) => (
               <option key={hotel.id} value={hotel.id}>
-                {hotel.hotelName}
+                {hotel.name}
               </option>
             ))}
           </select>
         </div>
 
-        {/* ROOMS LIST */}
         <div className="space-y-6">
-          {filteredRooms.map((item) => (
+          {filteredBookings.map((item) => (
             <div
               key={item.bookingId}
-              className="bg-white rounded-xl shadow-md flex flex-col md:flex-row"
+              className="bg-white rounded-xl shadow-md p-5"
             >
-              <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
-                alt="Room"
-                className="w-full md:w-64 h-48 object-cover"
-              />
-
-              <div className="flex-1 p-5">
-                <div className="flex justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold">
-                      {item.hotelName}
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      🛏 Room {item.roomNumber} ({item.roomType})
-                    </p>
-                  </div>
-
-                  <span className="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700">
-                    {item.bookingStatus}
-                  </span>
+              <div className="flex justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold">
+                    Booking Ref: {item.bookingReference}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    Room ID: {item.roomId}
+                  </p>
                 </div>
 
-                <div className="mt-4 grid md:grid-cols-4 gap-4 text-sm">
-                  <div>
-                    <p className="font-medium">Check-In</p>
-                    <p>{item.checkInDate}</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Check-Out</p>
-                    <p>{item.checkOutDate}</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Guests</p>
-                    <p>{item.maxGuests}</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Total</p>
-                    <p className="text-sky-600 font-semibold">
-                      ₹{item.totalPrice}
-                    </p>
-                  </div>
+                <span className="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700">
+                  {item.status}
+                </span>
+              </div>
+
+              <div className="mt-4 grid md:grid-cols-3 gap-4 text-sm">
+                <div>
+                  <p className="font-medium">Check-In</p>
+                  <p>{item.checkIn}</p>
+                </div>
+                <div>
+                  <p className="font-medium">Check-Out</p>
+                  <p>{item.checkOut}</p>
+                </div>
+                <div>
+                  <p className="font-medium">Total</p>
+                  <p className="text-sky-600 font-semibold">
+                    ₹{item.totalPrice}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {filteredRooms.length === 0 && (
+        {filteredBookings.length === 0 && (
           <div className="text-center py-16 text-gray-500">
-            No booked rooms for selected hotel
+            No confirmed bookings found
           </div>
         )}
       </div>

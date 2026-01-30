@@ -1,40 +1,52 @@
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Button from "../../reusable/Button";
+import {
+  getAllHotelsAdmin,
+  getHotelsByOwnerAdmin,
+  updateHotelStatus,
+} from "../../../services/adminHotelService";
 
 function AdminHotels() {
   const [filter, setFilter] = useState("all");
+  const [hotels, setHotels] = useState([]);
+  const [editedHotels, setEditedHotels] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Original backend data
-  const [hotels, setHotels] = useState([
-    {
-      id: 1,
-      owner: "Hart Hagerty",
-      country: "United States",
-      hotelName: "Sea View Resort",
-      role: "Luxury Hotel",
-      location: "Pune",
-      status: "active",
-      image: "https://img.daisyui.com/images/profile/demo/2@94.webp",
-    },
-    {
-      id: 2,
-      owner: "Jane Cooper",
-      country: "Canada",
-      hotelName: "Mountain Stay",
-      role: "Budget Hotel",
-      location: "Mumbai",
-      status: "inactive",
-      image: "https://img.daisyui.com/images/profile/demo/3@94.webp",
-    },
-  ]);
+  const ownerId = localStorage.getItem("selectedOwnerId");
+  // If admin is viewing a specific owner's hotels. If null → show all
 
-  // Editable copy
-  const [editedHotels, setEditedHotels] = useState(hotels);
+  useEffect(() => {
+    fetchHotels();
+  }, []);
 
-  const hasChanges =
-    JSON.stringify(hotels) !== JSON.stringify(editedHotels);
+  const fetchHotels = async () => {
+    try {
+      let response;
+      if (ownerId) {
+        response = await getHotelsByOwnerAdmin(ownerId);
+      } else {
+        response = await getAllHotelsAdmin();
+      }
 
-  // Change status only in edited state
+      // Backend returns: id, name, city, country, status
+      const formatted = response.data.map((h) => ({
+        id: h.id,
+        hotelName: h.name,
+        location: `${h.city}, ${h.country}`,
+        status: h.status.toLowerCase(), // ACTIVE → active
+      }));
+
+      setHotels(formatted);
+      setEditedHotels(formatted);
+    } catch (error) {
+      console.error("Error fetching hotels:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const hasChanges = JSON.stringify(hotels) !== JSON.stringify(editedHotels);
+
   const handleStatusChange = (id, newStatus) => {
     setEditedHotels((prev) =>
       prev.map((hotel) =>
@@ -43,18 +55,27 @@ function AdminHotels() {
     );
   };
 
-  // Save changes
-  const handleSaveChanges = () => {
-    console.log("Saving updated hotels:", editedHotels);
-    setHotels(editedHotels);
+  const handleSaveChanges = async () => {
+    try {
+      for (const hotel of editedHotels) {
+        const original = hotels.find((h) => h.id === hotel.id);
+        if (original.status !== hotel.status) {
+          await updateHotelStatus(
+            hotel.id,
+            hotel.status.toUpperCase() // active → ACTIVE
+          );
+        }
+      }
+      setHotels(editedHotels);
+    } catch (err) {
+      console.error("Error saving hotel updates:", err);
+    }
   };
 
-  // Reset changes
   const handleResetChanges = () => {
     setEditedHotels(hotels);
   };
 
-  // Filtered hotels
   const filteredHotels = useMemo(() => {
     if (filter === "active")
       return editedHotels.filter((h) => h.status === "active");
@@ -62,6 +83,10 @@ function AdminHotels() {
       return editedHotels.filter((h) => h.status === "inactive");
     return editedHotels;
   }, [filter, editedHotels]);
+
+  if (loading) {
+    return <div className="p-6">Loading hotels...</div>;
+  }
 
   return (
     <div className="p-6 space-y-6">
@@ -115,7 +140,6 @@ function AdminHotels() {
         <table className="table">
           <thead className="bg-gray-100">
             <tr>
-              <th>Owner</th>
               <th>Hotel Name</th>
               <th>Location</th>
               <th>Status</th>
@@ -125,30 +149,8 @@ function AdminHotels() {
           <tbody>
             {filteredHotels.map((hotel) => (
               <tr key={hotel.id}>
-                <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle h-12 w-12">
-                        <img src={hotel.image} alt="Owner" />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{hotel.owner}</div>
-                      <div className="text-sm opacity-50">{hotel.country}</div>
-                    </div>
-                  </div>
-                </td>
-
-                <td>
-                  {hotel.hotelName}
-                  <br />
-                  <span className="badge badge-ghost badge-sm">
-                    {hotel.role}
-                  </span>
-                </td>
-
+                <td className="font-medium">{hotel.hotelName}</td>
                 <td>{hotel.location}</td>
-
                 <td>
                   <select
                     value={hotel.status}
@@ -161,13 +163,12 @@ function AdminHotels() {
                     <option value="inactive">Inactive</option>
                   </select>
                 </td>
-
                 <td>
                   <Button
                     css="btn btn-ghost btn-xs"
                     text="Details"
                     onClick={() =>
-                      console.log("Viewing hotel details:", hotel)
+                      console.log("Viewing hotel details:", hotel.id)
                     }
                   />
                 </td>

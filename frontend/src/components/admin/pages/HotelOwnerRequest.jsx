@@ -1,69 +1,82 @@
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Button from "../../reusable/Button";
+import {
+  getPendingOwnerRequests,
+  updateOwnerRequestStatus,
+} from "../../../services/adminOwnerRequestService";
 
 function HotelOwnerRequest() {
-  const [filter, setFilter] = useState("pending");
+  const [filter, setFilter] = useState("PENDING");
+  const [requests, setRequests] = useState([]);
+  const [editedRequests, setEditedRequests] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Original data (backend)
-  const [requests, setRequests] = useState([
-    {
-      id: 1,
-      name: "Hart Hagerty",
-      country: "United States",
-      hotelName: "Sea View Resort",
-      status: "pending",
-      image: "https://img.daisyui.com/images/profile/demo/2@94.webp",
-    },
-    {
-      id: 2,
-      name: "Jane Cooper",
-      country: "Canada",
-      hotelName: "Mountain Stay",
-      status: "accepted",
-      image: "https://img.daisyui.com/images/profile/demo/3@94.webp",
-    },
-    {
-      id: 3,
-      name: "Robert Fox",
-      country: "UK",
-      hotelName: "City Lights Hotel",
-      status: "rejected",
-      image: "https://img.daisyui.com/images/profile/demo/4@94.webp",
-    },
-  ]);
+  const adminId = localStorage.getItem("user_id");
 
-  // Editable copy
-  const [editedRequests, setEditedRequests] = useState(requests);
+  useEffect(() => {
+    fetchRequests();
+  }, []);
 
-  // Detect unsaved changes
+  const fetchRequests = async () => {
+    try {
+      const res = await getPendingOwnerRequests();
+
+      const formatted = res.data.map((r) => ({
+        id: r.requestId,
+        userId: r.userId,
+        name: `User ${r.userId}`,
+        status: r.status || "PENDING",
+      }));
+
+      setRequests(formatted);
+      setEditedRequests(formatted);
+    } catch (err) {
+      console.error("Error loading owner requests:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const hasChanges =
     JSON.stringify(requests) !== JSON.stringify(editedRequests);
 
-  // Change status only in edited state
   const handleStatusChange = (id, newStatus) => {
     setEditedRequests((prev) =>
-      prev.map((req) =>
-        req.id === id ? { ...req, status: newStatus } : req
-      )
+      prev.map((req) => (req.id === id ? { ...req, status: newStatus } : req))
     );
   };
 
-  // Save changes
-  const handleSaveChanges = () => {
-    console.log("Saving updated requests:", editedRequests);
-    setRequests(editedRequests);
+  const handleSaveChanges = async () => {
+    if (!adminId) {
+      alert("Admin not logged in");
+      return;
+    }
+
+    try {
+      for (const req of editedRequests) {
+        const original = requests.find((r) => r.id === req.id);
+        if (original.status !== req.status) {
+          await updateOwnerRequestStatus(req.id, req.status, adminId);
+        }
+      }
+
+      setRequests(editedRequests);
+      alert("Status updated successfully");
+    } catch (err) {
+      console.error("Error updating owner requests:", err);
+    }
   };
 
-  // Reset changes
   const handleResetChanges = () => {
     setEditedRequests(requests);
   };
 
-  // Filtered list (based on edited state)
   const filteredRequests = useMemo(() => {
-    if (filter === "all") return editedRequests;
+    if (filter === "ALL") return editedRequests;
     return editedRequests.filter((r) => r.status === filter);
   }, [filter, editedRequests]);
+
+  if (loading) return <div className="p-6">Loading requests...</div>;
 
   return (
     <div className="p-6 space-y-6">
@@ -72,13 +85,15 @@ function HotelOwnerRequest() {
         <div className="flex items-center gap-4 font-semibold">
           <span>Filter Requests:</span>
           <div className="tabs tabs-box bg-base-200">
-            {["pending", "accepted", "rejected", "all"].map((tab) => (
+            {["PENDING", "APPROVED", "REJECTED", "ALL"].map((tab) => (
               <button
                 key={tab}
                 className={`tab ${filter === tab && "tab-active"}`}
                 onClick={() => setFilter(tab)}
               >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                {tab === "ALL"
+                  ? "All"
+                  : tab.charAt(0) + tab.slice(1).toLowerCase()}
               </button>
             ))}
           </div>
@@ -108,54 +123,49 @@ function HotelOwnerRequest() {
         <table className="table">
           <thead className="bg-gray-100">
             <tr>
-              <th>Name</th>
-              <th>Hotel Name</th>
+              <th>User</th>
               <th>Status</th>
               <th>Details</th>
             </tr>
           </thead>
           <tbody>
-            {filteredRequests.map((req) => (
-              <tr key={req.id}>
-                <td>
-                  <div className="flex items-center gap-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle h-12 w-12">
-                        <img src={req.image} alt="Owner" />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="font-bold">{req.name}</div>
-                      <div className="text-sm opacity-50">{req.country}</div>
-                    </div>
-                  </div>
-                </td>
+            {filteredRequests.length > 0 ? (
+              filteredRequests.map((req) => (
+                <tr key={req.id}>
+                  <td className="font-medium">{req.name}</td>
 
-                <td className="font-medium">{req.hotelName}</td>
+                  <td>
+                    <select
+                      value={req.status}
+                      onChange={(e) =>
+                        handleStatusChange(req.id, e.target.value)
+                      }
+                      className="select select-bordered"
+                    >
+                      <option value="PENDING">Pending</option>
+                      <option value="APPROVED">Approved</option>
+                      <option value="REJECTED">Rejected</option>
+                    </select>
+                  </td>
 
-                <td>
-                  <select
-                    value={req.status}
-                    className="select select-bordered"
-                    onChange={(e) =>
-                      handleStatusChange(req.id, e.target.value)
-                    }
-                  >
-                    <option value="accepted">Accept</option>
-                    <option value="pending">Pending</option>
-                    <option value="rejected">Reject</option>
-                  </select>
-                </td>
-
-                <td>
-                  <Button
-                    css="btn btn-ghost btn-xs"
-                    text="Details"
-                    onClick={() => console.log("View request details:", req)}
-                  />
+                  <td>
+                    <Button
+                      css="btn btn-ghost btn-xs"
+                      text="Details"
+                      onClick={() =>
+                        console.log("View owner request details:", req)
+                      }
+                    />
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="3" className="text-center py-6 text-gray-500">
+                  No requests found
                 </td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>

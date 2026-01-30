@@ -6,8 +6,8 @@ public class RoomDto {
 	Integer id;
 	Integer hotelId;
 	String roomNumber;
-	Double pricePerNight;
 	String description;
+	Double pricePerNight;
 	Integer maxGuests;
 	Boolean isActive;
 	RoomType roomType;
@@ -18,25 +18,27 @@ public class RoomDto {
 	
 	
 
-	public RoomDto(Integer id,
-            Integer hotelId,
-            String roomNumber,
-            RoomType roomType,
-            String description,
-            Double pricePerNight,
-            Integer maxGuests,
-            Boolean isActive,
-            String imageUrl) {
-		 this.id = id;
-		 this.hotelId = hotelId;
-		 this.roomNumber = roomNumber;
-		 this.roomType = roomType;
-		 this.description = description;
-		 this.pricePerNight = pricePerNight;
-		 this.maxGuests = maxGuests;
-		 this.isActive = isActive;
-		 this.image = imageUrl;
-}
+	 public RoomDto(
+	            Integer id,
+	            Integer hotelId,
+	            String roomNumber,
+	            RoomType roomType,   // must be String for JPQL projection
+	            String description,
+	            Double pricePerNight,
+	            Integer maxGuests,
+	            Boolean isActive,
+	            String imageUrl) {
+
+	        this.id = id;
+	        this.hotelId = hotelId;
+	        this.roomNumber = roomNumber;
+	        this.roomType = roomType; // convert to enum
+	        this.description = description;
+	        this.pricePerNight = pricePerNight;
+	        this.maxGuests = maxGuests;
+	        this.isActive = isActive;
+	        this.image = imageUrl;
+	    }
 
 
 public RoomDto() {}

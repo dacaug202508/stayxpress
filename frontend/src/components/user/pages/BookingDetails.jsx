@@ -1,33 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { getBookingById } from "../../../services/bookingService";
 function BookingDetails() {
-  const { bookingId } = useParams(); // from route /bookings/:bookingId
+  const { bookingId } = useParams();
+  const userId = localStorage.getItem("userId"); // stored after login
 
-  // Dummy booking data (later fetch using bookingId)
-  const booking = {
-    id: bookingId || "BK001",
-    hotel: "Oceanview Paradise Resort",
-    location: "Maldives",
-    checkIn: "2026-02-10",
-    checkOut: "2026-02-15",
-    guests: 2,
-    nights: 5,
-    roomType: "Deluxe Ocean Suite",
-    pricePerNight: 240,
-    taxes: 120,
-    total: 1320,
-    status: "CONFIRMED",
-    customerName: "John Doe",
-    paymentMethod: "Credit Card",
-  };
+  const [booking, setBooking] = useState(null);
+
+  useEffect(() => {
+    const fetchBooking = async () => {
+      try {
+        const data = await getBookingById(bookingId, userId);
+        setBooking(data);
+      } catch (err) {
+        console.error("Error fetching booking:", err);
+      }
+    };
+
+    fetchBooking();
+  }, [bookingId, userId]);
+
+  if (!booking) {
+    return (
+      <div className="text-center mt-20 text-gray-600">
+        Loading booking details...
+      </div>
+    );
+  }
+
+  const nights = new Date(booking.checkOut) - new Date(booking.checkIn);
+  const totalNights = nights / (1000 * 60 * 60 * 24);
 
   const handleDownloadInvoice = () => {
-    console.log("🧾 Download invoice for booking:", booking);
+    console.log("🧾 Download invoice for booking:", booking.bookingId);
   };
 
   const handleContactHotel = () => {
-    console.log("📞 Contact hotel for booking:", booking);
+    console.log("📞 Contact hotel for booking:", booking.hotelId);
   };
 
   return (
@@ -36,8 +45,12 @@ function BookingDetails() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between md:items-center border-b pb-6 mb-6">
           <div>
-            <h2 className="text-2xl font-bold text-gray-800">Booking Details</h2>
-            <p className="text-sm text-gray-500">Reference ID: {booking.id}</p>
+            <h2 className="text-2xl font-bold text-gray-800">
+              Booking Details
+            </h2>
+            <p className="text-sm text-gray-500">
+              Reference ID: {booking.bookingReference}
+            </p>
           </div>
           <span
             className={`mt-3 md:mt-0 px-4 py-1 text-sm font-bold rounded-full ${
@@ -55,15 +68,15 @@ function BookingDetails() {
         {/* Stay Info */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Hotel</h3>
-            <p className="text-lg font-medium text-gray-800">{booking.hotel}</p>
-            <p className="text-sm text-gray-500">📍 {booking.location}</p>
+            <h3 className="font-semibold text-gray-700 mb-2">Hotel ID</h3>
+            <p className="text-lg font-medium text-gray-800">
+              {booking.hotelId}
+            </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-700 mb-2">Guest</h3>
-            <p className="text-gray-800">{booking.customerName}</p>
-            <p className="text-sm text-gray-500">{booking.guests} Guests</p>
+            <h3 className="font-semibold text-gray-700 mb-2">Guests</h3>
+            <p className="text-gray-800">Customer ID: {booking.customerId}</p>
           </div>
         </div>
 
@@ -78,8 +91,10 @@ function BookingDetails() {
             <p className="font-medium text-gray-800">{booking.checkOut}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Room Type</p>
-            <p className="font-medium text-gray-800">{booking.roomType}</p>
+            <p className="text-sm text-gray-500">Room</p>
+            <p className="font-medium text-gray-800">
+              Room ID: {booking.roomId}
+            </p>
           </div>
         </div>
 
@@ -91,24 +106,17 @@ function BookingDetails() {
 
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">
-              <span>
-                ${booking.pricePerNight} × {booking.nights} nights
-              </span>
-              <span>${booking.pricePerNight * booking.nights}</span>
-            </div>
-
-            <div className="flex justify-between text-gray-600">
-              <span>Taxes & Fees</span>
-              <span>${booking.taxes}</span>
+              <span>Total Nights</span>
+              <span>{totalNights}</span>
             </div>
 
             <div className="flex justify-between font-bold text-lg text-sky-700 border-t pt-3">
               <span>Total Paid</span>
-              <span>${booking.total}</span>
+              <span>${booking.totalPrice}</span>
             </div>
 
             <div className="text-xs text-gray-500 pt-2">
-              Paid via {booking.paymentMethod}
+              Booking Status: {booking.status}
             </div>
           </div>
         </div>
