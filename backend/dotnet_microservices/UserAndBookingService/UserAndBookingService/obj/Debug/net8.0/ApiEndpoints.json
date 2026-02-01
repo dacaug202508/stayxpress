@@ -124,8 +124,40 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "UserAndBookingService.Controllers.BillController",
+    "Method": "GetBill",
+    "RelativePath": "api/bills/{billId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "billId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserAndBookingService.Controllers.BillController",
+    "Method": "GetBillByBooking",
+    "RelativePath": "api/bills/booking/{bookingId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UserAndBookingService.Controllers.BookingsController",
-    "Method": "Create",
+    "Method": "CreateBooking",
     "RelativePath": "api/bookings",
     "HttpMethod": "POST",
     "IsController": true,
@@ -214,6 +246,22 @@
       {
         "Name": "userId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserAndBookingService.Controllers.PaymentController",
+    "Method": "MakePayment",
+    "RelativePath": "api/payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "UserAndBookingService.Dto.CreatePaymentDto",
         "IsRequired": true
       }
     ],

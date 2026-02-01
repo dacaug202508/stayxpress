@@ -19,10 +19,13 @@ namespace UserAndBookingService.Controllers
         [HttpPost("availability")]
         public IActionResult CheckAvailability([FromBody] CheckAvailabilityDto dto) =>
             Ok(_service.IsRoomAvailable(dto));
-
         [HttpPost]
-        public IActionResult Create([FromBody] CreateBookingDto dto) =>
-            Ok(_service.CreateBooking(dto));
+        public IActionResult CreateBooking([FromBody] CreateBookingDto dto)
+        {
+            var result = _service.CreateBooking(dto);
+            return Ok(result);
+        }
+
 
         [HttpGet("user/{userId}")]
         public IActionResult UserBookings(int userId) =>

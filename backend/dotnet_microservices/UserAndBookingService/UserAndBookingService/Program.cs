@@ -42,6 +42,13 @@ namespace UserAndBookingService
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IOwnerRequestService, OwnerRequestService>();
 
+            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+            builder.Services.AddScoped<IPaymentService, PaymentService>();
+
+            builder.Services.AddScoped<IBillRepository, BillRepository>();
+            builder.Services.AddScoped<IBillService, BillService>();
+
+
 
             builder.Services.AddControllers()
     .AddJsonOptions(opt =>

@@ -8,11 +8,13 @@ namespace UserAndBookingService.Services
     {
         private readonly IBookingRepository _repo;
         private readonly HotelbookingContext _context;
+        private readonly IBillService _billService;
 
-        public BookingService(IBookingRepository repo, HotelbookingContext context)
+        public BookingService(IBookingRepository repo, HotelbookingContext context, IBillService billService)
         {
             _repo = repo;
             _context = context;
+            _billService = billService;
         }
 
         public bool IsRoomAvailable(CheckAvailabilityDto dto)
@@ -22,6 +24,11 @@ namespace UserAndBookingService.Services
 
         public BookingResponseDto CreateBooking(CreateBookingDto dto)
         {
+            
+            if (dto.CheckOut <= dto.CheckIn)
+                throw new Exception("Check-out date must be after check-in date");
+
+            
             if (!IsRoomAvailable(new CheckAvailabilityDto
             {
                 RoomId = dto.RoomId,
@@ -30,33 +37,46 @@ namespace UserAndBookingService.Services
             }))
                 throw new Exception("Room not available");
 
-            var room = _context.Rooms.First(r => r.Id == dto.RoomId);
+            
+            var room = _context.Rooms.FirstOrDefault(r => r.Id == dto.RoomId);
+            if (room == null)
+                throw new Exception("Room not found");
+
             var nights = dto.CheckOut.DayNumber - dto.CheckIn.DayNumber;
+
+            if (nights <= 0)
+                throw new Exception("Check-out must be after check-in");
+
             var total = nights * room.PricePerNight;
+
+
 
             var booking = new Booking
             {
                 BookingReference = Guid.NewGuid().ToString().Substring(0, 8).ToUpper(),
                 CustomerId = dto.CustomerId,
-                HotelId = dto.HotelId,
+                HotelId = room.HotelId,   
                 RoomId = dto.RoomId,
                 CheckInDate = dto.CheckIn,
                 CheckOutDate = dto.CheckOut,
-
                 BookingStatus = "CONFIRMED",
                 TotalPrice = total
             };
-
             _repo.Add(booking);
+            _context.SaveChanges();
+
+            _billService.CreateBill(booking.Id, total);
+
 
             return new BookingResponseDto
             {
                 BookingId = booking.Id,
                 BookingReference = booking.BookingReference,
+                HotelId = booking.HotelId,  // include this in response
                 RoomId = booking.RoomId,
-                CheckIn = dto.CheckIn,
-                CheckOut = dto.CheckOut,
-                TotalPrice = total,
+                CheckIn = booking.CheckInDate,
+                CheckOut = booking.CheckOutDate,
+                TotalPrice = booking.TotalPrice,
                 Status = booking.BookingStatus
             };
         }

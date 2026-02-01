@@ -49,3 +49,4 @@ export const getBookingById = async (bookingId, userId) => {
   );
   return res.data.find((b) => b.bookingId === parseInt(bookingId));
 };
+
