@@ -23,6 +23,8 @@ public partial class Room
 
     public DateTime? UpdatedAt { get; set; }
 
+    public string? Description { get; set; }
+
     public virtual ICollection<BookingExtra> BookingExtras { get; set; } = new List<BookingExtra>();
 
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();

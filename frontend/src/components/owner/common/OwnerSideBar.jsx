@@ -20,7 +20,7 @@ const sideBarLinks = [
   { name: 'Confirm Bookings', to: '/owner/confirm-booking', icon: GiConfirmed },
   { name: 'Payments', to: '/owner/payments', icon: MdPayments },
   { name: 'Feedbacks', to: '/owner/view-feedbacks', icon: FcFeedback },
-  { name: 'Cancelled', to: '/owner/cancel-bookings', icon: TbZoomCancelFilled },
+  { name: 'Cancelled', to: '/owner/cancelled', icon: TbZoomCancelFilled },
   { name: 'Add Hotel', to: '/owner/add-hotel', icon: FaHotel },
   { name: 'Add Room', to: '/owner/add-room', icon: MdOutlineBedroomParent },
 ]

@@ -28,7 +28,7 @@ namespace UserAndBookingService.Services
                 Id = h.Id,
                 Name = h.HotelName,
                 Status = h.Status,
-                City = h.City,        
+                City = h.City,
                 Country = h.Country,
             }).ToList();
 

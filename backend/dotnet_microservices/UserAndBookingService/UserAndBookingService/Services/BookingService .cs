@@ -24,11 +24,11 @@ namespace UserAndBookingService.Services
 
         public BookingResponseDto CreateBooking(CreateBookingDto dto)
         {
-            
+
             if (dto.CheckOut <= dto.CheckIn)
                 throw new Exception("Check-out date must be after check-in date");
 
-            
+
             if (!IsRoomAvailable(new CheckAvailabilityDto
             {
                 RoomId = dto.RoomId,
@@ -37,7 +37,7 @@ namespace UserAndBookingService.Services
             }))
                 throw new Exception("Room not available");
 
-            
+
             var room = _context.Rooms.FirstOrDefault(r => r.Id == dto.RoomId);
             if (room == null)
                 throw new Exception("Room not found");
@@ -55,7 +55,7 @@ namespace UserAndBookingService.Services
             {
                 BookingReference = Guid.NewGuid().ToString().Substring(0, 8).ToUpper(),
                 CustomerId = dto.CustomerId,
-                HotelId = room.HotelId,   
+                HotelId = room.HotelId,
                 RoomId = dto.RoomId,
                 CheckInDate = dto.CheckIn,
                 CheckOutDate = dto.CheckOut,

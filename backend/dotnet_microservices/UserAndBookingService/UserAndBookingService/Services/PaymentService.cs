@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using UserAndBookingService.Dto;
+﻿using UserAndBookingService.Dto;
 using UserAndBookingService.Models;
 using UserAndBookingService.Repository;
 
@@ -27,36 +26,35 @@ namespace UserAndBookingService.Services
             if (booking == null)
                 throw new Exception("Booking not found");
 
-            var bill = _billRepo.GetById(dto.BillId);
-            if (bill == null)
-                throw new Exception("Bill not found");
-
             if (booking.BookingStatus == "COMPLETED")
                 throw new Exception("Booking already paid");
 
-            // 🔥 Simulate payment gateway
+            var bill = _billRepo.GetByBookingId(dto.BookingId);
+            if (bill == null)
+                throw new Exception("Bill not found");
+
             var payment = new Payment
             {
-                BookingId = dto.BookingId,
-                BillId = dto.BillId,
+                BookingId = booking.Id,
+                BillId = bill.BillId,
                 PaymentMethod = dto.PaymentMethod,
                 PaymentStatus = "SUCCESS",
                 TotalAmount = bill.BaseAmount,
-                TransactionReference = Guid.NewGuid().ToString().Substring(0, 12),
+                TransactionReference = Guid.NewGuid().ToString("N").Substring(0, 12),
                 PaidAt = DateTime.UtcNow,
                 CreatedAt = DateTime.UtcNow
             };
 
-            payment = _paymentRepo.Add(payment);
+            _paymentRepo.Add(payment);
 
-            // ✅ Update booking status
-            booking.BookingStatus = "CONFIRMED";
+            // ✅ ENUM SAFE
+            booking.BookingStatus = "COMPLETED";
             _bookingRepo.Update(booking);
 
             return new PaymentResponseDto
             {
                 PaymentId = payment.PaymentId,
-                BookingId = payment.BookingId,
+                BookingId = booking.Id,
                 TotalAmount = payment.TotalAmount,
                 PaymentStatus = payment.PaymentStatus,
                 TransactionReference = payment.TransactionReference,
@@ -64,6 +62,4 @@ namespace UserAndBookingService.Services
             };
         }
     }
-
-
 }

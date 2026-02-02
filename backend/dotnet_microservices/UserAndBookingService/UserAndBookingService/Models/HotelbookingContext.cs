@@ -42,9 +42,9 @@ public partial class HotelbookingContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=localhost;database=hotelbooking;user=root;pwd=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.2.0-mysql"));
+//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+//        => optionsBuilder.UseMySql("server=localhost;database=hotelbooking;user=root;pwd=Yogesh@123", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.39-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -439,6 +439,9 @@ public partial class HotelbookingContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("created_at");
+            entity.Property(e => e.Description)
+                .HasMaxLength(45)
+                .HasColumnName("description");
             entity.Property(e => e.HotelId).HasColumnName("hotel_id");
             entity.Property(e => e.IsActive).HasColumnName("is_active");
             entity.Property(e => e.MaxGuests).HasColumnName("max_guests");

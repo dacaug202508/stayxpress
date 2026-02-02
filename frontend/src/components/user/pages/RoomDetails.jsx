@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../reusable/Button";
 import { getRoomById } from "../../../services/roomservice";
 import { getHotelById } from "../../../services/hotelservice";
 import { createBooking } from "../../../services/bookingService";
 
 function RoomDetails() {
+
+  const navigate = useNavigate(); 
+
+
   const { roomId } = useParams();
   const userId = localStorage.getItem("user_id");
 
@@ -54,6 +58,7 @@ function RoomDetails() {
       const res = await createBooking(bookingPayload);
 
       alert(`Booking Confirmed! Ref: ${res.data.bookingReference}`);
+      navigate("/user/payment/" + res.data.bookingId);
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || "Booking failed");

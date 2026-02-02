@@ -45,7 +45,6 @@ import RoomCompare from "./components/user/pages/RoomCompare.jsx";
 import UserProfile from "./components/user/pages/UserProfile.jsx";
 import SearchPage from "./components/user/pages/Search.jsx";
 import HomePage from "./components/user/pages/Home.jsx";
-import UserBookings from "./components/user/pages/Booking.jsx";
 import BookingDetails from "./components/user/pages/BookingDetails.jsx";
 import RoomsPage from "./components/user/pages/Rooms.jsx";
 import HotelDetails from "./components/user/pages/HotelDetails.jsx";
@@ -53,6 +52,9 @@ import RoomDetails from "./components/user/pages/RoomDetails.jsx";
 import PublicOnlyLayout from "./Layout/PublicOnlyLayout.jsx";
 import AuthRequiredLayout from "./Layout/AuthRequiredLayout.jsx";
 import RoleBasedLayout from "./Layout/RoleBasedLayout.jsx";
+import PaymentPage from "./components/user/pages/PaymentPage.jsx";
+import UserBookings from "./components/user/pages/UserBooking.jsx";
+import CancelledBookings from "./components/owner/pages/CancelledBookings.jsx";
 
 let router = createBrowserRouter([
   {
@@ -86,11 +88,12 @@ let router = createBrowserRouter([
               { path: "profile", element: <UserProfile /> },
               { path: "compare", element: <RoomCompare /> },
               { path: "search", element: <SearchPage /> },
-              { path: "booking", element: <UserBookings /> },
+              { path: "booking", element: <UserBookings/> },
               { path: "bookings/:bookingId", element: <BookingDetails /> },
               { path: "hotels/:hotelId", element: <HotelDetails /> },
               { path: "hotels/:hotelId/rooms", element: <RoomsPage /> },
               { path: "rooms/:roomId", element: <RoomDetails /> },
+                { path: "payment/:bookingId", element: <PaymentPage />},
             ],
           },
         ],
@@ -113,6 +116,7 @@ let router = createBrowserRouter([
               { path: "edit-room/:roomId", element: <OwnerEditRoom /> },
               { path: "upload-info", element: <OwnerHotelInfo /> },
               { path: "view-bookings", element: <OwnerBooking /> },
+              { path: "cancelled", element: <CancelledBookings /> },
             ],
           },
         ],

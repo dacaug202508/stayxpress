@@ -12,7 +12,7 @@ function OwnerUpdateHotel() {
 
   const initialHotel = {
     id: 0,
-    ownerId: 1, // later from JWT
+    ownerId: localStorage.getItem("user_id"), // later from JWT
     hotelName: "",
     description: "",
     address: "",
@@ -41,7 +41,7 @@ function OwnerUpdateHotel() {
 
         setHotelData({
           id: hotel.id ?? 0,
-          ownerId: hotel.ownerId ?? 1,
+          ownerId: hotel.ownerId ?? localStorage.getItem("user_id"),
           hotelName: hotel.hotelName ?? "",
           description: hotel.description ?? "",
           address: hotel.address ?? "",
@@ -84,7 +84,7 @@ function OwnerUpdateHotel() {
 
       await updateHotel(hotelData.id, payload);
 
-      navigate("/owner/hotels");
+      navigate("/owner/upload-info");
     } catch (error) {
       console.error("Update error:", error);
     } finally {

@@ -8,7 +8,6 @@ namespace UserAndBookingService.Services
         private readonly IBillRepository _repo;
         private readonly HotelbookingContext _context;
 
-
         public BillService(IBillRepository repo, HotelbookingContext context)
         {
             _repo = repo;
@@ -17,9 +16,13 @@ namespace UserAndBookingService.Services
 
         public Bill CreateBill(int bookingId, decimal amount)
         {
-            var bookingExists = _context.Bookings.Any(b => b.Id == bookingId);
-            if (!bookingExists)
-                throw new Exception("Booking does not exist for bill generation");
+            if (!_context.Bookings.Any(b => b.Id == bookingId))
+                throw new Exception("Booking does not exist");
+
+            // prevent duplicate bill
+            var existing = _repo.GetByBookingId(bookingId);
+            if (existing != null)
+                return existing;
 
             var bill = new Bill
             {
@@ -35,16 +38,14 @@ namespace UserAndBookingService.Services
             return bill;
         }
 
+        public Bill GetBill(int billId)
+        {
+            throw new NotImplementedException();
+        }
 
         public Bill GetBillByBooking(int bookingId)
         {
             return _repo.GetByBookingId(bookingId)
-                   ?? throw new Exception("Bill not found for booking");
-        }
-
-        public Bill GetBill(int billId)
-        {
-            return _repo.GetById(billId)
                    ?? throw new Exception("Bill not found");
         }
     }

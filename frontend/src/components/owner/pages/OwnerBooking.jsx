@@ -1,134 +1,93 @@
 import React, { useEffect, useState } from "react";
-import { getBookedRoomsByOwner } from "../../../services/bookingService";
-import { getHotelsByOwnerAdmin } from "../../../services/adminHotelService";
+import { getOwnerBookings } from "../../../services/bookingService";
 
 function OwnerBooking() {
-  const ownerId = localStorage.getItem("user_id");
-
-  const [hotels, setHotels] = useState([]);
-  const [selectedHotelId, setSelectedHotelId] = useState("");
-  const [bookings, setBookings] = useState([]);
-  const [filteredBookings, setFilteredBookings] = useState([]);
+  const [bookedRooms, setBookedRooms] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const ownerId = localStorage.getItem("user_id");
+
   useEffect(() => {
-    fetchHotels();
-    fetchBookings();
+    fetchBookedRooms();
   }, []);
 
-  const fetchHotels = async () => {
+  const fetchBookedRooms = async () => {
     try {
-      const res = await getHotelsByOwnerAdmin(ownerId);
-      console.log(res.data)
-      setHotels(res.data)
-    } catch (error) {
-      console.error("Error fetching hotels", error);
-    }
-  };
+      const res = await getOwnerBookings(ownerId);
 
-  const fetchBookings = async () => {
-    try {
-      const res = await getBookedRoomsByOwner(ownerId);
-      console.log(res.data)
-      // Backend field = status
-      const confirmed = res.data.filter((b) => b.status === "CONFIRMED");
+      // 🔥 ONLY PAID BOOKINGS
+      const paidBookings = res.data.filter(
+        (b) => b.status === "COMPLETED"
+      );
 
-      setBookings(confirmed);
-      setFilteredBookings(confirmed);
+      setBookedRooms(paidBookings);
     } catch (error) {
-      console.error("Error fetching bookings:", error);
+      console.error("Error fetching owner bookings", error);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleHotelChange = (e) => {
-    const hotelId = e.target.value;
-    setSelectedHotelId(hotelId);
-
-    if (!hotelId) {
-      setFilteredBookings(bookings);
-    } else {
-      setFilteredBookings(
-        bookings.filter((b) => b.hotelId === Number(hotelId))
-      );
-    }
-  };
-
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        Loading bookings...
+      <div className="w-full min-h-full flex items-center justify-center">
+        Loading paid bookings...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-sky-50 px-4 py-10">
-      <div className="max-w-6xl mx-auto space-y-6">
-        <h2 className="text-3xl font-bold text-sky-900">Confirmed Bookings</h2>
+    <div className="w-full min-h-full p-6 bg-sky-50">
+      <h1 className="text-2xl font-semibold text-gray-800 mb-6">
+        Paid Bookings (Your Hotels)
+      </h1>
 
-        <div className="w-72">
-          <select
-            className="select select-bordered w-full"
-            value={selectedHotelId}
-            onChange={handleHotelChange}
-          >
-            <option value="">All Hotels</option>
-            {hotels.map((hotel) => (
-              <option key={hotel.id} value={hotel.id}>
-                {hotel.name}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div className="card bg-base-100 shadow-md">
+        <div className="card-body p-0">
+          <div className="overflow-x-auto">
+            <table className="table">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th>#</th>
+                  <th>Booking Ref</th>
+                  <th>Room</th>
+                  <th>Check-In</th>
+                  <th>Check-Out</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
 
-        <div className="space-y-6">
-          {filteredBookings.map((item) => (
-            <div
-              key={item.bookingId}
-              className="bg-white rounded-xl shadow-md p-5"
-            >
-              <div className="flex justify-between">
-                <div>
-                  <h3 className="text-xl font-semibold">
-                    Booking Ref: {item.bookingReference}
-                  </h3>
-                  <p className="text-sm text-gray-500">
-                    Room ID: {item.roomId}
-                  </p>
-                </div>
-
-                <span className="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700">
-                  {item.status}
-                </span>
-              </div>
-
-              <div className="mt-4 grid md:grid-cols-3 gap-4 text-sm">
-                <div>
-                  <p className="font-medium">Check-In</p>
-                  <p>{item.checkIn}</p>
-                </div>
-                <div>
-                  <p className="font-medium">Check-Out</p>
-                  <p>{item.checkOut}</p>
-                </div>
-                <div>
-                  <p className="font-medium">Total</p>
-                  <p className="text-sky-600 font-semibold">
-                    ₹{item.totalPrice}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {filteredBookings.length === 0 && (
-          <div className="text-center py-16 text-gray-500">
-            No confirmed bookings found
+              <tbody>
+                {bookedRooms.length > 0 ? (
+                  bookedRooms.map((item, index) => (
+                    <tr key={item.bookingId}>
+                      <td>{index + 1}</td>
+                      <td className="font-medium">{item.bookingReference}</td>
+                      <td>{item.roomId}</td>
+                      <td>{item.checkIn}</td>
+                      <td>{item.checkOut}</td>
+                      <td>
+                        <span className="badge badge-success">
+                          PAID
+                        </span>
+                      </td>
+                      <td className="font-semibold">
+                        ₹{item.totalPrice}
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="7" className="text-center py-6 text-gray-500">
+                      No paid bookings found
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

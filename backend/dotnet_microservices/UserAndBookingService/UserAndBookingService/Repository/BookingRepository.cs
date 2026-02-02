@@ -38,9 +38,13 @@ namespace UserAndBookingService.Repository
 
         public void Update(Booking booking)
         {
-            _context.Bookings.Update(booking);
+            var existing = _context.Bookings.Find(booking.Id);
+            if (existing == null) return;
+
+            existing.BookingStatus = booking.BookingStatus;
             _context.SaveChanges();
         }
+
     }
 
 }

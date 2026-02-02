@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using UserAndBookingService.Dto;
 using UserAndBookingService.Services;
 
@@ -23,6 +22,4 @@ namespace UserAndBookingService.Controllers
             return Ok(result);
         }
     }
-
-
 }

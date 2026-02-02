@@ -38,7 +38,7 @@ namespace UserAndBookingService.Services
                 }).ToList();
         }
 
-        
+
         public void UpdateRequestStatus(int requestId, string status, int adminId)
         {
             var request = _requestRepo.GetById(requestId);

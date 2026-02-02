@@ -32,7 +32,7 @@ namespace UserAndBookingService.Controllers
             return Ok(_service.GetAllRequests());
         }
 
-        
+
 
 
     }

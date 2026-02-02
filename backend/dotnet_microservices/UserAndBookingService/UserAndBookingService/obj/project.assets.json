@@ -2589,23 +2589,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\inamd\\.nuget\\packages\\": {},
+    "C:\\Users\\yoges\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\cdac\\Project\\stayxpress\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
+      "projectUniqueName": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
       "projectName": "UserAndBookingService",
-      "projectPath": "E:\\cdac\\Project\\stayxpress\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
-      "packagesPath": "C:\\Users\\inamd\\.nuget\\packages\\",
-      "outputPath": "E:\\cdac\\Project\\stayxpress\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\obj\\",
+      "projectPath": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
+      "packagesPath": "C:\\Users\\yoges\\.nuget\\packages\\",
+      "outputPath": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\inamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yoges\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
