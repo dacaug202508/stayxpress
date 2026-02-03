@@ -9,8 +9,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Login from "./components/pages/Login.jsx";
-import Layout from "./components/reusable/Layout.jsx";
 import Registration from "./components/pages/Registration.jsx";
+import Layout from "./components/reusable/Layout.jsx";
+// import Registration from "";
 import OwnerLayout from "./components/owner/common/OwnerLayout.jsx";
 import OwnerHomePage from "./components/owner/OwnerHomePage.jsx";
 import OwnerDashboard from "./components/owner/pages/OwnerDashboard.jsx";
@@ -55,11 +56,12 @@ import RoleBasedLayout from "./Layout/RoleBasedLayout.jsx";
 import PaymentPage from "./components/user/pages/PaymentPage.jsx";
 import UserBookings from "./components/user/pages/UserBooking.jsx";
 import CancelledBookings from "./components/owner/pages/CancelledBookings.jsx";
+import OwnerHotelsStatus from "./components/owner/pages/OwnerHotelsStatus.jsx";
 
 let router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, 
+    element: <Layout />,
     children: [
       { index: true, element: <App /> }, // home page
     ],
@@ -88,12 +90,12 @@ let router = createBrowserRouter([
               { path: "profile", element: <UserProfile /> },
               { path: "compare", element: <RoomCompare /> },
               { path: "search", element: <SearchPage /> },
-              { path: "booking", element: <UserBookings/> },
+              { path: "booking", element: <UserBookings /> },
               { path: "bookings/:bookingId", element: <BookingDetails /> },
               { path: "hotels/:hotelId", element: <HotelDetails /> },
               { path: "hotels/:hotelId/rooms", element: <RoomsPage /> },
               { path: "rooms/:roomId", element: <RoomDetails /> },
-                { path: "payment/:bookingId", element: <PaymentPage />},
+              { path: "payment/:bookingId", element: <PaymentPage /> },
             ],
           },
         ],
@@ -117,6 +119,10 @@ let router = createBrowserRouter([
               { path: "upload-info", element: <OwnerHotelInfo /> },
               { path: "view-bookings", element: <OwnerBooking /> },
               { path: "cancelled", element: <CancelledBookings /> },
+              {
+                path: "hotels/status",
+                element: <OwnerHotelsStatus />
+              },
             ],
           },
         ],

@@ -1,16 +1,12 @@
 import React from 'react'
 import {
-  BiHotel,
   BiInfoCircle,
-  BiHomeAlt,
 } from 'react-icons/bi'
-import { MdRoom, MdPayments, MdOutlineBedroomParent } from 'react-icons/md'
+import { MdRoom, MdOutlineBedroomParent } from 'react-icons/md'
 import { PiBookOpenLight } from 'react-icons/pi'
-import { GiConfirmed } from 'react-icons/gi'
 import { TbZoomCancelFilled } from 'react-icons/tb'
-import { FcFeedback } from 'react-icons/fc'
 import { Link, useLocation } from 'react-router-dom'
-import { FaHotel } from "react-icons/fa";
+import { FaHotel, FaConciergeBell } from "react-icons/fa";
 
 const sideBarLinks = [
   // { name: 'Dashboard', to: '/owner/dashboard', icon: BiHomeAlt },
@@ -29,46 +25,65 @@ function OwnerSideBar() {
   const location = useLocation()
 
   return (
-    <aside className="h-full bg-white border-r text-gray-300">
+    <aside className="h-full bg-white flex flex-col border-r border-gray-100 relative z-20">
 
-      {/* LOGO / TITLE */}
-      <div className="flex items-center gap-3 px-6 py-5">
-        <BiHotel className="text-2xl text-blue-500" />
-        <h1 className="text-lg text-black font-bold tracking-wide">
-          HotelManager
-        </h1>
+      {/* HEADER / LOGO */}
+      <div className="flex items-center gap-3 px-8 py-8 mb-2">
+        <div className="p-2 bg-blue-600 rounded-lg text-white shadow-md shadow-blue-200">
+          <FaConciergeBell className="text-xl" />
+        </div>
+        <div>
+          <h1 className="text-lg text-gray-800 font-bold tracking-wide font-sans">
+            StayXpress
+          </h1>
+          <p className="text-[10px] text-gray-400 font-semibold tracking-widest uppercase">
+            Owner Panel
+          </p>
+        </div>
       </div>
 
       {/* NAV LINKS */}
-      <nav className="p-4">
-        <ul className="space-y-2">
-          {sideBarLinks.map(({ name, to, icon: Icon }) => {
-            const isActive = location.pathname === to
+      <nav className="flex-1 px-4 overflow-y-auto custom-scrollbar space-y-1">
+        {sideBarLinks.map(({ name, to, icon: Icon }) => {
+          const isActive = location.pathname === to
 
-            return (
-              <li key={name}>
-                <Link
-                  to={to}
-                  className={`
-                    grid grid-cols-[20px_1fr]
-                    items-center gap-3
-                    px-4 py-3 rounded-xl text-sm
-                    transition
-                    ${
-                      isActive
-                        ? 'bg-blue-500 text-white'
-                        : 'text-gray-700 hover:bg-blue-100 hover:text-blue-600'
-                    }
+          return (
+            <div key={name}>
+              <Link
+                to={to}
+                className={`
+                    group flex items-center gap-3.5
+                    px-4 py-3.5 rounded-xl text-sm font-medium
+                    transition-all duration-200 ease-in-out
+                    ${isActive
+                    ? 'bg-blue-50 text-blue-700 shadow-sm'
+                    : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+                  }
                   `}
-                >
-                  <Icon className="text-lg" />
-                  <span className="font-medium">{name}</span>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
+              >
+                <Icon
+                  className={`text-xl transition-colors ${isActive ? 'text-blue-600' : 'text-gray-400 group-hover:text-gray-600'
+                    }`}
+                />
+                <span>{name}</span>
+
+                {/* Subtle Active Indicator */}
+                {isActive && (
+                  <div className="ml-auto w-1.5 h-1.5 rounded-full bg-blue-600" />
+                )}
+              </Link>
+            </div>
+          )
+        })}
       </nav>
+
+      {/* FOOTER AREA */}
+      <div className="p-4 mt-auto">
+        <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
+          <p className="text-xs text-gray-500 mb-1">Need assistance?</p>
+          <p className="text-xs font-semibold text-blue-600 cursor-pointer hover:underline">Contact Support</p>
+        </div>
+      </div>
 
     </aside>
   )

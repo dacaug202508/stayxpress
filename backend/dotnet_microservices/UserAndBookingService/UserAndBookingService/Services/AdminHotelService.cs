@@ -38,6 +38,32 @@ namespace UserAndBookingService.Services
             hotel.Status = status;
             _repo.Update(hotel);
         }
+
+
+        public void ApproveHotel(int hotelId, int adminId)
+        {
+            var hotel = _repo.GetById(hotelId);
+            if (hotel == null)
+                throw new Exception("Hotel not found");
+
+            hotel.Status = "APPROVED";
+            hotel.UpdatedAt = DateTime.UtcNow;
+
+            _repo.Update(hotel);
+        }
+
+        public void RejectHotel(int hotelId, int adminId)
+        {
+            var hotel = _repo.GetById(hotelId);
+            if (hotel == null)
+                throw new Exception("Hotel not found");
+
+            hotel.Status = "REJECTED";
+            hotel.UpdatedAt = DateTime.UtcNow;
+
+            _repo.Update(hotel);
+        }
+
     }
 
 }

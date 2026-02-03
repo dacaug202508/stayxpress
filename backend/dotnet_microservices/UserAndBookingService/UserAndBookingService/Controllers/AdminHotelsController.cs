@@ -28,6 +28,25 @@ namespace UserAndBookingService.Controllers
             _service.SetHotelStatus(id, status);
             return NoContent();
         }
+
+        [HttpPatch("{hotelId}/approve")]
+        public IActionResult ApproveHotel(int hotelId, [FromQuery] int adminId)
+        {
+            _service.ApproveHotel(hotelId, adminId);
+            return Ok("Hotel approved");
+        }
+
+        
+        [HttpPatch("{hotelId}/reject")]
+        public IActionResult RejectHotel(int hotelId, [FromQuery] int adminId)
+        {
+            _service.RejectHotel(hotelId, adminId);
+            return Ok("Hotel rejected");
+        }
+
+
+
+
     }
 
 }

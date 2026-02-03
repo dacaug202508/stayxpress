@@ -1,183 +1,118 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getRoomsByHotelId } from "../../../services/roomservice";
+import { FaUserFriends, FaBed, FaArrowRight, FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
-function OwnerBooking() {
-  // 🔹 Dummy bookings (based on YOUR schema)
-  const [bookings] = useState([
-    {
-      id: 1,
-      booking_reference: "BK-2026-001",
-      customer_id: 12,
-      room_id: 101,
-      room_number: "101",
-      room_type: "DELUXE",
-      hotel_name: "Hotel Sunrise",
-      check_in_date: "2026-02-10",
-      check_out_date: "2026-02-12",
-      booking_status: "BOOKED",
-      total_price: 7000,
-      created_at: "2026-01-20",
-      updated_at: "2026-01-20",
-    },
-    {
-      id: 2,
-      booking_reference: "BK-2026-002",
-      customer_id: 18,
-      room_id: 201,
-      room_number: "201",
-      room_type: "SUITE",
-      hotel_name: "Hotel Ocean View",
-      check_in_date: "2026-02-15",
-      check_out_date: "2026-02-18",
-      booking_status: "BOOKED",
-      total_price: 16500,
-      created_at: "2026-01-22",
-      updated_at: "2026-01-22",
-    },
-  ]);
-
+function UserRooms() {
   let { hotelId } = useParams();
   const [rooms, setRooms] = useState([]);
   let navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     (async () => {
       try {
         const res = await getRoomsByHotelId(hotelId);
-        console.log("Rooms:", res.data);
         setRooms(res.data || []);
       } catch (error) {
         console.error("Error fetching rooms:", error);
+      } finally {
+        setLoading(false);
       }
     })();
   }, [hotelId]);
 
-  // return (
-  //   <div className="w-full min-h-full p-6 bg-sky-50">
-
-  //     <h1 className="text-2xl font-semibold text-gray-800 mb-6">
-  //       Booked Rooms
-  //     </h1>
-
-  //     <div className="card bg-base-100 shadow-md">
-  //       <div className="card-body p-0">
-
-  //         <div className="overflow-x-auto">
-  //           <table className="table">
-
-  //             <thead className="bg-gray-50">
-  //               <tr>
-  //                 <th>#</th>
-  //                 <th>Booking Ref</th>
-  //                 <th>Hotel</th>
-  //                 <th>Room</th>
-  //                 <th>Check-In</th>
-  //                 <th>Check-Out</th>
-  //                 <th>Status</th>
-  //                 <th>Total Price</th>
-  //               </tr>
-  //             </thead>
-
-  //             <tbody>
-  //               {bookings.length > 0 ? (
-  //                 bookings.map((b, index) => (
-  //                   <tr key={b.id}>
-  //                     <th>{index + 1}</th>
-  //                     <td className="font-medium">
-  //                       {b.booking_reference}
-  //                     </td>
-  //                     <td>{b.hotel_name}</td>
-  //                     <td>
-  //                       {b.room_number} ({b.room_type})
-  //                     </td>
-  //                     <td>{b.check_in_date}</td>
-  //                     <td>{b.check_out_date}</td>
-  //                     <td>
-  //                       <span className="badge badge-success badge-outline">
-  //                         {b.booking_status}
-  //                       </span>
-  //                     </td>
-  //                     <td>₹{b.total_price}</td>
-  //                   </tr>
-  //                 ))
-  //               ) : (
-  //                 <tr>
-  //                   <td colSpan="8" className="text-center py-6 text-gray-500">
-  //                     No bookings found
-  //                   </td>
-  //                 </tr>
-  //               )}
-  //             </tbody>
-
-  //           </table>
-  //         </div>
-  //       </div>
-  //     </div>
-
   return (
-    <div className="min-h-screen bg-sky-50 p-6">
-      <h2 className="text-3xl font-bold mb-8 text-sky-800">Rooms Available</h2>
+    <div className="min-h-screen bg-gray-50 p-6 md:p-10">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-10 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Available Rooms</h2>
+          <p className="text-gray-500 text-lg">Choose the perfect room for your stay</p>
+        </header>
 
-      {rooms.length === 0 ? (
-        <p className="text-gray-500">No rooms found for this hotel.</p>
-      ) : (
-        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
-          {rooms.map((room) => (
-            <div
-              key={room.id}
-              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col overflow-hidden"
-            >
-              {/* Room Image Placeholder */}
-              <div className="h-44 bg-slate-200 relative">
-                <span
-                  className={`absolute top-3 right-3 text-xs px-3 py-1 rounded-full font-semibold ${
-                    room.isActive
-                      ? "bg-green-100 text-green-600"
-                      : "bg-red-100 text-red-600"
-                  }`}
-                >
-                  {room.isActive ? "Available" : "Unavailable"}
-                </span>
-                <img src={room.image || "https://static.leonardo-hotels.com/image/executive-room-with-king-bed_35ba711c8e3052877659372a86e4bb3a_2048x1365_desktop_2.jpeg"} alt="" className="h-full w-full" />
-              </div>
+        {loading ? (
+          <div className="flex justify-center items-center py-20">
+            <span className="loading loading-spinner loading-lg text-blue-600"></span>
+          </div>
+        ) : rooms.length === 0 ? (
+          <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-gray-200">
+            <div className="p-4 bg-gray-50 rounded-full inline-block mb-4">
+              <FaBed className="text-4xl text-gray-300" />
+            </div>
+            <p className="text-gray-500 font-medium">No rooms found for this hotel.</p>
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {rooms.map((room) => (
+              <div
+                key={room.id}
+                className="group bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden"
+              >
+                {/* Room Image */}
+                <div className="h-56 relative overflow-hidden">
+                  <div className={`absolute top-4 right-4 z-10 text-xs px-3 py-1.5 rounded-full font-bold shadow-md flex items-center gap-1.5 backdrop-blur-md ${room.isActive
+                      ? "bg-green-100/90 text-green-700"
+                      : "bg-red-100/90 text-red-700"
+                    }`}>
+                    {room.isActive ? <FaCheckCircle size={12} /> : <FaTimesCircle size={12} />}
+                    {room.isActive ? "Available" : "Unavailable"}
+                  </div>
 
-              {/* Room Info */}
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="text-lg font-bold text-slate-800 mb-1">
-                  Room {room.roomNumber} — {room.roomType}
-                </h3>
+                  <img
+                    src={room.image || "https://static.leonardo-hotels.com/image/executive-room-with-king-bed_35ba711c8e3052877659372a86e4bb3a_2048x1365_desktop_2.jpeg"}
+                    alt={room.roomType}
+                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-xl font-bold shadow-sm">{room.roomType}</h3>
+                  </div>
+                </div>
 
-                <p className="text-sm text-gray-600">
-                  👥 Up to{" "}
-                  <span className="font-semibold">{room.maxGuests}</span> guests
-                </p>
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Room Number</div>
+                      <div className="font-semibold text-gray-800 text-lg">#{room.roomNumber}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Capacity</div>
+                      <div className="flex items-center gap-2 font-medium text-gray-700 justify-end">
+                        <FaUserFriends className="text-blue-500" />
+                        {room.maxGuests} Guests
+                      </div>
+                    </div>
+                  </div>
 
-                <p className="text-sky-600 font-bold text-lg mt-2">
-                  ₹{room.pricePerNight}{" "}
-                  <span className="text-sm text-gray-500">/ night</span>
-                </p>
+                  <hr className="border-gray-100 my-4" />
 
-                <div className="mt-auto pt-4">
-                  <button
-                    disabled={!room.isActive}
-                    onClick={() => navigate(`/user/rooms/${room.id}`)}
-                    className={`w-full py-2 rounded-lg font-semibold transition ${
-                      room.isActive
-                        ? "bg-sky-600 text-white hover:bg-sky-700"
-                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    }`}
-                  >
-                    {room.isActive ? "Book Now" : "Not Available"}
-                  </button>
+                  <div className="flex items-end justify-between mt-auto">
+                    <div>
+                      <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">Price per night</p>
+                      <p className="text-2xl font-bold text-blue-600">₹{room.pricePerNight}</p>
+                    </div>
+
+                    <button
+                      disabled={!room.isActive}
+                      onClick={() => navigate(`/user/rooms/${room.id}`)}
+                      className={`px-6 py-3 rounded-xl font-bold shadow-lg transition-all active:scale-95 flex items-center gap-2 ${room.isActive
+                          ? "bg-blue-600 text-white hover:bg-blue-700 shadow-blue-500/30"
+                          : "bg-gray-100 text-gray-400 cursor-not-allowed shadow-none"
+                        }`}
+                    >
+                      {room.isActive ? "Book Now" : "Booked"}
+                      {room.isActive && <FaArrowRight size={14} />}
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
-export default OwnerBooking;
+export default UserRooms;

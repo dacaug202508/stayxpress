@@ -4,7 +4,7 @@ import UserNavBar from "./UserNavBar";
 
 function UserLayout() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       <UserNavBar />
 
       <main className="w-full">

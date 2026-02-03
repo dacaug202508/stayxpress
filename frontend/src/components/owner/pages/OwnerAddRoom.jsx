@@ -3,6 +3,16 @@ import Button from "../../reusable/Button";
 import { getHotelsByOwnerId } from "../../../services/hotelservice";
 import { saveRoom } from "../../../services/roomservice";
 import { uploadImage } from "../../../services/imageservices";
+import { toast } from "react-toastify";
+import {
+  FaHotel,
+  FaBed,
+  FaMoneyBillWave,
+  FaUsers,
+  FaImage,
+  FaAlignLeft,
+  FaDoorOpen,
+} from "react-icons/fa";
 
 function OwnerAddRoom() {
   const init = {
@@ -18,190 +28,270 @@ function OwnerAddRoom() {
   const [roomData, setRoomData] = useState(init);
   const [hotels, setHotels] = useState([]);
   const [image, setImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
+  const [dragActive, setDragActive] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const onChangeHandler = (name, value) => {
-    setRoomData({
-      ...roomData,
-      [name]: value,
-    });
+  /* ================= IMAGE HANDLER ================= */
+  const handleFile = (file) => {
+    if (!file || !file.type.startsWith("image/")) {
+      toast.error("Please upload a valid image");
+      return;
+    }
+    setImage(file);
+    setImagePreview(URL.createObjectURL(file));
   };
 
+  const handleImageChange = (e) => {
+    handleFile(e.target.files[0]);
+  };
+
+  /* ================= DRAG & DROP ================= */
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setDragActive(true);
+  };
+
+  const handleDragLeave = () => {
+    setDragActive(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setDragActive(false);
+    handleFile(e.dataTransfer.files[0]);
+  };
+
+  /* ======= PREVENT MEMORY LEAK ======= */
+  useEffect(() => {
+    return () => {
+      if (imagePreview) URL.revokeObjectURL(imagePreview);
+    };
+  }, [imagePreview]);
+
+  /* ================= INPUT HANDLER ================= */
+  const onChangeHandler = (name, value) => {
+    setRoomData({ ...roomData, [name]: value });
+  };
+
+  /* ================= SAVE ROOM ================= */
   async function handleSave(e) {
     e.preventDefault();
 
+    if (!roomData.hotelId) {
+      toast.error("Please select a hotel.");
+      return;
+    }
+
     try {
       setLoading(true);
-      // 🔹 Convert types
+
       const payload = {
         ...roomData,
         hotelId: Number(roomData.hotelId),
         pricePerNight: Number(roomData.pricePerNight),
         maxGuests: Number(roomData.maxGuests),
-        isActive: roomData.isActive === "true" || roomData.isActive === true,
+        isActive: roomData.isActive === true,
       };
 
-      console.log("Saving Room:", payload);
-
-      // 1️⃣ Save Room First
       const roomRes = await saveRoom(payload);
       const savedRoom = roomRes.data;
-      console.log("Saved Room:", savedRoom);
 
-      // 2️⃣ Upload Image AFTER room is created
       if (image) {
-        const formData = new FormData();
-        formData.append("file", image);
-        formData.append("entityType", "ROOM");
-        formData.append("entityId", savedRoom.id);
-
-        const imgRes = await uploadImage(formData);
-        console.log("Room image uploaded:", imgRes.data);
+        try {
+          const formData = new FormData();
+          formData.append("file", image);
+          formData.append("entityType", "ROOM");
+          formData.append("entityId", savedRoom.id);
+          await uploadImage(formData);
+        } catch {
+          toast.warn("Room saved, but image upload failed.");
+        }
       }
 
-      alert("Room added successfully!");
+      toast.success("Room added successfully!");
       setRoomData(init);
       setImage(null);
+      setImagePreview(null);
     } catch (error) {
-      console.error("Error saving room:", error);
+      console.error(error);
+      toast.error("Failed to save room.");
     } finally {
       setLoading(false);
     }
   }
 
+  /* ================= FETCH HOTELS ================= */
   useEffect(() => {
     (async () => {
-      let res = await getHotelsByOwnerId(1);
-      setHotels(res.data.data);
+      try {
+        const ownerId = localStorage.getItem("user_id");
+        const res = await getHotelsByOwnerId(ownerId);
+        setHotels(res.data.data);
+      } catch {
+        toast.error("Could not load hotels");
+      }
     })();
   }, []);
 
+  /* ================= UI ================= */
   return (
-    <div className="w-full min-h-full flex items-center justify-center">
-      <div className="card bg-base-100 w-full max-w-md shadow-2xl">
-        <div className="card-body">
-          <h2 className="text-xl font-semibold text-center mb-4">Add Room</h2>
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6">
+      <div className="card w-full max-w-4xl bg-white/80 shadow-2xl rounded-2xl p-8">
+        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <FaBed /> Add New Room
+        </h2>
 
-          <form className="space-y-4" onSubmit={handleSave}>
-            {/* HOTEL */}
-            <div>
-              <label className="label">Hotel</label>
+        <form className="space-y-6" onSubmit={handleSave}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* LEFT */}
+            <div className="space-y-4">
               <select
                 name="hotelId"
-                value={roomData.hotelId}
                 className="select select-bordered w-full"
-                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
+                value={roomData.hotelId}
+                onChange={(e) =>
+                  onChangeHandler(e.target.name, e.target.value)
+                }
                 required
               >
                 <option value="">Select Hotel</option>
-                {hotels.map((hotel) => (
-                  <option key={hotel.id} value={hotel.id}>
-                    {hotel.hotelName}
+                {hotels.map((h) => (
+                  <option key={h.id} value={h.id}>
+                    {h.hotelName}
                   </option>
                 ))}
               </select>
-            </div>
-            {/* ROOM NUMBER */}
-            <div>
-              <label className="label">Room Number</label>
+
               <input
-                type="text"
                 name="roomNumber"
+                placeholder="Room Number"
+                className="input input-bordered"
                 value={roomData.roomNumber}
-                className="input input-bordered w-full"
-                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  onChangeHandler(e.target.name, e.target.value)
+                }
                 required
               />
-            </div>
-            {/* ROOM Description */}
-            <div>
-              <label className="label">Description</label>
-              <input
-                type="text"
-                name="description"
-                value={roomData.description}
-                className="input input-bordered w-full"
-                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
-                required
-              />
-            </div>
-            {/* ROOM TYPE */}
-            <div>
-              <label className="label">Room Type</label>
+
               <select
                 name="roomType"
+                className="select select-bordered"
                 value={roomData.roomType}
-                className="select select-bordered w-full"
-                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  onChangeHandler(e.target.name, e.target.value)
+                }
                 required
               >
-                <option value="">Select Room Type</option>
-                <option value="SINGLE">SINGLE</option>
-                <option value="DOUBLE">DOUBLE</option>
-                <option value="SUITE">SUITE</option>
+                <option value="">Room Type</option>
+                <option value="SINGLE">Single</option>
+                <option value="DOUBLE">Double</option>
+                <option value="SUITE">Suite</option>
               </select>
-            </div>
-            {/* PRICE */}
-            <div>
-              <label className="label">Price Per Night</label>
+
               <input
                 type="number"
                 name="pricePerNight"
+                placeholder="Price per night"
+                className="input input-bordered"
                 value={roomData.pricePerNight}
-                className="input input-bordered w-full"
-                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  onChangeHandler(e.target.name, e.target.value)
+                }
+                min="0"
                 required
               />
-            </div>
-            {/* MAX GUESTS */}
-            <div>
-              <label className="label">Max Guests</label>
+
               <input
                 type="number"
                 name="maxGuests"
+                placeholder="Max Guests"
+                className="input input-bordered"
                 value={roomData.maxGuests}
-                className="input input-bordered w-full"
-                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
+                onChange={(e) =>
+                  onChangeHandler(e.target.name, e.target.value)
+                }
+                min="1"
                 required
               />
             </div>
-            {/* STATUS */}
-            <div>
-              <label className="label">Status</label>
-              <select
-                name="isActive"
-                value={roomData.isActive}
-                className="select select-bordered w-full"
-                onChange={(e) => onChangeHandler(e.target.name, e.target.value)}
+
+            {/* RIGHT */}
+            <div className="space-y-4">
+              <textarea
+                name="description"
+                className="textarea textarea-bordered"
+                placeholder="Room description"
+                value={roomData.description}
+                onChange={(e) =>
+                  onChangeHandler(e.target.name, e.target.value)
+                }
+                required
+              />
+
+              <div className="flex gap-4">
+                <label>
+                  <input
+                    type="radio"
+                    checked={roomData.isActive}
+                    onChange={() => onChangeHandler("isActive", true)}
+                  />{" "}
+                  Active
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    checked={!roomData.isActive}
+                    onChange={() => onChangeHandler("isActive", false)}
+                  />{" "}
+                  Inactive
+                </label>
+              </div>
+
+              {/* DRAG & DROP IMAGE */}
+              <div
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
+                className={`border-2 border-dashed rounded-xl p-6 text-center transition ${dragActive
+                    ? "border-blue-600 bg-blue-50"
+                    : "border-gray-300"
+                  }`}
               >
-                <option value="true">ACTIVE</option>
-                <option value="false">INACTIVE</option>
-              </select>
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  id="fileUpload"
+                  onChange={handleImageChange}
+                />
+                <label htmlFor="fileUpload" className="cursor-pointer">
+                  {imagePreview ? (
+                    <img
+                      src={imagePreview}
+                      alt="Preview"
+                      className="w-full h-40 object-cover rounded"
+                    />
+                  ) : (
+                    <>
+                      <FaImage className="text-4xl mx-auto text-gray-400 mb-2" />
+                      <p className="text-gray-500">
+                        Drag & drop image here or click to upload
+                      </p>
+                    </>
+                  )}
+                </label>
+              </div>
             </div>
-            {/* ROOM IMAGE */}
-            <div>
-              <label className="label">Room Image</label>
-              <input
-                type="file"
-                accept="image/*"
-                className="file-input file-input-bordered w-full"
-                onChange={(e) => setImage(e.target.files[0])}
-                required
-              />
-            </div>
-            {loading ? (
-              <Button
-                css="w-full mt-4 btn btn-soft btn-info"
-                text="Saving...."
-              />
-            ) : (
-              <Button
-                css="w-full mt-4 btn btn-soft btn-info"
-                text="Save Room"
-              />
-            )}{" "}
-          </form>
-        </div>
+          </div>
+
+          <Button
+            type="submit"
+            disabled={loading}
+            css="w-full btn btn-primary"
+            text={loading ? "Saving..." : "Save Room"}
+          />
+        </form>
       </div>
     </div>
   );

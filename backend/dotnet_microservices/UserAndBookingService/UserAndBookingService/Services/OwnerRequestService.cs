@@ -6,10 +6,14 @@ namespace UserAndBookingService.Services
     public class OwnerRequestService : IOwnerRequestService
     {
         private readonly IOwnerRequestRepository _repo;
+        private readonly IUserRepository _userRepo;
 
-        public OwnerRequestService(IOwnerRequestRepository repo)
+        public OwnerRequestService(
+            IOwnerRequestRepository repo,
+            IUserRepository userRepo)
         {
             _repo = repo;
+            _userRepo = userRepo;
         }
 
         public void CreateOwnerRequest(int userId)
@@ -29,6 +33,36 @@ namespace UserAndBookingService.Services
 
             _repo.Add(request);
         }
-    }
 
+        public List<OwnerRequest> GetAllRequests() =>
+            _repo.GetAll();
+
+        public List<OwnerRequest> GetPendingRequests() =>
+            _repo.GetPendingRequests();
+
+        public void UpdateStatus(int requestId, string status, int adminId)
+        {
+            var request = _repo.GetById(requestId);
+            if (request == null)
+                throw new Exception("Request not found");
+
+            request.RequestStatus = status;
+            request.ReviewedAt = DateTime.UtcNow;
+            request.ReviewedBy = adminId;
+
+            _repo.Update(request);
+
+            // 🔥 Role update logic
+            var user = _userRepo.GetById(request.UserId);
+            if (user != null)
+            {
+                if (status == "APPROVED")
+                    user.Role = "OWNER";
+                else if (user.Role == "OWNER")
+                    user.Role = "CUSTOMER";
+
+                _userRepo.Update(user);
+            }
+        }
+    }
 }

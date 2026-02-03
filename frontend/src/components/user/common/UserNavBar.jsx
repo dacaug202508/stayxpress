@@ -1,41 +1,66 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaUserCircle, FaSignOutAlt, FaCog } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../store/authSlice";
+
 
 const NavLinks = [
   { name: "Home", to: "/user" },
-  { name: "Search", to: "/user/search" },
-  { name: "Compare", to: "/user/compare" },
-  { name: "Booking", to: "/user/booking" },
-  { name: "Profile", to: "/user/profile" },
+  { name: "Find Hotels", to: "/user/search" },
+  { name: "My Bookings", to: "/user/booking" },
 ];
 
 function UserNavBar() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+
   return (
-    <div className="navbar bg-base-100 shadow-sm px-4">
+    <div className="navbar bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 px-6 md:px-10 h-20">
       {/* LEFT SECTION */}
-      <div className="flex-1 flex items-center gap-4">
+      <div className="flex-1 flex items-center gap-8">
         {/* LOGO */}
-        <Link to="/" className="btn btn-ghost text-xl">
-          STAYXPRESS
+        <Link to="/user" className="flex items-center gap-2 group">
+          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
+            S
+          </div>
+          <span className="text-xl font-bold text-gray-800 tracking-tight">STAY<span className="text-blue-600">XPRESS</span></span>
         </Link>
 
         {/* DESKTOP NAV LINKS */}
-        <ul className="menu menu-horizontal px-1 hidden lg:flex">
-          {NavLinks.map((link) => (
-            <li key={link.name}>
-              <Link to={link.to}>{link.name}</Link>
-            </li>
-          ))}
+        <ul className="hidden lg:flex items-center gap-1">
+          {NavLinks.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <li key={link.name}>
+                <Link
+                  to={link.to}
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${isActive
+                    ? "bg-blue-50 text-blue-600 shadow-sm"
+                    : "text-gray-500 hover:text-blue-600 hover:bg-gray-50"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </div>
 
       {/* RIGHT SECTION */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-4">
         {/* AVATAR DROPDOWN */}
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost btn-circle avatar"
+            className="btn btn-ghost btn-circle avatar ring-2 ring-gray-100 hover:ring-blue-100 transition-all"
           >
             <div className="w-10 rounded-full">
               <img
@@ -47,19 +72,23 @@ function UserNavBar() {
 
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-1"
+            className="menu menu-sm dropdown-content bg-white rounded-2xl mt-4 w-56 p-2 shadow-xl border border-gray-100 z-[9999]"
           >
+            <li className="menu-title px-4 py-2 text-xs text-gray-400 font-semibold uppercase tracking-wider">
+              Account
+            </li>
             <li>
-              <Link className="justify-between">
+              <Link to="/user/profile" className="py-3 px-4 hover:bg-blue-50 text-gray-600 hover:text-blue-600 rounded-xl flex items-center gap-3">
+                <FaUserCircle size={16} />
                 Profile
-                <span className="badge">New</span>
               </Link>
             </li>
+            <div className="divider my-1"></div>
             <li>
-              <Link>Settings</Link>
-            </li>
-            <li>
-              <Link>Logout</Link>
+              <button onClick={handleLogout} className="py-3 px-4 hover:bg-red-50 text-red-500 hover:text-red-600 rounded-xl flex items-center gap-3 font-medium">
+                <FaSignOutAlt size={16} />
+                Logout
+              </button>
             </li>
           </ul>
         </div>

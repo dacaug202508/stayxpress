@@ -3,164 +3,32 @@
   "WorkspaceRootPath": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\bookingservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\bookingservice .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\billrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\billrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\billservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\ibillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\ibillservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\bookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\billcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\billcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\paymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\ownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\ownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\iownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\iownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\ibookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\ibookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\iadminuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\iadminuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\iadminownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\iadminownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\iadminhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\iadminhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\adminuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\adminuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\adminownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\adminownerrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\adminhotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\adminhotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\adminhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\adminhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\ownerrequestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\ownerrequestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\ipaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\ipaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\iownerrequestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\iownerrequestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\ihotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\ihotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\ibookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\ibookingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\ibillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\ibillrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\services\\iadminhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\services\\iadminhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\hotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\hotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\adminownerrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\adminownerrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\repository\\ihotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\repository\\ihotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\models\\hotel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\ownerrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\ownerrequestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\adminuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\controllers\\adminhotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\controllers\\adminhotelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\models\\hotelbookingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\models\\hotelbookingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\userandbookingservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\userandbookingservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|c:\\mainproject\\stayxpress\\backend\\dotnet_microservices\\userandbookingservice\\userandbookingservice\\models\\bookingextra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D71D6D6B-D7E1-4551-ACD5-4CA599261282}|UserAndBookingService\\UserAndBookingService.csproj|solutionrelative:userandbookingservice\\models\\bookingextra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -174,345 +42,46 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BookingRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\BookingRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\BookingRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\BookingRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\BookingRepository.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAcwCwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:44.634Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PaymentController.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\PaymentController.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\PaymentController.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\PaymentController.cs",
-              "RelativeToolTip": "UserAndBookingService\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:27.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BillController.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\BillController.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\BillController.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\BillController.cs",
-              "RelativeToolTip": "UserAndBookingService\\Controllers\\BillController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAuwBoAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:16.037Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BillRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\BillRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\BillRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\BillRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\BillRepository.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAuwB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:41.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BillService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\BillService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\BillService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\BillService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\BillService.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:06.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IBillService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IBillService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\IBillService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IBillService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\IBillService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:27.358Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookingService .cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\BookingService .cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\BookingService .cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\BookingService .cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\BookingService .cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAA4wCUAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:09.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PaymentService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\PaymentService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\PaymentService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\PaymentService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\PaymentService.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAuwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:54.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PaymentRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\PaymentRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\PaymentRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\PaymentRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\PaymentRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAuwBwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:16.423Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Program.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Program.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Program.cs",
-              "RelativeToolTip": "UserAndBookingService\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:19:59.815Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\UserService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\UserService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\UserService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAuwDcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:58.323Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "OwnerRequestService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\OwnerRequestService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\OwnerRequestService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\OwnerRequestService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\OwnerRequestService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAuwCIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:51.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IPaymentService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IPaymentService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\IPaymentService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IPaymentService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\IPaymentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:45.51Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IOwnerRequestService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IOwnerRequestService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\IOwnerRequestService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IOwnerRequestService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\IOwnerRequestService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:37.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\appsettings.json",
-              "RelativeDocumentMoniker": "UserAndBookingService\\appsettings.json",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\appsettings.json",
-              "RelativeToolTip": "UserAndBookingService\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-02T12:23:33.31Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IBookingService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IBookingService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\IBookingService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IBookingService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\IBookingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:42.032Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IAdminUserService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IAdminUserService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\IAdminUserService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IAdminUserService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\IAdminUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:24.44Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IAdminOwnerRequestService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IAdminOwnerRequestService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\IAdminOwnerRequestService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IAdminOwnerRequestService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\IAdminOwnerRequestService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:21.535Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "IAdminHotelService.cs",
               "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IAdminHotelService.cs",
               "RelativeDocumentMoniker": "UserAndBookingService\\Services\\IAdminHotelService.cs",
               "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\IAdminHotelService.cs",
               "RelativeToolTip": "UserAndBookingService\\Services\\IAdminHotelService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:18.491Z"
+              "WhenOpened": "2026-02-03T10:33:20.656Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AdminUserService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\AdminUserService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\AdminUserService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\AdminUserService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\AdminUserService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAuwCIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:01.846Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AdminOwnerRequestService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\AdminOwnerRequestService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Services\\AdminOwnerRequestService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\AdminOwnerRequestService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Services\\AdminOwnerRequestService.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAuwEUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:16:57.822Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 1,
               "Title": "AdminHotelService.cs",
               "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\AdminHotelService.cs",
               "RelativeDocumentMoniker": "UserAndBookingService\\Services\\AdminHotelService.cs",
               "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Services\\AdminHotelService.cs",
               "RelativeToolTip": "UserAndBookingService\\Services\\AdminHotelService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAuwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAUwEAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:23.306Z"
+              "WhenOpened": "2026-02-03T10:31:04.765Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\UserRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\UserRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "HotelRepository.cs",
+              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\HotelRepository.cs",
+              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\HotelRepository.cs",
+              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\HotelRepository.cs",
+              "RelativeToolTip": "UserAndBookingService\\Repository\\HotelRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:19.286Z"
+              "WhenOpened": "2026-02-03T10:30:36.214Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "OwnerRequestRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\OwnerRequestRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\OwnerRequestRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\OwnerRequestRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\OwnerRequestRepository.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAuwC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:13.192Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IUserService.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\IUserService.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IUserService.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:10.471Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\IUserRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IUserRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:07.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "IPaymentRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IPaymentRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\IPaymentRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IPaymentRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\IPaymentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:03.731Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "IOwnerRequestRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IOwnerRequestRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\IOwnerRequestRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IOwnerRequestRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\IOwnerRequestRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:01.142Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 4,
               "Title": "IHotelRepository.cs",
               "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IHotelRepository.cs",
               "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\IHotelRepository.cs",
@@ -520,139 +89,47 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IHotelRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:58.03Z"
+              "WhenOpened": "2026-02-03T10:30:22.137Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "IBookingRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IBookingRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\IBookingRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IBookingRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\IBookingRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAABAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Hotel.cs",
+              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Models\\Hotel.cs",
+              "RelativeDocumentMoniker": "UserAndBookingService\\Models\\Hotel.cs",
+              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Models\\Hotel.cs",
+              "RelativeToolTip": "UserAndBookingService\\Models\\Hotel.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAxwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:55.102Z"
+              "WhenOpened": "2026-02-03T10:29:58.714Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "IBillRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IBillRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\IBillRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\IBillRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\IBillRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "BookingExtra.cs",
+              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Models\\BookingExtra.cs",
+              "RelativeDocumentMoniker": "UserAndBookingService\\Models\\BookingExtra.cs",
+              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Models\\BookingExtra.cs",
+              "RelativeToolTip": "UserAndBookingService\\Models\\BookingExtra.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:51.906Z"
+              "WhenOpened": "2026-02-03T10:29:57.705Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "HotelRepository.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\HotelRepository.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Repository\\HotelRepository.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Repository\\HotelRepository.cs",
-              "RelativeToolTip": "UserAndBookingService\\Repository\\HotelRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAuwB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:48.305Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "UserAndBookingService\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAuwCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:31.148Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "OwnerRequestsController.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\OwnerRequestsController.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\OwnerRequestsController.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\OwnerRequestsController.cs",
-              "RelativeToolTip": "UserAndBookingService\\Controllers\\OwnerRequestsController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:23.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "BookingsController.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\BookingsController.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\BookingsController.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\BookingsController.cs",
-              "RelativeToolTip": "UserAndBookingService\\Controllers\\BookingsController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAuwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:20.445Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "AdminOwnerRequestsController.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\AdminOwnerRequestsController.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\AdminOwnerRequestsController.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\AdminOwnerRequestsController.cs",
-              "RelativeToolTip": "UserAndBookingService\\Controllers\\AdminOwnerRequestsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:06.136Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "AdminUsersController.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\AdminUsersController.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\AdminUsersController.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\AdminUsersController.cs",
-              "RelativeToolTip": "UserAndBookingService\\Controllers\\AdminUsersController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA+wB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:09.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 0,
               "Title": "AdminHotelsController.cs",
               "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\AdminHotelsController.cs",
               "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\AdminHotelsController.cs",
               "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\AdminHotelsController.cs",
               "RelativeToolTip": "UserAndBookingService\\Controllers\\AdminHotelsController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwCEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAACYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:20:41.198Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "HotelbookingContext.cs",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Models\\HotelbookingContext.cs",
-              "RelativeDocumentMoniker": "UserAndBookingService\\Models\\HotelbookingContext.cs",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Models\\HotelbookingContext.cs",
-              "RelativeToolTip": "UserAndBookingService\\Models\\HotelbookingContext.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAA8wC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:20:33.354Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "UserAndBookingService.csproj",
-              "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
-              "RelativeDocumentMoniker": "UserAndBookingService\\UserAndBookingService.csproj",
-              "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
-              "RelativeToolTip": "UserAndBookingService\\UserAndBookingService.csproj",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-02T12:18:50.873Z"
+              "WhenOpened": "2026-02-03T10:29:31.206Z",
+              "EditorCaption": ""
             }
           ]
         }

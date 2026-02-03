@@ -11,6 +11,48 @@
   },
   {
     "ContainingType": "UserAndBookingService.Controllers.AdminHotelsController",
+    "Method": "ApproveHotel",
+    "RelativePath": "api/admin/hotels/{hotelId}/approve",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hotelId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "adminId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserAndBookingService.Controllers.AdminHotelsController",
+    "Method": "RejectHotel",
+    "RelativePath": "api/admin/hotels/{hotelId}/reject",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "hotelId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "adminId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserAndBookingService.Controllers.AdminHotelsController",
     "Method": "SetStatus",
     "RelativePath": "api/admin/hotels/{id}/status",
     "HttpMethod": "PATCH",
@@ -237,6 +279,42 @@
   },
   {
     "ContainingType": "UserAndBookingService.Controllers.OwnerRequestsController",
+    "Method": "GetAll",
+    "RelativePath": "api/owner-requests",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserAndBookingService.Controllers.OwnerRequestsController",
+    "Method": "UpdateStatus",
+    "RelativePath": "api/owner-requests/{requestId}/status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "adminId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserAndBookingService.Controllers.OwnerRequestsController",
     "Method": "CreateRequest",
     "RelativePath": "api/owner-requests/{userId}",
     "HttpMethod": "POST",
@@ -249,6 +327,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserAndBookingService.Controllers.OwnerRequestsController",
+    "Method": "GetPending",
+    "RelativePath": "api/owner-requests/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

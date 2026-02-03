@@ -70,6 +70,68 @@
         }
       }
     },
+    "/api/admin/hotels/{hotelId}/approve": {
+      "patch": {
+        "tags": [
+          "AdminHotels"
+        ],
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "adminId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/hotels/{hotelId}/reject": {
+      "patch": {
+        "tags": [
+          "AdminHotels"
+        ],
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "adminId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/admin/owner-requests/pending": {
       "get": {
         "tags": [
@@ -361,6 +423,68 @@
             "name": "userId",
             "in": "path",
             "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/owner-requests": {
+      "get": {
+        "tags": [
+          "OwnerRequests"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/owner-requests/pending": {
+      "get": {
+        "tags": [
+          "OwnerRequests"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/owner-requests/{requestId}/status": {
+      "put": {
+        "tags": [
+          "OwnerRequests"
+        ],
+        "parameters": [
+          {
+            "name": "requestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "adminId",
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
