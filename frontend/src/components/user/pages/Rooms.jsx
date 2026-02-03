@@ -139,7 +139,7 @@ function OwnerBooking() {
                 >
                   {room.isActive ? "Available" : "Unavailable"}
                 </span>
-                <img src={room.image} alt="" className="h-full w-full" />
+                <img src={room.image || "https://static.leonardo-hotels.com/image/executive-room-with-king-bed_35ba711c8e3052877659372a86e4bb3a_2048x1365_desktop_2.jpeg"} alt="" className="h-full w-full" />
               </div>
 
               {/* Room Info */}

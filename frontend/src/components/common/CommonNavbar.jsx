@@ -61,7 +61,7 @@ function CommonNavbar() {
 
         {/* LOGO */}
         <Link to="/" className="btn btn-ghost text-xl">
-          daisyUI
+          STAYXPRESS
         </Link>
       </div>
 

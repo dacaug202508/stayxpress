@@ -182,8 +182,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\PaymentService.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAuwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:54.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:54.592Z"
             },
             {
               "$type": "Document",
@@ -195,8 +194,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\BookingRepository.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAcwCwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:44.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:44.634Z"
             },
             {
               "$type": "Document",
@@ -206,7 +204,7 @@
               "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\PaymentController.cs",
               "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\PaymentController.cs",
               "RelativeToolTip": "UserAndBookingService\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA+wBkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T12:21:27.459Z",
               "EditorCaption": ""
@@ -221,8 +219,7 @@
               "RelativeToolTip": "UserAndBookingService\\Controllers\\BillController.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAuwBoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:16.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:16.037Z"
             },
             {
               "$type": "Document",
@@ -234,8 +231,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\BillRepository.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAuwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:41.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:41.306Z"
             },
             {
               "$type": "Document",
@@ -247,8 +243,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\BillService.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAAADEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:06.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:06.14Z"
             },
             {
               "$type": "Document",
@@ -260,8 +255,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IBillService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:27.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:27.358Z"
             },
             {
               "$type": "Document",
@@ -273,8 +267,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\PaymentRepository.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAuwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:16.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:16.423Z"
             },
             {
               "$type": "Document",
@@ -286,8 +279,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\BookingService .cs",
               "ViewState": "AgIAAEMAAAAAAAAAAAAiwG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:09.501Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:09.501Z"
             },
             {
               "$type": "Document",
@@ -299,8 +291,7 @@
               "RelativeToolTip": "UserAndBookingService\\Program.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:19:59.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:19:59.815Z"
             },
             {
               "$type": "Document",
@@ -312,8 +303,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\UserService.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAuwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:58.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:58.323Z"
             },
             {
               "$type": "Document",
@@ -325,8 +315,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\OwnerRequestService.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAuwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:51.217Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:51.217Z"
             },
             {
               "$type": "Document",
@@ -338,8 +327,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IPaymentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:45.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:45.51Z"
             },
             {
               "$type": "Document",
@@ -351,8 +339,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IOwnerRequestService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:37.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:37.515Z"
             },
             {
               "$type": "Document",
@@ -364,8 +351,7 @@
               "RelativeToolTip": "UserAndBookingService\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-02T12:23:33.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:23:33.31Z"
             },
             {
               "$type": "Document",
@@ -377,8 +363,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IBookingService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:42.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:42.032Z"
             },
             {
               "$type": "Document",
@@ -390,8 +375,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IAdminUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:24.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:24.44Z"
             },
             {
               "$type": "Document",
@@ -403,8 +387,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IAdminOwnerRequestService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:21.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:21.535Z"
             },
             {
               "$type": "Document",
@@ -416,8 +399,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IAdminHotelService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:18.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:18.491Z"
             },
             {
               "$type": "Document",
@@ -429,8 +411,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\AdminUserService.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAuwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:17:01.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:17:01.846Z"
             },
             {
               "$type": "Document",
@@ -442,8 +423,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\AdminOwnerRequestService.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAuwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:16:57.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:16:57.822Z"
             },
             {
               "$type": "Document",
@@ -455,8 +435,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\AdminHotelService.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAuwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:23.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:23.306Z"
             },
             {
               "$type": "Document",
@@ -468,8 +447,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\UserRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:19.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:19.286Z"
             },
             {
               "$type": "Document",
@@ -481,8 +459,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\OwnerRequestRepository.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAuwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:13.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:13.192Z"
             },
             {
               "$type": "Document",
@@ -494,8 +471,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:10.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:10.471Z"
             },
             {
               "$type": "Document",
@@ -507,8 +483,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IUserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:07.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:07.613Z"
             },
             {
               "$type": "Document",
@@ -520,8 +495,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IPaymentRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:03.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:03.731Z"
             },
             {
               "$type": "Document",
@@ -533,8 +507,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IOwnerRequestRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:22:01.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:22:01.142Z"
             },
             {
               "$type": "Document",
@@ -546,8 +519,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IHotelRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:58.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:58.03Z"
             },
             {
               "$type": "Document",
@@ -559,8 +531,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IBookingRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:55.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:55.102Z"
             },
             {
               "$type": "Document",
@@ -572,8 +543,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IBillRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:51.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:51.906Z"
             },
             {
               "$type": "Document",
@@ -585,8 +555,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\HotelRepository.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAuwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:48.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:48.305Z"
             },
             {
               "$type": "Document",
@@ -598,8 +567,7 @@
               "RelativeToolTip": "UserAndBookingService\\Controllers\\UsersController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAuwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:31.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:31.148Z"
             },
             {
               "$type": "Document",
@@ -611,8 +579,7 @@
               "RelativeToolTip": "UserAndBookingService\\Controllers\\OwnerRequestsController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:23.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:23.842Z"
             },
             {
               "$type": "Document",
@@ -624,8 +591,7 @@
               "RelativeToolTip": "UserAndBookingService\\Controllers\\BookingsController.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAuwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:20.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:20.445Z"
             },
             {
               "$type": "Document",
@@ -637,8 +603,7 @@
               "RelativeToolTip": "UserAndBookingService\\Controllers\\AdminOwnerRequestsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAcwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:06.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:06.136Z"
             },
             {
               "$type": "Document",
@@ -650,8 +615,7 @@
               "RelativeToolTip": "UserAndBookingService\\Controllers\\AdminUsersController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAA+wB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:21:09.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:21:09.866Z"
             },
             {
               "$type": "Document",
@@ -663,8 +627,7 @@
               "RelativeToolTip": "UserAndBookingService\\Controllers\\AdminHotelsController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAuwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:20:41.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:20:41.198Z"
             },
             {
               "$type": "Document",
@@ -676,21 +639,19 @@
               "RelativeToolTip": "UserAndBookingService\\Models\\HotelbookingContext.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAA8wC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:20:33.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:20:33.354Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 39,
-              "Title": "UserAndBookingService",
+              "Title": "UserAndBookingService.csproj",
               "DocumentMoniker": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
               "RelativeDocumentMoniker": "UserAndBookingService\\UserAndBookingService.csproj",
               "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\UserAndBookingService.csproj",
               "RelativeToolTip": "UserAndBookingService\\UserAndBookingService.csproj",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-02T12:18:50.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T12:18:50.873Z"
             }
           ]
         }

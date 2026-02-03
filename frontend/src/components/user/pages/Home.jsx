@@ -6,6 +6,7 @@ import { getAllHotels } from "../../../services/hotelservice";
 function HomePage() {
   const navigate = useNavigate();
 
+  /* ---------------- SEARCH STATE ---------------- */
   const [search, setSearch] = useState({
     location: "",
     checkIn: "",
@@ -13,26 +14,56 @@ function HomePage() {
     guests: "2",
   });
 
+  /* ---------------- HOTEL STATE ---------------- */
+  const [hotels, setHotels] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  /* ---------------- SEARCH HANDLERS ---------------- */
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     setSearch((prev) => {
       const updated = { ...prev, [name]: value };
-
-      // Reset checkout if invalid
       if (name === "checkIn" && prev.checkOut && prev.checkOut < value) {
         updated.checkOut = "";
       }
-
       return updated;
     });
   };
 
   const handleSearch = () => {
-    console.log(" Home Search Data:", search);
-    navigate("/user/search", {
-      state: search,
-    });
+    navigate("/user/search", { state: search });
+  };
+
+  /* ---------------- FETCH HOTELS ---------------- */
+  useEffect(() => {
+    fetchHotels();
+  }, []);
+
+  const fetchHotels = async () => {
+    try {
+      const res = await getAllHotels();
+
+      const hotelList = Array.isArray(res?.data)
+        ? res.data
+        : Array.isArray(res?.data?.data)
+        ? res.data.data
+        : [];
+
+      setHotels(hotelList);
+    } catch (error) {
+      console.error("Error fetching hotels", error);
+      setHotels([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /* ---------------- LOCAL DESTINATION IMAGES ---------------- */
+  const destinationImages = {
+    KOKAN: "https://tse4.mm.bing.net/th/id/OIP.FgBB6C4xCozpUnCbMVhLmAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+    MUMBAI: "https://tse1.mm.bing.net/th/id/OIP.6_vaYs9NFUsRCnuMpiZbjwHaFA?rs=1&pid=ImgDetMain&o=7&rm=3",
+    RAJASTAN: "https://images.ctfassets.net/uwf0n1j71a7j/6bjzME3K7Hv5pmx78Cy86g/4845e4edfa738e8c41ecf47da161d279/best-places-to-visit-in-dubai.png",
   };
 
   return (
@@ -46,7 +77,6 @@ function HomePage() {
           Discover hotels, compare rooms, and book unforgettable experiences.
         </p>
 
-        {/* SEARCH Form */}
         <SearchForm
           search={search}
           handleChange={handleChange}
@@ -61,16 +91,15 @@ function HomePage() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {["Maldives", "Paris", "Dubai"].map((place) => (
+          {["KOKAN", "MUMBAI", "RAJASTAN"].map((place) => (
             <div
               key={place}
-              onClick={() => console.log("📍 Destination clicked:", place)}
-              className="relative h-56 rounded-xl overflow-hidden shadow-md cursor-pointer group"
+              className="relative h-56 rounded-xl overflow-hidden shadow-md"
             >
               <img
-                src={`https://source.unsplash.com/600x400/?${place},travel`}
+                src={destinationImages[place]}
                 alt={place}
-                className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                 <h3 className="text-white text-xl font-semibold">{place}</h3>
@@ -86,34 +115,49 @@ function HomePage() {
           Featured Hotels
         </h2>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[1, 2, 3].map((hotel) => (
-            <div
-              key={hotel}
-              className="border border-sky-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition"
-            >
-              <img
-                src={`https://source.unsplash.com/600x400/?hotel,luxury,room`}
-                alt="hotel"
-                className="h-48 w-full object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-semibold text-lg text-sky-900">
-                  Luxury Hotel {hotel}
-                </h3>
-                <p className="text-sky-600 text-sm mb-2">City Center</p>
-                <p className="text-sky-700 font-bold">$120 / night</p>
-
-                <button
-                  onClick={() => console.log("🏨 View hotel clicked:", hotel)}
-                  className="mt-3 w-full bg-sky-500 hover:bg-sky-600 text-white py-2 rounded-lg transition"
+        {loading ? (
+          <p className="text-center text-sky-600">Loading hotels...</p>
+        ) : hotels.length === 0 ? (
+          <p className="text-center text-red-500">No hotels found</p>
+        ) : (
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            {hotels
+              .filter((h) => h.status?.toUpperCase() === "ACTIVE")
+              .slice(0, 3)
+              .map((hotel) => (
+                <div
+                  key={hotel.id}
+                  className="border border-sky-100 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition"
                 >
-                  View Rooms
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+                  {/* HOTEL IMAGE */}
+                  <img
+                    src={hotel.imageUrl || "/hotel.jpg"}
+                    alt={hotel.hotel_name}
+                    className="h-48 w-full object-cover"
+                  />
+
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg text-sky-900">
+                      {hotel.hotel_name}
+                    </h3>
+
+                    <p className="text-sky-600 text-sm mb-2">
+                      {hotel.city}, {hotel.country}
+                    </p>
+
+                    <p className="text-sky-700 font-bold">City Center</p>
+
+                    <button
+                      onClick={() => navigate(`hotels/${hotel.id}/rooms`)}
+                      className="mt-3 w-full bg-sky-500 hover:bg-sky-600 text-white py-2 rounded-lg transition"
+                    >
+                      View Rooms
+                    </button>
+                  </div>
+                </div>
+              ))}
+          </div>
+        )}
       </section>
 
       {/* CTA */}
@@ -126,10 +170,7 @@ function HomePage() {
         </p>
 
         <button
-          onClick={() => {
-            console.log("🚀 CTA Search Clicked");
-            navigate("/user/search");
-          }}
+          onClick={() => navigate("/user/search")}
           className="bg-white text-sky-600 px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-sky-100 transition"
         >
           Search Hotels

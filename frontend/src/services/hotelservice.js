@@ -12,12 +12,14 @@ const getAuthHeader = () => {
   };
 };
 
-export const getAllHotels = async () => {
-  try {
-    return await axios.get(`${BASE_URL}/getallhotels`, getAuthHeader());
-  } catch (error) {
-    throw error;
-  }
+export const getAllHotels = () => {
+  const token = localStorage.getItem("token");
+
+  return axios.get("http://localhost:8080/hotel/getallhotels", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 };
 
 export const saveHotel = async (hotel) => {
@@ -86,3 +88,4 @@ export const getHotelsByCity = async (city) => {
     throw error;
   }
 };
+

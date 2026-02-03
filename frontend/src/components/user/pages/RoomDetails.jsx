@@ -82,7 +82,7 @@ function RoomDetails() {
           <img
             src={
               room.image ||
-              "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1200"
+              "https://static.leonardo-hotels.com/image/executive-room-with-king-bed_35ba711c8e3052877659372a86e4bb3a_2048x1365_desktop_2.jpeg"
             }
             alt="Room"
             className="w-full h-full object-cover"

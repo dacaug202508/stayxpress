@@ -15,7 +15,7 @@ function UserNavBar() {
       <div className="flex-1 flex items-center gap-4">
         {/* LOGO */}
         <Link to="/" className="btn btn-ghost text-xl">
-          daisyUI
+          STAYXPRESS
         </Link>
 
         {/* DESKTOP NAV LINKS */}
