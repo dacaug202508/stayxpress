@@ -54,7 +54,6 @@ public interface HotelRepository extends JpaRepository<HotelEntity, Integer> {
 			 LEFT JOIN ImageEntity i
 			   ON i.entityId = h.id 
 			   AND i.entityType = 'HOTEL'
-			   AND i.isPrimary = true
 			 WHERE h.status = 'ACTIVE'
 			 """)
 			 List<Object[]> findHotelsWithPrimaryImage();
@@ -76,7 +75,6 @@ public interface HotelRepository extends JpaRepository<HotelEntity, Integer> {
 					    LEFT JOIN ImageEntity img
 					           ON img.entityId = h.id
 					           AND img.entityType = 'HOTEL'
-					           AND img.isPrimary = true
 					    WHERE h.owner.id = :ownerId
 					""")
 					List<HotelDto> findHotelsByOwnerIdWithImage(@Param("ownerId") Integer ownerId);

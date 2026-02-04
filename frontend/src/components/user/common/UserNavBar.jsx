@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaUserCircle, FaSignOutAlt, FaCog } from "react-icons/fa";
+import { FaUserCircle, FaSignOutAlt, FaCog, FaHotel } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/authSlice";
 
@@ -7,6 +7,7 @@ import { logout } from "../../../store/authSlice";
 const NavLinks = [
   { name: "Home", to: "/user" },
   { name: "Find Hotels", to: "/user/search" },
+  { name: "Compare Rooms", to: "/user/compare" },
   { name: "My Bookings", to: "/user/booking" },
 ];
 
@@ -25,11 +26,12 @@ function UserNavBar() {
       {/* LEFT SECTION */}
       <div className="flex-1 flex items-center gap-8">
         {/* LOGO */}
-        <Link to="/user" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform">
-            S
+        {/* LOGO */}
+        <Link to="/user" className="flex items-center gap-2.5 group">
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+            <FaHotel className="text-xl" />
           </div>
-          <span className="text-xl font-bold text-gray-800 tracking-tight">STAY<span className="text-blue-600">XPRESS</span></span>
+          <span className="text-xl font-bold text-gray-800 tracking-tight">Stay<span className="text-blue-600">Xpress</span></span>
         </Link>
 
         {/* DESKTOP NAV LINKS */}

@@ -10,7 +10,7 @@ import { FaHotel, FaConciergeBell } from "react-icons/fa";
 
 const sideBarLinks = [
   // { name: 'Dashboard', to: '/owner/dashboard', icon: BiHomeAlt },
-  { name: 'Hotel Info', to: '/owner/upload-info', icon: BiInfoCircle },
+  { name: 'Hotel Info', to: '/owner/hotel-info', icon: BiInfoCircle },
   { name: 'Rooms & Pricing', to: '/owner/rooms-pricing', icon: MdRoom },
   { name: 'Bookings', to: '/owner/view-bookings', icon: PiBookOpenLight },
   // { name: 'Confirm Bookings', to: '/owner/confirm-booking', icon: GiConfirmed },
@@ -28,15 +28,15 @@ function OwnerSideBar() {
     <aside className="h-full bg-white flex flex-col border-r border-gray-100 relative z-20">
 
       {/* HEADER / LOGO */}
-      <div className="flex items-center gap-3 px-8 py-8 mb-2">
-        <div className="p-2 bg-blue-600 rounded-lg text-white shadow-md shadow-blue-200">
-          <FaConciergeBell className="text-xl" />
+      <div className="flex items-center gap-3 px-6 py-8 mb-2">
+        <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+          <FaHotel className="text-xl" />
         </div>
         <div>
-          <h1 className="text-lg text-gray-800 font-bold tracking-wide font-sans">
-            StayXpress
+          <h1 className="text-lg text-gray-900 font-bold tracking-tight font-sans">
+            Stay<span className="text-blue-600">Xpress</span>
           </h1>
-          <p className="text-[10px] text-gray-400 font-semibold tracking-widest uppercase">
+          <p className="text-[10px] text-gray-400 font-bold tracking-widest uppercase">
             Owner Panel
           </p>
         </div>

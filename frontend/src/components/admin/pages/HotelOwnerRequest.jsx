@@ -7,6 +7,7 @@ import {
 } from "../../../services/adminOwnerRequestService";
 import { FaUserClock } from "react-icons/fa";
 import { BiRefresh } from "react-icons/bi";
+import { getUserProfile } from "../../../services/userService";
 
 function HotelOwnerRequest() {
   const [filter, setFilter] = useState("PENDING");
@@ -29,12 +30,16 @@ function HotelOwnerRequest() {
           ? await getPendingOwnerRequests()
           : await getAllOwnerRequests();
 
+      let userId = localStorage.getItem("user_id")
+      const user = await getUserProfile(userId);
+      console.log(user.data);
+
       console.log(res.data);
 
       const formatted = res.data.map((r) => ({
         id: r.id,
         userId: r.userId,
-        name: `User ${r.userId}`,
+        name: `${user.data.fullName}`,
         status: r.requestStatus,
       }));
 

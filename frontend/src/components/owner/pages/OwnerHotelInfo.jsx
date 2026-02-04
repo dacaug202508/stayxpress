@@ -22,7 +22,6 @@ function OwnerHotelInfo() {
   const [loading, setLoading] = useState(true);
 
   let state = useSelector((state) => state.auth);
-
   useEffect(() => {
     fetchHotels();
   }, []);

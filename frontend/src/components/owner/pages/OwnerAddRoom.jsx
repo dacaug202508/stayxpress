@@ -13,6 +13,7 @@ import {
   FaAlignLeft,
   FaDoorOpen,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function OwnerAddRoom() {
   const init = {
@@ -24,6 +25,8 @@ function OwnerAddRoom() {
     description: "",
     isActive: true,
   };
+
+  let navigate = useNavigate()
 
   const [roomData, setRoomData] = useState(init);
   const [hotels, setHotels] = useState([]);
@@ -113,6 +116,7 @@ function OwnerAddRoom() {
       setRoomData(init);
       setImage(null);
       setImagePreview(null);
+      navigate("/owner/rooms-pricing");
     } catch (error) {
       console.error(error);
       toast.error("Failed to save room.");
@@ -254,8 +258,8 @@ function OwnerAddRoom() {
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
                 className={`border-2 border-dashed rounded-xl p-6 text-center transition ${dragActive
-                    ? "border-blue-600 bg-blue-50"
-                    : "border-gray-300"
+                  ? "border-blue-600 bg-blue-50"
+                  : "border-gray-300"
                   }`}
               >
                 <input

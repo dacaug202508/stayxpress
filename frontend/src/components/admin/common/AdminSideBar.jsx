@@ -25,15 +25,15 @@ function AdminSideBar() {
   return (
     <aside className="h-full bg-white border-r border-gray-100 flex flex-col">
       {/* LOGO / TITLE */}
-      <div className="flex items-center gap-3 px-8 py-8">
-        <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-          <BiHotel className="text-2xl" />
+      <div className="flex items-center gap-3 px-6 py-8">
+        <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+          <FaHotel className="text-xl" />
         </div>
         <div>
           <h1 className="text-xl font-bold text-gray-900 tracking-tight leading-none">
-            StayXpress
+            Stay<span className="text-blue-600">Xpress</span>
           </h1>
-          <span className="text-xs font-bold text-blue-600 uppercase tracking-widest">Admin Panel</span>
+          <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Admin Panel</span>
         </div>
       </div>
 

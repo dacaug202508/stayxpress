@@ -50,8 +50,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\IAdminHotelService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAiwAoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T10:33:20.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T10:33:20.656Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "UserAndBookingService\\Services\\AdminHotelService.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAUwEAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T10:31:04.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T10:31:04.765Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\HotelRepository.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAgwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T10:30:36.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T10:30:36.214Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "RelativeToolTip": "UserAndBookingService\\Repository\\IHotelRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T10:30:22.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T10:30:22.137Z"
             },
             {
               "$type": "Document",
@@ -102,8 +98,7 @@
               "RelativeToolTip": "UserAndBookingService\\Models\\Hotel.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAxwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T10:29:58.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T10:29:58.714Z"
             },
             {
               "$type": "Document",
@@ -115,8 +110,7 @@
               "RelativeToolTip": "UserAndBookingService\\Models\\BookingExtra.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T10:29:57.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-03T10:29:57.705Z"
             },
             {
               "$type": "Document",
@@ -126,7 +120,7 @@
               "RelativeDocumentMoniker": "UserAndBookingService\\Controllers\\AdminHotelsController.cs",
               "ToolTip": "C:\\MainProject\\stayxpress\\backend\\dotnet_microservices\\UserAndBookingService\\UserAndBookingService\\Controllers\\AdminHotelsController.cs",
               "RelativeToolTip": "UserAndBookingService\\Controllers\\AdminHotelsController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAACYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAA1wAoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-03T10:29:31.206Z",
               "EditorCaption": ""

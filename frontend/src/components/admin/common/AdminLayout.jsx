@@ -1,8 +1,8 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import OwnerNavBar from "./AdminNavBar";
 import OwnerSideBar from "./AdminSideBar";
-import { BiBell, BiSearch } from "react-icons/bi";
+import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
 import { RxAvatar } from "react-icons/rx";
 import Button from "../../reusable/Button";
 import { useDispatch } from "react-redux";
@@ -39,40 +39,48 @@ function AdminLayout() {
           {/* HEADER */}
           <header className="h-20 bg-white/80 backdrop-blur-md border-b border-gray-100 px-8 flex items-center justify-between sticky top-0 z-10 transition-all">
             {/* Search / Breadcrumbs Area (Placeholder for Future) */}
-            <div className="flex items-center gap-4 w-1/3">
-              <div className="relative w-full">
-                <BiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="w-full bg-gray-50 border-none rounded-xl py-2.5 pl-12 pr-4 text-sm font-medium focus:ring-2 focus:ring-blue-100 transition-all"
-                />
-              </div>
-            </div>
+            {/* SPACER (Pushes content to right) */}
+            <div className="flex-1"></div>
 
             {/* RIGHT ACTIONS */}
             <div className="flex items-center gap-6">
-              <button className="relative w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-100 text-gray-500 hover:text-blue-600 hover:bg-blue-50 transition-colors shadow-sm">
-                <BiBell size={20} />
-                <span className="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
-              </button>
 
-              <div className="flex items-center gap-3 pl-6 border-l border-gray-100">
+              <div className="flex items-center gap-3 pl-6">
                 <div className="text-right hidden lg:block">
                   <p className="text-sm font-bold text-gray-800">Admin User</p>
                   <p className="text-xs text-gray-400">Super Admin</p>
                 </div>
                 <div className="dropdown dropdown-end">
-                  <label tabIndex={0} className="btn btn-ghost btn-circle avatar online">
-                    <div className="w-10 rounded-full ring ring-offset-2 ring-gray-100">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar ring-2 ring-gray-100 hover:ring-blue-100 transition-all"
+                  >
+                    <div className="w-10 rounded-full">
                       <RxAvatar className="w-full h-full text-gray-400 bg-gray-200" />
                     </div>
-                  </label>
-                  <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow-xl menu menu-sm dropdown-content bg-white rounded-xl w-52 border border-gray-100">
-                    <li><a className="py-2">Profile</a></li>
-                    <li><a className="py-2">Settings</a></li>
+                  </div>
+
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content bg-white rounded-2xl mt-4 w-56 p-2 shadow-xl border border-gray-100 z-[9999]"
+                  >
+                    <li className="menu-title px-4 py-2 text-xs text-gray-400 font-semibold uppercase tracking-wider">
+                      Account
+                    </li>
+                    <li>
+                      <Link to="/admin/profile" className="py-3 px-4 hover:bg-blue-50 text-gray-600 hover:text-blue-600 rounded-xl flex items-center gap-3">
+                        <FaUserCircle size={16} />
+                        Profile
+                      </Link>
+                    </li>
                     <div className="divider my-1"></div>
-                    <li><a onClick={handleLogout} className="text-red-500 font-medium py-2">Logout</a></li>
+                    <li>
+                      <button onClick={handleLogout} className="py-3 px-4 hover:bg-red-50 text-red-500 hover:text-red-600 rounded-xl flex items-center gap-3 font-medium">
+                        <FaSignOutAlt size={16} />
+                        Logout
+                      </button>
+                    </li>
                   </ul>
                 </div>
               </div>

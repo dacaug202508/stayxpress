@@ -89,7 +89,7 @@ export default function SearchPage() {
       {/* 🔹 CONTENT AREA */}
       <div className="max-w-7xl mx-auto px-4 md:px-10 py-10 flex flex-col md:flex-row gap-8">
         {/* Filters Sidebar */}
-        <aside className="md:w-72 space-y-8 sticky top-32 h-fit bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hidden md:block">
+        {/* <aside className="md:w-72 space-y-8 sticky top-32 h-fit bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hidden md:block">
           <div className="flex items-center gap-2 mb-6 text-gray-800 border-b border-gray-100 pb-4">
             <FaFilter className="text-blue-500" />
             <h3 className="text-lg font-bold">Filters</h3>
@@ -129,11 +129,11 @@ export default function SearchPage() {
               </label>
             </div>
           </div>
-        </aside>
+        </aside> */}
 
         {/* Hotel Results */}
         <div className="flex-1">
-          <div className="flex justify-between items-center mb-6">
+          {/* <div className="flex justify-between items-center mb-6">
             <h3 className="text-xl font-bold text-gray-800">
               {hotels.length} {hotels.length === 1 ? 'Property' : 'Properties'} Found
             </h3>
@@ -142,7 +142,7 @@ export default function SearchPage() {
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
             </select>
-          </div>
+          </div> */}
 
           {/* Cards Grid */}
           {loading ? (

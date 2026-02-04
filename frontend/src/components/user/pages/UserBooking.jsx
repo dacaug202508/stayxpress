@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getUserBookings, cancelBooking } from "../../../services/bookingService";
 import { FaCalendarAlt, FaHotel, FaMoneyBillWave, FaEllipsisV, FaTrashAlt } from "react-icons/fa";
+import { getRoomById } from "../../../services/roomservice";
 
 function UserBookings() {
   const userId = localStorage.getItem("user_id");
@@ -16,6 +17,9 @@ function UserBookings() {
     try {
       const res = await getUserBookings(userId);
       setBookings(res.data);
+      console.log(res.data);
+      // let room = await getRoomById(res.data.roomId);
+      // console.log(room.data);
     } catch (error) {
       console.error("Error fetching user bookings", error);
     } finally {
@@ -102,12 +106,12 @@ function UserBookings() {
                       <td>
                         <span
                           className={`px-3 py-1 rounded-full text-xs font-bold border ${b.status === "COMPLETED"
-                              ? "bg-green-50 text-green-600 border-green-100"
-                              : b.status === "CONFIRMED"
-                                ? "bg-blue-50 text-blue-600 border-blue-100"
-                                : b.status === "CANCELLED"
-                                  ? "bg-red-50 text-red-600 border-red-100"
-                                  : "bg-gray-50 text-gray-600 border-gray-100"
+                            ? "bg-green-50 text-green-600 border-green-100"
+                            : b.status === "CONFIRMED"
+                              ? "bg-blue-50 text-blue-600 border-blue-100"
+                              : b.status === "CANCELLED"
+                                ? "bg-red-50 text-red-600 border-red-100"
+                                : "bg-gray-50 text-gray-600 border-gray-100"
                             }`}
                         >
                           {b.status}

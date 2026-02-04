@@ -36,8 +36,7 @@ public interface RoomRepository extends JpaRepository<RoomEntity, Integer> {
 			LEFT JOIN ImageEntity img
 			       ON img.entityId = r.id
 			       AND img.entityType = 'ROOM'
-			       AND img.isPrimary = true
-			WHERE r.hotel.id = :hotelId
+						WHERE r.hotel.id = :hotelId
 			""")
 			List<RoomDto> getRoomsByHotelWithImages(@Param("hotelId") Integer hotelId);
 
@@ -56,7 +55,7 @@ public interface RoomRepository extends JpaRepository<RoomEntity, Integer> {
 			LEFT JOIN ImageEntity img
 			       ON img.entityId = r.id
 			       AND img.entityType = 'ROOM'
-			       AND img.isPrimary = true
+			     
 			WHERE r.id = :roomId
 			""")
 			RoomDto getRoomByWithImages(@Param("roomId") Integer roomId);

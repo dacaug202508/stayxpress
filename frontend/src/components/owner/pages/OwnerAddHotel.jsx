@@ -12,6 +12,7 @@ import {
   FaAlignLeft,
   FaImage,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function OwnerAddHotel() {
   const { userId } = useSelector((state) => state.auth);
@@ -26,6 +27,7 @@ function OwnerAddHotel() {
     country: "",
     status: "INACTIVE",
   };
+  let navigate = useNavigate()
 
   const [hotelData, setHotelData] = useState(init);
   const [image, setImage] = useState(null);
@@ -97,6 +99,7 @@ function OwnerAddHotel() {
       setHotelData(init);
       setImage(null);
       setImagePreview(null);
+      navigate("/owner/hotel-info");
     } catch (error) {
       console.error(error);
       toast.error("Failed to save hotel.");

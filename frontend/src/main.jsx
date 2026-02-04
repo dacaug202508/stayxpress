@@ -11,7 +11,7 @@ import {
 import Login from "./components/pages/Login.jsx";
 import Registration from "./components/pages/Registration.jsx";
 import Layout from "./components/reusable/Layout.jsx";
-// import Registration from "";
+
 import OwnerLayout from "./components/owner/common/OwnerLayout.jsx";
 import OwnerHomePage from "./components/owner/OwnerHomePage.jsx";
 import OwnerDashboard from "./components/owner/pages/OwnerDashboard.jsx";
@@ -41,6 +41,7 @@ import AdminDashboard from "./components/admin/pages/AdminDashboard.jsx";
 import HotelOwnerRequest from "./components/admin/pages/HotelOwnerRequest.jsx";
 import ManageHotelOwner from "./components/admin/pages/ManageHotelOwner.jsx";
 import AdminHotels from "./components/admin/pages/AdminHotels.jsx";
+import AdminProfile from "./components/admin/pages/AdminProfile.jsx";
 
 import RoomCompare from "./components/user/pages/RoomCompare.jsx";
 import UserProfile from "./components/user/pages/UserProfile.jsx";
@@ -57,6 +58,7 @@ import PaymentPage from "./components/user/pages/PaymentPage.jsx";
 import UserBookings from "./components/user/pages/UserBooking.jsx";
 import CancelledBookings from "./components/owner/pages/CancelledBookings.jsx";
 import OwnerHotelsStatus from "./components/owner/pages/OwnerHotelsStatus.jsx";
+import OwnerProfile from "./components/owner/pages/OwnerProfile.jsx";
 
 let router = createBrowserRouter([
   {
@@ -116,7 +118,8 @@ let router = createBrowserRouter([
               { path: "add-room", element: <OwnerAddRoom /> },
               { path: "rooms-pricing", element: <OwnerRoomAndPrice /> },
               { path: "edit-room/:roomId", element: <OwnerEditRoom /> },
-              { path: "upload-info", element: <OwnerHotelInfo /> },
+              { path: "hotel-info", element: <OwnerHotelInfo /> },
+              { path: "profile", element: <OwnerProfile /> },
               { path: "view-bookings", element: <OwnerBooking /> },
               { path: "cancelled", element: <CancelledBookings /> },
               {
@@ -136,11 +139,12 @@ let router = createBrowserRouter([
           {
             element: <AdminLayout />,
             children: [
-              { index: true, element: <AdminHomePage /> },
+              { index: true, element: <AdminDashboard /> },
               { path: "dashboard", element: <AdminDashboard /> },
               { path: "owner-request", element: <HotelOwnerRequest /> },
               { path: "manage-owners", element: <ManageHotelOwner /> },
               { path: "hotels", element: <AdminHotels /> },
+              { path: "profile", element: <AdminProfile /> },
             ],
           },
         ],

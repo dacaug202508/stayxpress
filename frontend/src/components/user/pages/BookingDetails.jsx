@@ -11,6 +11,7 @@ function BookingDetails() {
     const fetchBooking = async () => {
       try {
         const data = await getBookingById(bookingId, userId);
+
         setBooking(data);
       } catch (err) {
         console.error("Error fetching booking:", err);
@@ -53,13 +54,12 @@ function BookingDetails() {
             </p>
           </div>
           <span
-            className={`mt-3 md:mt-0 px-4 py-1 text-sm font-bold rounded-full ${
-              booking.status === "CONFIRMED"
-                ? "bg-green-100 text-green-700"
-                : booking.status === "COMPLETED"
+            className={`mt-3 md:mt-0 px-4 py-1 text-sm font-bold rounded-full ${booking.status === "CONFIRMED"
+              ? "bg-green-100 text-green-700"
+              : booking.status === "COMPLETED"
                 ? "bg-blue-100 text-blue-700"
                 : "bg-red-100 text-red-700"
-            }`}
+              }`}
           >
             {booking.status}
           </span>

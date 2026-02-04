@@ -65,15 +65,35 @@ function OwnerLayout() {
 
             {/* RIGHT */}
             <div className="flex items-center gap-4">
-              <BiBell
-                size={20}
-                className="cursor-pointer text-gray-600 hover:text-gray-800 transition"
-              />
-
-              <div className="flex items-center gap-2 bg-gray-100 px-3 py-1.5 rounded-full">
-                <RxAvatar size={20} />
-
-                <Button onClick={handleLogout} text={"logout"} css="btn" />
+              <div className="dropdown dropdown-end">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full border border-gray-200 p-1">
+                    <RxAvatar className="w-full h-full text-gray-600" />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content bg-white rounded-2xl mt-3 z-[1] p-2 shadow-xl border border-gray-100 w-52"
+                >
+                  <li className="menu-title px-4 py-2 text-xs text-gray-400 font-bold uppercase">
+                    Account
+                  </li>
+                  <li>
+                    <Link to="/owner/profile" className="py-2.5 px-4 hover:bg-blue-50 text-gray-600 hover:text-blue-600 rounded-xl mb-1">
+                      Profile
+                    </Link>
+                  </li>
+                  <div className="divider my-0"></div>
+                  <li>
+                    <button onClick={handleLogout} className="py-2.5 px-4 text-red-500 hover:bg-red-50 rounded-xl mt-1">
+                      Logout
+                    </button>
+                  </li>
+                </ul>
               </div>
             </div>
           </header>
